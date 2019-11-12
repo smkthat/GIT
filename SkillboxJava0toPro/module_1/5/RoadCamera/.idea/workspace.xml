@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b5e66ee-739f-4da6-a865-f2a087f19ee7" name="Default Changelist" comment="" />
+    <list default="true" id="5b5e66ee-739f-4da6-a865-f2a087f19ee7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +31,12 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549955948495" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../-JavaDeveloper(Skillbox)/- MODULES/1/RoadCamera" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../module_4/6/DataApp2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Main.Java" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -75,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573560058903</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactor and test git settings">
+      <created>1573560261013</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573560261013</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,6 +105,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactor and rename Main class to Loader" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor and rename Main class to Loader" />
+    <MESSAGE value="refactor and test git settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor and test git settings" />
   </component>
 </project>

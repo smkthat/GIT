@@ -1,3 +1,5 @@
+package Main.Java;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -5,7 +7,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 
-public class Main {
+public class Loader {
 
   private static final DateTimeFormatter RU_DATE_FORMATTER = DateTimeFormatter
       .ofPattern("dd.MM.yyyy - EEE")
