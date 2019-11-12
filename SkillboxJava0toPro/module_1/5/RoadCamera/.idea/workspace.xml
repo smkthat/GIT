@@ -32,6 +32,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -39,12 +42,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="23" />
-    <option name="y" value="20" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
-  </component>
+  <component name="ProjectId" id="1TVz3aGTFIVZdmhOpdEGBTViYnM" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -71,6 +69,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549955948495" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../-JavaDeveloper(Skillbox)/- MODULES/1/RoadCamera" />
   </component>
@@ -87,8 +86,8 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="RoadCamera" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RoadCamera" />
+    <configuration name="Loader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.Java.Loader" />
       <module name="RoadCamera" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -96,7 +95,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RoadCamera" />
+        <item itemvalue="Application.Loader" />
       </list>
     </recent_temporary>
   </component>
