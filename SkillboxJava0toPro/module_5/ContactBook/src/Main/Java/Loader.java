@@ -25,11 +25,7 @@ public class Loader {
     System.err.println("<            Welcome to phonebook emulator :)            >");
 
     while (steelWorking) {
-      System.out.println("\nYou have the following commands:   1 - print all contacts;\n"
-          + "                                   2 - clear all contacts from;\n"
-          + "                                   0 - stop program.\n"
-      );
-      System.out.println("\nPlease, type contact phone number/name or command:");
+      showMainMenu();
       String input = inputString();
       if (input.isEmpty()) {
         continue;
@@ -40,54 +36,72 @@ public class Loader {
         if (foundedContacts.isEmpty()) {
           createNewContact(input);
         } else {
-          System.err.println("FOUNDED CONTACTS");
-          System.out.println("Id:\tName:\tPhone:");
-
-          for (Contact contact : foundedContacts) {
-            System.out
-                .println(contact.getId() + "\t" + contact.getName() + "\t" + contact.getPhone());
-          }
-
-          System.err.println("Do you want to change contact?");
-          System.out.println("Please, enter contact id or print \"no\"!");
-
-          while (true) {
-            input = inputString();
-            if (input.matches(REGEX_PHONE)) {
-              Contact contact = getContactById(Integer.parseInt(input));
-              if (contact != null) {
-                changeContact(contact);
-                break;
-              } else {
-                System.err.println("Wrong id! Repeat input:");
-              }
-            } else if (input.equals("n") || input.equals("no")) {
-              break;
-            }
-          }
-
+          printFoundedContacts(foundedContacts);
+          showContactAction();
         }
       } else {
-
-        switch (input) {
-          case "1": {
-            if (contactsBook.isEmpty()) {
-              System.err.println("Phonebook empty! Nothing to print!");
-            } else {
-              printAllContacts();
-            }
-            continue;
-          }
-          case "2": {
-            clearAllContacts();
-            System.err.println("Phonebook cleared!");
-            continue;
-          }
-          case "0": {
-            steelWorking = false;
-          }
-        }
+        executeCommand(input);
       }
+    }
+  }
+
+  private static void showMainMenu() {
+    System.out.println("\nYou have the following commands:   1 - print all contacts;\n"
+        + "                                   2 - clear all contacts from;\n"
+        + "                                   0 - stop program.\n"
+    );
+
+    System.out.println("\nPlease, type contact phone number/name or command:");
+  }
+
+  private static void executeCommand(String input) {
+    switch (input) {
+      case "1": { // print all contacts
+        if (contactsBook.isEmpty()) {
+          System.err.println("Phonebook empty! Nothing to print!");
+        } else {
+          printAllContacts();
+        }
+        return;
+      }
+      case "2": { // clear contact book
+        clearAllContacts();
+        System.err.println("Phonebook cleared!");
+        return;
+      }
+      case "0": { // stop program
+        steelWorking = false;
+      }
+    }
+  }
+
+  private static void showContactAction() {
+    String input;
+    System.err.println("Do you want to change contact?");
+    System.out.println("Please, enter contact id or print \"no\"!");
+
+    while (true) {
+      input = inputString();
+      if (input.matches(REGEX_PHONE)) {
+        Contact contact = getContactById(Integer.parseInt(input));
+        if (contact != null) {
+          changeContact(contact);
+          break;
+        } else {
+          System.err.println("Wrong id! Repeat input:");
+        }
+      } else if (input.equals("n") || input.equals("no")) {
+        break;
+      }
+    }
+  }
+
+  private static void printFoundedContacts(ArrayList<Contact> contacts) {
+    System.err.println("FOUNDED CONTACTS");
+    System.out.println("Id:\tName:\tPhone:");
+
+    for (Contact contact : contacts) {
+      System.out.println(contact.getId() + "\t" + contact.getName() + "\t" + contact.getPhone());
     }
   }
 
@@ -109,6 +123,10 @@ public class Loader {
       }
     }
 
+    return clearDuplicate(foundedContacts);
+  }
+
+  private static ArrayList<Contact> clearDuplicate(ArrayList<Contact> foundedContacts) {
     Set<Contact> set = new HashSet<>(foundedContacts);
     foundedContacts.clear();
     foundedContacts.addAll(set);
@@ -116,16 +134,13 @@ public class Loader {
   }
 
   private static String inputString() {
-    String input = "";
-    while (input.isEmpty()) {
-      input = new Scanner(System.in).nextLine();
-
-      if (input.isEmpty()) {
-        System.err.println("Please, repeat input:");
+    while (true) {
+      String input = new Scanner(System.in).nextLine();
+      if (!input.isEmpty()) {
+        return input;
       }
+      System.err.println("Please, repeat input:");
     }
-
-    return input;
   }
 
   private static void printAllContacts() {
@@ -194,33 +209,44 @@ public class Loader {
         break;
       }
       case "2": {
-        System.err.println("Please, enter new contact phone number:");
-        String phone = "";
-        while (!phone.matches(REGEX_PHONE)) {
-          phone = inputString();
-        }
-        contact.setPhone(phone);
-        System.err.println(
-            "Contact " + contact.getName() + " change phone number to " + contact.getPhone());
+        changeContactPhone(contact);
         break;
       }
       case "3": {
-        System.err.println("Please, enter new contact name:");
-        String oldName = contact.getName();
-        String name = "";
-        while (name.isEmpty()) {
-          name = inputString();
-        }
-        contact.setName(name);
-        System.err.println("Contact " + oldName + " change name to " + contact.getName());
+        changeContactName(contact);
         break;
       }
       case "4": {
-        System.err.println("Contact " + contact.getName() + " removed!");
-        contactsBook.remove(contact);
+        removeContact(contact);
         break;
       }
     }
+  }
+
+  private static void removeContact(Contact contact) {
+    System.err.println("Contact " + contact.getName() + " removed!");
+    contactsBook.remove(contact);
+  }
+
+  private static void changeContactPhone(Contact contact) {
+    System.err.println("Please, enter new contact phone number:");
+    String phone = "";
+    while (!phone.matches(REGEX_PHONE)) {
+      phone = inputString();
+    }
+    contact.setPhone(phone);
+    System.err.println("Contact " + contact.getName() + " change phone number to " + contact.getPhone());
+  }
+
+  private static void changeContactName(Contact contact) {
+    System.err.println("Please, enter new contact name:");
+    String oldName = contact.getName();
+    String name = "";
+    while (name.isEmpty()) {
+      name = inputString();
+    }
+    contact.setName(name);
+    System.err.println("Contact " + oldName + " change name to " + contact.getName());
   }
 
   public static void main(String[] args) {
