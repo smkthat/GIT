@@ -193,8 +193,7 @@ public class Loader {
     ArrayList<String> num = new ArrayList<>();
     int count;
     for (int k = 0; k < 10; k++) {
-      String temp = Integer.toString(k).trim();
-      num.add("00" + temp);
+      num.add(String.format("%03d", k));
     }
 
     for (int k = 1; k < 10; k++) {
