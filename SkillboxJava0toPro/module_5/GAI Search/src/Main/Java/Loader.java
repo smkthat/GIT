@@ -1,36 +1,176 @@
 package Main.Java;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
 
 public class Loader {
+
   private static final String EXIT = "выход";
   private static ArrayList<String> numbersArrayList;
+  private static List<List<String>> tableResultData;
   private static long start;
   private static long finish;
+  private static int searchCounter;
+  private static boolean isFound;
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) {
     generateNumbersDB();
+    boolean isWorking = true;
+    searchCounter = 0;
+    tableResultData = new ArrayList<>();
 
-    for (; ; ) {
+    while (isWorking) {
+      isFound = false;
       System.out.println(
           "\nВведите номер автомобиля в формате Х000ХХ000 с русскими буквами: "
               + "\n( наберите \""
               + EXIT
               + "\" чтобы закрыть программу )");
-      String inputNumber = (new BufferedReader(new InputStreamReader(System.in))).readLine();
+      String inputNumber = new Scanner(System.in).nextLine();
 
       if (inputNumber.equals(EXIT)) {
         break;
       }
 
       if (checkInputNumber(inputNumber)) {
+
         startSearch(inputNumber);
+        showSearchResult();
+        isWorking = repeatSearch();
       } else {
         System.err.println("Неправельный ввод!");
       }
+    }
+  }
+
+  /* Показывает результаты поиска */
+  private static void showSearchResult() {
+    printTable(getHeader(), tableResultData);
+  }
+
+  /*  ПОИСК  */
+  private static void startSearch(String inputNumber) {
+    searchCounter++;
+    tableResultData.add(creatingSearchResult(inputNumber));
+  }
+
+  /*  формирование данных для таблицы результатов поиска  */
+  private static ArrayList<String> creatingSearchResult(String inputNumber) {
+    System.out.println("Поиск начат");
+    ArrayList<String> searchResultData = new ArrayList<>();
+    searchResultData.add(Integer.toString(searchCounter));
+    searchResultData.add(inputNumber);
+    searchResultData.add(enumeration(inputNumber));
+    searchResultData.add(binarySearch(inputNumber));
+    searchResultData.add(treeSetSearch(inputNumber));
+    searchResultData.add(hashSetSearch(inputNumber));
+    searchResultData.add(Boolean.toString(isFound));
+    System.out.println("Результат:");
+    return searchResultData;
+  }
+
+  /*  получить шапку таблицы  */
+  private static ArrayList<String> getHeader() {
+    ArrayList<String> header = new ArrayList<>();
+    header.add("N");
+    header.add("Номер");
+    header.add("Перебор");
+    header.add("HashSet");
+    header.add("TreeSet");
+    header.add("binarySearch");
+    header.add("Найден");
+    return header;
+  }
+
+  /*  получить дно таблицы таблицы  */
+  private static void showFinalResult() {
+    ArrayList<String> header = getFinalHeader();
+
+    TreeSet<Long> sortedEnumerationResults = new TreeSet<>();
+    TreeSet<Long> sortedHashSetResults = new TreeSet<>();
+    TreeSet<Long> sortedTreeSetResults = new TreeSet<>();
+    TreeSet<Long> sortedBinarySearchResults = new TreeSet<>();
+
+    for (List<String> data : tableResultData) {
+      sortedEnumerationResults.add(Long.parseLong(data.get(2)));
+      sortedHashSetResults.add(Long.parseLong(data.get(3)));
+      sortedTreeSetResults.add(Long.parseLong(data.get(4)));
+      sortedBinarySearchResults.add(Long.parseLong(data.get(5)));
+    }
+
+    List<List<String>> finalTableResultData = getFinalTableData(
+        sortedEnumerationResults,
+        sortedHashSetResults,
+        sortedTreeSetResults,
+        sortedBinarySearchResults
+    );
+
+    printTable(header, finalTableResultData);
+  }
+
+  /*  Печатает таблицу */
+  private static void printTable(ArrayList<String> header,
+      List<List<String>> finalTableResultData) {
+    TableGenerator table = new TableGenerator();
+    String finalResult = table.generateTable(header, finalTableResultData);
+    System.out.println(finalResult);
+  }
+
+  /*  Получаем данные финальной таблицы результатов */
+  private static List<List<String>> getFinalTableData(TreeSet<Long> sortedEnumerationResults,
+      TreeSet<Long> sortedHashSetResults, TreeSet<Long> sortedTreeSetResults,
+      TreeSet<Long> sortedBinarySearchResults) {
+    List<List<String>> finalTableResultData = new ArrayList<>();
+
+    ArrayList<String> data = new ArrayList<>();
+    data.add("Перебор");
+    data.add(sortedEnumerationResults.first().toString());
+    data.add(
+        "Линейный поиск можно использовать для малого, несортированного набора данных, который не увеличивается в размерах.");
+    finalTableResultData.add(data);
+
+    data = new ArrayList<>();
+    data.add("HashSet");
+    data.add(sortedHashSetResults.first().toString());
+    data.add(
+        "Если много элементов, не сортирует элементы. Может хранить null. Не синхронизирован.");
+    finalTableResultData.add(data);
+
+    data = new ArrayList<>();
+    data.add("TreeSet");
+    data.add(sortedTreeSetResults.first().toString());
+    data.add("Если много элементов, сортирует элементы. Неможет хранить null. Не синхронизирован.");
+    finalTableResultData.add(data);
+
+    data = new ArrayList<>();
+    data.add("binarySearch");
+    data.add(sortedBinarySearchResults.first().toString());
+    data.add(
+        "Двоичный поиск может использоваться для быстрого доступа к упорядоченным данным, когда пространство памяти ограничено.");
+    finalTableResultData.add(data);
+    return finalTableResultData;
+  }
+
+  /*  Получаем шапку финальной таблицы */
+  private static ArrayList<String> getFinalHeader() {
+    ArrayList<String> header = new ArrayList<>();
+    header.add("Метод");
+    header.add("Наилучший результат");
+    header.add("В каких случаях хорошо использовать");
+    return header;
+  }
+
+  /* Спрашивает нужно ли повторит поиск */
+  private static boolean repeatSearch() {
+    System.out.println("Повторить поиск? - да/нет");
+    while (true) {
+      String answer = new Scanner(System.in).nextLine();
+      if (answer.equals("да")) {
+        return true;
+      } else if (answer.equals("нет")) {
+        showFinalResult();
+        return false;
+      }
+      System.err.println("Повторите ввод! - да/нет");
     }
   }
 
@@ -120,66 +260,48 @@ public class Loader {
     println("Сформированно номеров :" + tab(3) + numbersArrayList.size());
   }
 
-  /*  ПОИСК  */
-  private static void startSearch(String inputNumber) {
-    print("Поиск перебором (ArrayList):" + tab(1));
-    println(enumeration(inputNumber));
-    print("Бинарный  поиск:" + tab(4));
-    println(binarySearch(inputNumber));
-    print("Поиск по TreeSet:" + tab(4));
-    println(treeSetSearch(inputNumber));
-    print("Поиск по HashSet:" + tab(4));
-    println(hashSetSearch(inputNumber));
-  }
-
   private static String binarySearch(String inputNumber) {
     /* БИНАРНЫЙ ПОИСК */
-    boolean numberIsFound = false;
     start = System.nanoTime();
     int index = Collections.binarySearch(numbersArrayList, inputNumber);
     finish = System.nanoTime() - start;
     if (index > 0) {
-      numberIsFound = true;
+      isFound = true;
     }
-
-    return numberIsFound + "(" + finish + " ns)";
+    return Long.toString(finish);
   }
 
   private static String treeSetSearch(String inputNumber) {
     /* ПОИСК В TREESET */
     TreeSet<String> numbersTreeSet = new TreeSet<>(numbersArrayList);
     start = System.nanoTime();
-    boolean numberIsFound = numbersTreeSet.contains(inputNumber);
+    isFound = numbersTreeSet.contains(inputNumber);
     finish = System.nanoTime() - start;
     numbersTreeSet.clear();
-
-    return numberIsFound + "(" + finish + " ns)";
+    return Long.toString(finish);
   }
 
   private static String hashSetSearch(String inputNumber) {
     /* ПОИСК В HASHSET */
     HashSet<String> numbersHashSet = new HashSet<>(numbersArrayList);
     start = System.nanoTime();
-    boolean numberIsFound = numbersHashSet.contains(inputNumber);
+    isFound = numbersHashSet.contains(inputNumber);
     finish = System.nanoTime() - start;
     numbersHashSet.clear();
-
-    return numberIsFound + "(" + finish + " ns)";
+    return Long.toString(finish);
   }
 
   private static String enumeration(String inputNumber) {
     /* ПОИСК ПЕРЕБОРОМ */
     start = System.nanoTime();
-    boolean numberIsFound = false;
     for (String number : numbersArrayList) {
       if (number.equals(inputNumber)) {
-        numberIsFound = true;
+        isFound = true;
         break;
       }
     }
     finish = System.nanoTime() - start;
-
-    return numberIsFound + "(" + finish + " ns)";
+    return Long.toString(finish);
   }
 
   /*  ПОМОШНИКИ */
@@ -187,11 +309,6 @@ public class Loader {
     /* Проверка корректности ввода номера */
     return number.matches("\\D\\d{3}\\D{2}\\d{3}");
   }
-
-//  private static long getMilliFromNano(long nanoSeconds) {
-//    /* Перевод наносекунд в миллисекунды */
-//    return nanoSeconds / 1000000;
-//  }
 
   private static String tab(int n) {
     /* Добавляет знаки табуляции */
