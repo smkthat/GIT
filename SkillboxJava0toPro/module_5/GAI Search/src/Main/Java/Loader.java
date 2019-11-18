@@ -51,64 +51,54 @@ public class Loader {
   private static void startSearch(String inputNumber) {
     searchCounter++;
     tableResultData.add(creatingSearchResult(inputNumber));
+    System.out.println("Результат:");
   }
 
   /*  формирование данных для таблицы результатов поиска  */
-  private static ArrayList<String> creatingSearchResult(String inputNumber) {
+  private static List<String> creatingSearchResult(String inputNumber) {
     System.out.println("Поиск начат");
-    ArrayList<String> searchResultData = new ArrayList<>();
-    searchResultData.add(Integer.toString(searchCounter));
-    searchResultData.add(inputNumber);
-    searchResultData.add(enumeration(inputNumber));
-    searchResultData.add(binarySearch(inputNumber));
-    searchResultData.add(treeSetSearch(inputNumber));
-    searchResultData.add(hashSetSearch(inputNumber));
-    searchResultData.add(Boolean.toString(isFound));
-    System.out.println("Результат:");
-    return searchResultData;
+    return Arrays.asList(
+        Integer.toString(searchCounter),
+        inputNumber,
+        enumeration(inputNumber),
+        binarySearch(inputNumber),
+        treeSetSearch(inputNumber),
+        hashSetSearch(inputNumber),
+        Boolean.toString(isFound)
+    );
   }
 
   /*  получить шапку таблицы  */
-  private static ArrayList<String> getHeader() {
-    ArrayList<String> header = new ArrayList<>();
-    header.add("N");
-    header.add("Номер");
-    header.add("Перебор");
-    header.add("HashSet");
-    header.add("TreeSet");
-    header.add("binarySearch");
-    header.add("Найден");
-    return header;
+  private static List<String> getHeader() {
+    return Arrays.asList("N", "Номер", "Перебор", "TreeSet", "HashSet", "binarySearch", "Найден");
   }
 
-  /*  получить дно таблицы таблицы  */
+  /*  получить финальную таблицу результатов  */
   private static void showFinalResult() {
-    ArrayList<String> header = getFinalHeader();
+    List<String> header = getFinalHeader();
 
     TreeSet<Long> sortedEnumerationResults = new TreeSet<>();
-    TreeSet<Long> sortedHashSetResults = new TreeSet<>();
     TreeSet<Long> sortedTreeSetResults = new TreeSet<>();
+    TreeSet<Long> sortedHashSetResults = new TreeSet<>();
     TreeSet<Long> sortedBinarySearchResults = new TreeSet<>();
 
-    for (List<String> data : tableResultData) {
-      sortedEnumerationResults.add(Long.parseLong(data.get(2)));
-      sortedHashSetResults.add(Long.parseLong(data.get(3)));
-      sortedTreeSetResults.add(Long.parseLong(data.get(4)));
-      sortedBinarySearchResults.add(Long.parseLong(data.get(5)));
-    }
+    tableResultData.forEach(f -> {
+      sortedEnumerationResults.add(Long.parseLong(f.get(2)));
+      sortedTreeSetResults.add(Long.parseLong(f.get(4)));
+      sortedHashSetResults.add(Long.parseLong(f.get(3)));
+      sortedBinarySearchResults.add(Long.parseLong(f.get(5)));
+    });
 
-    List<List<String>> finalTableResultData = getFinalTableData(
+    printTable(header, getFinalTableData(
         sortedEnumerationResults,
-        sortedHashSetResults,
         sortedTreeSetResults,
+        sortedHashSetResults,
         sortedBinarySearchResults
-    );
-
-    printTable(header, finalTableResultData);
+    ));
   }
 
   /*  Печатает таблицу */
-  private static void printTable(ArrayList<String> header,
+  private static void printTable(List<String> header,
       List<List<String>> finalTableResultData) {
     TableGenerator table = new TableGenerator();
     String finalResult = table.generateTable(header, finalTableResultData);
@@ -119,44 +109,41 @@ public class Loader {
   private static List<List<String>> getFinalTableData(TreeSet<Long> sortedEnumerationResults,
       TreeSet<Long> sortedHashSetResults, TreeSet<Long> sortedTreeSetResults,
       TreeSet<Long> sortedBinarySearchResults) {
+
     List<List<String>> finalTableResultData = new ArrayList<>();
 
-    ArrayList<String> data = new ArrayList<>();
-    data.add("Перебор");
-    data.add(sortedEnumerationResults.first().toString());
-    data.add(
-        "Линейный поиск можно использовать для малого, несортированного набора данных, который не увеличивается в размерах.");
-    finalTableResultData.add(data);
+    finalTableResultData.add(Arrays.asList(
+        "Перебор",
+        sortedEnumerationResults.first().toString(),
+        "Линейный поиск можно использовать для малого, несортированного набора данных, "
+            + "который не увеличивается в размерах."
+    ));
 
-    data = new ArrayList<>();
-    data.add("HashSet");
-    data.add(sortedHashSetResults.first().toString());
-    data.add(
-        "Если много элементов, не сортирует элементы. Может хранить null. Не синхронизирован.");
-    finalTableResultData.add(data);
+    finalTableResultData.add(Arrays.asList(
+        "TreeSet",
+        sortedTreeSetResults.first().toString(),
+        "Если много элементов, сортирует элементы. Неможет хранить null. Не синхронизирован."
+    ));
 
-    data = new ArrayList<>();
-    data.add("TreeSet");
-    data.add(sortedTreeSetResults.first().toString());
-    data.add("Если много элементов, сортирует элементы. Неможет хранить null. Не синхронизирован.");
-    finalTableResultData.add(data);
+    finalTableResultData.add(Arrays.asList(
+        "HashSet",
+        sortedHashSetResults.first().toString(),
+        "Если много элементов, не сортирует элементы. Может хранить null. Не синхронизирован."
+    ));
 
-    data = new ArrayList<>();
-    data.add("binarySearch");
-    data.add(sortedBinarySearchResults.first().toString());
-    data.add(
-        "Двоичный поиск может использоваться для быстрого доступа к упорядоченным данным, когда пространство памяти ограничено.");
-    finalTableResultData.add(data);
+    finalTableResultData.add(Arrays.asList(
+        "binarySearch",
+        sortedBinarySearchResults.first().toString(),
+        "Двоичный поиск может использоваться для быстрого доступа к "
+            + "упорядоченным данным, когда пространство памяти ограничено."
+    ));
+
     return finalTableResultData;
   }
 
   /*  Получаем шапку финальной таблицы */
-  private static ArrayList<String> getFinalHeader() {
-    ArrayList<String> header = new ArrayList<>();
-    header.add("Метод");
-    header.add("Наилучший результат");
-    header.add("В каких случаях хорошо использовать");
-    return header;
+  private static List<String> getFinalHeader() {
+    return Arrays.asList("Метод", "Наилучший результат", "В каких случаях хорошо использовать");
   }
 
   /* Спрашивает нужно ли повторит поиск */
@@ -180,10 +167,7 @@ public class Loader {
   года.  */
   private static ArrayList<String> generateABC() {
     print("Генерация букв...");
-    ArrayList<String> abc = new ArrayList<>(Arrays.asList("АВЕКМНОРСТУХ".split("")));
-    println(tab(4) + "ꓳꓗ");
-
-    return abc;
+    return new ArrayList<>(Arrays.asList("АВЕКМНОРСТУХ".split("")));
   }
 
   /*  ГЕНЕРАТОР НОМЕРОВ. На мой взгляд, блатной номер должен быть с нулями, зеркальным или состоять
@@ -198,16 +182,13 @@ public class Loader {
 
     for (int k = 1; k < 10; k++) {
       count = 100 * k;
-      String temp = Integer.toString(count).trim();
-      num.add(temp);
+      num.add(Integer.toString(count));
     }
 
     for (int k = 1; k < 10; k++) {
       count = 111 * k;
-      String temp = Integer.toString(count).trim();
-      num.add(temp);
+      num.add(Integer.toString(count));
     }
-    System.out.println(tab(3) + "ꓳꓗ");
 
     return num;
   }
@@ -218,20 +199,16 @@ public class Loader {
     System.out.print("Генерация регионов...");
     ArrayList<String> region = new ArrayList<>();
     for (int k = 1; k < 10; k++) {
-      String temp = Integer.toString(k).trim();
-      region.add("00" + temp);
+      region.add(String.format("%03d", k));
     }
 
     for (int k = 10; k < 100; k++) {
-      String temp = Integer.toString(k).trim();
-      region.add("0" + temp);
+      region.add(String.format("%03d", k));
     }
 
     for (int k = 100; k < 10000; k++) { // изменить на k < 200
-      String temp = Integer.toString(k).trim();
-      region.add(temp);
+      region.add(Integer.toString(k));
     }
-    System.out.println(tab(3) + "ꓳꓗ");
 
     return region;
   }
@@ -241,21 +218,21 @@ public class Loader {
     println("Генерация базы блатных номеров");
 
     ArrayList<String> abc = generateABC();
+    println(tab(4) + "ꓳꓗ");
     ArrayList<String> num = generateNumbers();
+    System.out.println(tab(3) + "ꓳꓗ");
     ArrayList<String> region = generateRegion();
+    System.out.println(tab(3) + "ꓳꓗ");
 
     /* Формирование блатных номеров из сгенерированных значений */
     print("Формирование номеров...");
     numbersArrayList = new ArrayList<>();
     ArrayList<String> temp = new ArrayList<>();
-    abc.forEach(s -> num.forEach(value -> temp.add(s.trim() + value.trim() + s.trim() + s.trim())));
-
-    temp.forEach(s -> region.forEach(value -> numbersArrayList.add(s.trim() + value.trim())));
+    abc.forEach(s -> num.forEach(value -> temp.add(s + value + s + s)));
+    temp.forEach(s -> region.forEach(value -> numbersArrayList.add(s + value)));
 
     println(tab(3) + "ꓳꓗ");
-
     Collections.sort(numbersArrayList);
-    temp.clear();
     println("Сформированно номеров :" + tab(3) + numbersArrayList.size());
   }
 
@@ -264,7 +241,7 @@ public class Loader {
     start = System.nanoTime();
     int index = Collections.binarySearch(numbersArrayList, inputNumber);
     finish = System.nanoTime() - start;
-    if (index > 0) {
+    if (index >= 0) {
       isFound = true;
     }
     return Long.toString(finish);
