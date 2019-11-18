@@ -35,7 +35,7 @@ public class Loader {
         break;
       }
 
-      if (Helper.checkInputNumber(inputNumber)) {
+      if (Helpers.checkInputNumber(inputNumber)) {
         startSearch(inputNumber);
         showSearchResult();
         isWorking = repeatSearch();

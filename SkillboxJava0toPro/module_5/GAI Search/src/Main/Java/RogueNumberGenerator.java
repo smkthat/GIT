@@ -76,11 +76,11 @@ class RogueNumberGenerator {
     out.println("Генерация базы блатных номеров");
 
     ArrayList<String> abc = generateABC();
-    out.println(Helper.tab(4) + "ꓳꓗ");
+    out.println(Helpers.tab(4) + "ꓳꓗ");
     ArrayList<String> num = generateNumbers();
-    out.println(Helper.tab(3) + "ꓳꓗ");
+    out.println(Helpers.tab(3) + "ꓳꓗ");
     ArrayList<String> region = generateRegion();
-    out.println(Helper.tab(3) + "ꓳꓗ");
+    out.println(Helpers.tab(3) + "ꓳꓗ");
 
     /* Формирование блатных номеров из сгенерированных значений */
     out.print("Формирование номеров...");
@@ -89,8 +89,8 @@ class RogueNumberGenerator {
     abc.forEach(s -> num.forEach(value -> temp.add(s + value + s + s)));
     temp.forEach(s -> region.forEach(value -> numbersArrayList.add(s + value)));
 
-    out.println(Helper.tab(3) + "ꓳꓗ");
+    out.println(Helpers.tab(3) + "ꓳꓗ");
     Collections.sort(numbersArrayList);
-    out.println("Сформированно номеров :" + Helper.tab(3) + numbersArrayList.size());
+    out.println("Сформированно номеров :" + Helpers.tab(3) + numbersArrayList.size());
   }
 }

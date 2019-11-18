@@ -1,14 +1,15 @@
 package Main.Java;
 
-class Helper {
+/*  ПОМОШНИКИ */
+class Helpers {
+
+  /* Добавляет знаки табуляции */
   static String tab(int n) {
-    /* Добавляет знаки табуляции */
     return "\t".repeat(Math.max(0, n));
   }
 
-  /*  ПОМОШНИКИ */
+  /* Проверка корректности ввода номера */
   static boolean checkInputNumber(String number) {
-    /* Проверка корректности ввода номера */
     return number.matches("\\D\\d{3}\\D{2}\\d{3}");
   }
 }
