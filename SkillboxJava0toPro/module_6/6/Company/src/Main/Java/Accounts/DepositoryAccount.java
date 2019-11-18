@@ -3,17 +3,13 @@ package Main.Java.Accounts;
 import java.time.LocalDate;
 
 public class DepositoryAccount extends DefaultAccount {
-  private LocalDate lastDeposit;
 
-  public DepositoryAccount() {
-    this.moneyBalance = 0.00;
-    this.createdDate = LocalDate.now();
-  }
+  private LocalDate lastDeposit;
 
   public void depositMoney(double money) {
     System.out.println("+" + money);
-    this.moneyBalance = money;
-    this.lastDeposit = LocalDate.now();
+    moneyBalance = moneyBalance + money;
+    lastDeposit = LocalDate.now();
   }
 
   private boolean validateWithdrawDate() {
@@ -25,10 +21,10 @@ public class DepositoryAccount extends DefaultAccount {
     System.out.println("-" + money);
 
     if (validateWithdrawDate()) {
-      if (this.moneyBalance <= money) {
+      if (moneyBalance <= money) {
         System.err.println("Not enough money. Withdrawal aborted!");
       } else {
-        this.moneyBalance = this.moneyBalance - money;
+        moneyBalance = moneyBalance - money;
       }
     } else {
       System.err.println("Withdrawal is prohibited!");

@@ -3,11 +3,12 @@ package Main.Java.Clients;
 import Main.Java.Accounts.DefaultAccount;
 
 public class EntityClient extends Client {
+
   private static final double WITHDRAW_FEE = 0.01;
 
   @Override
   public void depositMoney(double money) {
-    super.account.depositMoney(money);
+    account.depositMoney(money);
   }
 
   private double calcWithdrawFee(double money) {
@@ -19,16 +20,16 @@ public class EntityClient extends Client {
   @Override
   public void withdrawMoney(double money) {
     double withdrawAmount = money + calcWithdrawFee(money);
-    super.account.withdrawMoney(withdrawAmount);
+    account.withdrawMoney(withdrawAmount);
   }
 
   @Override
   public void getBalance() {
-    System.out.println("Balance: " + super.account.getMoneyBalance());
+    System.out.println("Balance: " + account.getMoneyBalance());
   }
 
   @Override
   public void setAccount(DefaultAccount account) {
-    super.account = account;
+    this.account = account;
   }
 }

@@ -3,18 +3,19 @@ package Main.Java.Clients;
 import Main.Java.Accounts.DefaultAccount;
 
 public class Businessman extends Client {
+
   private static final double DEPOSIT_FEE1 = 0.01;
   private static final double DEPOSIT_FEE2 = 0.005;
 
   @Override
   public void depositMoney(double money) {
+    double depositAmount;
     if (money < 1000) {
-      double depositAmount = money - calcDepositFee(money, DEPOSIT_FEE1);
-      super.account.depositMoney(depositAmount);
+      depositAmount = money - calcDepositFee(money, DEPOSIT_FEE1);
     } else {
-      double depositAmount = money - calcDepositFee(money, DEPOSIT_FEE2);
-      super.account.depositMoney(depositAmount);
+      depositAmount = money - calcDepositFee(money, DEPOSIT_FEE2);
     }
+    account.depositMoney(depositAmount);
   }
 
   private double calcDepositFee(double money, double fee) {
@@ -25,16 +26,16 @@ public class Businessman extends Client {
 
   @Override
   public void withdrawMoney(double money) {
-    super.account.withdrawMoney(money);
+    account.withdrawMoney(money);
   }
 
   @Override
   public void getBalance() {
-    System.out.println("Balance: " + super.account.getMoneyBalance());
+    System.out.println("Balance: " + account.getMoneyBalance());
   }
 
   @Override
   public void setAccount(DefaultAccount account) {
-    super.account = account;
+    this.account = account;
   }
 }

@@ -6,21 +6,21 @@ public class IndividualClient extends Client {
 
   @Override
   public void depositMoney(double money) {
-    super.account.depositMoney(money);
+    account.depositMoney(money);
   }
 
   @Override
   public void withdrawMoney(double money) {
-    super.account.withdrawMoney(money);
+    account.withdrawMoney(money);
   }
 
   @Override
   public void getBalance() {
-    System.out.println("Balance: " + super.account.getMoneyBalance());
+    System.out.println("Balance: " + account.getMoneyBalance());
   }
 
   @Override
   public void setAccount(DefaultAccount account) {
-    super.account = account;
+    this.account = account;
   }
 }
