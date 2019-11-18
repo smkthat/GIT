@@ -8,7 +8,6 @@ class TableGenerator {
 
   private int PADDING_SIZE = 2;
 
-
   String generateTable(List<String> headersList, List<List<String>> rowsList,
       int... overRiddenHeaderHeight) {
     StringBuilder stringBuilder = new StringBuilder();
