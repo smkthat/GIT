@@ -31,7 +31,7 @@ public class Report {
     employees.forEach(e -> dataList.add(Arrays.asList(
         Integer.toString(e.getId()),
         e.toString(),
-        Double.toString(e.getMonthSalary())
+        Helper.formatToRUB(e.getMonthSalary())
     )));
 
     return dataList;
