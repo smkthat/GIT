@@ -1,10 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class Company {
 
@@ -40,27 +34,13 @@ public class Company {
     return name + " income:\t" + Helper.formatToRUB(companyIncome);
   }
 
-  private Employee getEmployeeById(int id) {
-    return employees.get(id);
-  }
-
   void hireEmployee(Employee e) {
     employees.put(e.getId(), e);
     e.setCompany(this);
-//    System.out.println(
-//        e.getEmployeeType() +
-//            " id_" + e.getId() +
-//            " hired to " + name
-//    );
   }
 
   private List<Employee> getSalaryStaff() {
-    List<Employee> salaryStaff = new ArrayList<>();
-    for (Map.Entry entry : employees.entrySet()) {
-      Employee e = (Employee) entry.getValue();
-      salaryStaff.add(e);
-    }
-    return salaryStaff;
+    return new ArrayList<>(employees.values());
   }
 
   void getTopSalaryStaff(int count) {
@@ -122,25 +102,19 @@ public class Company {
   private void printReport(Report report) {
     TableGenerator generator = new TableGenerator();
     String table = generator.generateTable(report.getHeader(), report.getDataList());
-    int tabsCount = Math.round((table.substring(0, table.indexOf("\n")).length() / 4) / 2);
+    int tabsCount = Math.round((table.substring(0, table.indexOf("\n")).length() / 4.0f) / 2.0f);
     System.out.println("\n" + Helper.getTAB(tabsCount + 2) + getName());
     System.out.println(Helper.getTAB(tabsCount) + report.getName().toUpperCase());
     System.out.println(table);
   }
 
-  public void fire(Employee e) {
+  private void fire(Employee e) {
     e.setCompany(null);
     employees.remove(e.getId());
 //    System.out.println(
 //        "Employee id_" + e.getId() +
 //            " dismissed from " + name
 //    );
-  }
-
-  public void fireAll() {
-    employees.forEach((key, value) -> value.setCompany(null));
-    employees.clear();
-    System.out.println("All employees has been dismissed from " + name);
   }
 
   void fireRandom(int count) {
@@ -153,14 +127,6 @@ public class Company {
     }
   }
 
-  String getEmployeeSalaryToString(double salary) {
-    return Helper.formatToRUB(salary);
-  }
-
-  Integer getId() {
-    return id;
-  }
-
   String getName() {
     return this.name;
   }
@@ -169,23 +135,11 @@ public class Company {
     return employees;
   }
 
+  public Integer getId() {
+    return id;
+  }
+
   public List<Report> getReportsList() {
     return reportsList;
-  }
-
-  public void setReportsList(List<Report> reportsList) {
-    this.reportsList = reportsList;
-  }
-
-  public Report getReport(int index) {
-    return reportsList.get(index);
-  }
-
-  public void addReport(Report report) {
-    reportsList.add(report);
-  }
-
-  public void removeReport(int index) {
-    reportsList.remove(index);
   }
 }

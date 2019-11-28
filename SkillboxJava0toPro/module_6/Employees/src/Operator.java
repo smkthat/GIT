@@ -1,6 +1,6 @@
-class Operator extends Employee implements EmployeeInterface {
+class Operator extends Employee {
 
   Operator() {
-    super("Operator", 30000);
+    super(30000);
   }
 }

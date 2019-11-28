@@ -32,26 +32,23 @@ public class Main {
   }
 
   private static void generateManagers(Company company, int count) {
-    Employee e;
     for (int i = 0; i < count; i++) {
-      e = new Manager();
+      Employee e = new Manager();
       company.hireEmployee(e);
       e.sale(Helper.randInt(1, 5) * 1000);
     }
   }
 
   private static void generateOperators(Company company, int count) {
-    Employee e;
     for (int i = 0; i < count; i++) {
-      e = new Operator();
+      Employee e = new Operator();
       company.hireEmployee(e);
     }
   }
 
   private static void generateTopManagers(Company company, int count) {
-    Employee e;
     for (int i = 0; i < count; i++) {
-      e = new TopManager();
+      Employee e = new TopManager();
       company.hireEmployee(e);
     }
   }

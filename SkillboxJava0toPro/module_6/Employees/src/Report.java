@@ -10,8 +10,6 @@ public class Report {
   private String name;
   private List<String> header;
   private List<List<String>> dataList;
-  private List<Employee> employeeData;
-  private List<Company> companyData;
 
   Report(String name, List<String> header) {
     idCounter++;
@@ -45,40 +43,16 @@ public class Report {
     return id;
   }
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-  public static Integer getIdCounter() {
-    return idCounter;
-  }
-
-  public static void setIdCounter(Integer idCounter) {
-    Report.idCounter = idCounter;
-  }
-
   String getName() {
     return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
   }
 
   List<String> getHeader() {
     return header;
   }
 
-  public void setHeader(List<String> header) {
-    this.header = header;
-  }
-
   List<List<String>> getDataList() {
     return dataList;
-  }
-
-  public void setDataList(List<List<String>> dataList) {
-    this.dataList = dataList;
   }
 
   public void addData(List<String> data) {

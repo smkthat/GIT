@@ -1,9 +1,9 @@
-class TopManager extends Employee implements EmployeeInterface {
+class TopManager extends Employee {
 
   private static final double TOP_MANAGER_BONUS_PERCENT = 1.5;
 
   TopManager() {
-    super("TopManager", 50000);
+    super(50000);
   }
 
   @Override

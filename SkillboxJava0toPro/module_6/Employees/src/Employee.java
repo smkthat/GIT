@@ -1,15 +1,13 @@
-public class Employee {
+public abstract class Employee {
 
   private Integer id;
-  private String employeeType;
   private double fixSalary;
   private static Integer idCounter = 0;
   private double managerSales;
   private Company company;
 
-  Employee(String employeeType, double fixSalary) {
+  Employee(double fixSalary) {
     idCounter++;
-    this.employeeType = employeeType;
     this.fixSalary = fixSalary;
     id = idCounter;
   }
@@ -29,7 +27,7 @@ public class Employee {
   }
 
   String getEmployeeType() {
-    return employeeType;
+    return this.getClass().getSimpleName();
   }
 
   double getFixSalary() {
