@@ -36,7 +36,7 @@ public class Main {
     for (int i = 0; i < count; i++) {
       e = new Manager();
       company.hireEmployee(e);
-      e.sale(Helper.randInt(1000, 6000));
+      e.sale(Helper.randInt(1, 5) * 1000);
     }
   }
 
