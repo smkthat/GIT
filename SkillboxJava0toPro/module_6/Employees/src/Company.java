@@ -46,11 +46,11 @@ public class Company {
   void hireEmployee(Employee e) {
     employees.put(e.getId(), e);
     e.setCompany(this);
-    System.out.println(
-        e.getEmployeeType() +
-            " id_" + e.getId() +
-            " hired to " + name
-    );
+//    System.out.println(
+//        e.getEmployeeType() +
+//            " id_" + e.getId() +
+//            " hired to " + name
+//    );
   }
 
   private List<Employee> getSalaryStaff() {
@@ -129,10 +129,10 @@ public class Company {
   public void fire(Employee e) {
     e.setCompany(null);
     employees.remove(e.getId());
-    System.out.println(
-        "Employee id_" + e.getId() +
-            " dismissed from " + name
-    );
+//    System.out.println(
+//        "Employee id_" + e.getId() +
+//            " dismissed from " + name
+//    );
   }
 
   public void fireAll() {
@@ -142,11 +142,14 @@ public class Company {
   }
 
   void fireRandom(int count) {
+    int attemptCount = 0;
     for (int i = 0; i < count; i++) {
       Employee e;
       do {
+        attemptCount++;
         int randomId = Helper.randInt(1, employees.size());
         e = getEmployeeById(randomId);
+        System.out.println("Attempt - " + attemptCount);
       } while (e == null);
       e.setCompany(null);
       employees.remove(e.getId());
