@@ -13,4 +13,8 @@ class Helper {
     Random rand = new Random();
     return rand.nextInt((max - min) + 1) + min;
   }
+
+  static String getTAB(int count) {
+    return "\t".repeat(Math.max(0, count));
+  }
 }

@@ -1,19 +1,27 @@
-import java.util.List;
-
 public class Main {
 
   public static void main(String[] args) {
-    Company company = new Company("\"JDCompany®\"");
-    generateAndHireEmployees(company, 20, 50, 200);
-    company.dismissTenEmployee();
-    company.getTopSalaryStaff(10);
-    System.out.println(company.getCompanyIncomeToString());
+    Company jdCompany = new Company("\"JDCompany®\"");
+    generateAndHireEmployees(jdCompany, 10, 180 , 80 );
+    jdCompany.fireRandom(10);
+    jdCompany.getTopSalaryStaff(15);
+    jdCompany.getLowestSalaryStaff(10);
+    System.out.println(jdCompany.getIncomeToString());
+    System.out.println(jdCompany.getName() + " staff size: " + jdCompany.getEmployees().size() + " employees");
+
+    Company abCraft = new Company("\"ABCraft®\"");
+    generateAndHireEmployees(abCraft, 15, 185 , 100 );
+    abCraft.fireRandom(100);
+    abCraft.getTopSalaryStaff(20);
+    abCraft.getLowestSalaryStaff(5);
+    System.out.println(abCraft.getIncomeToString());
+    System.out.println(abCraft.getName() + " staff size: " + abCraft.getEmployees().size() + " employees");
   }
 
-  private static void generateAndHireEmployees(Company company, int topsCount, int clerksCount,
+  private static void generateAndHireEmployees(Company company, int topsCount, int operatorsCount,
       int managersCount) {
     generateTopManagers(company, topsCount);
-    generateClerks(company, clerksCount);
+    generateOperators(company, operatorsCount);
     generateManagers(company, managersCount);
   }
 
@@ -22,14 +30,14 @@ public class Main {
     for (int i = 0; i < count; i++) {
       e = new Manager();
       company.hireEmployee(e);
-      e.sale(Helper.randInt(1, 100) * 1000);
+      e.sale(Helper.randInt(1000, 6000));
     }
   }
 
-  private static void generateClerks(Company company, int count) {
+  private static void generateOperators(Company company, int count) {
     Employee e;
     for (int i = 0; i < count; i++) {
-      e = new Clerk();
+      e = new Operator();
       company.hireEmployee(e);
     }
   }

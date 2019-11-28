@@ -12,11 +12,11 @@ class TableGenerator {
 
     int rowHeight = overRiddenHeaderHeight.length > 0 ? overRiddenHeaderHeight[0] : 1;
 
-    Map<Integer, Integer> columnMaxWidthMapping = getMaximumWidhtOfTable(headersList, rowsList);
+    Map<Integer, Integer> columnMaxWidthMapping = getMaximumWidthOfTable(headersList, rowsList);
 
     String NEW_LINE = "\n";
-    stringBuilder.append(NEW_LINE);
-    stringBuilder.append(NEW_LINE);
+    //stringBuilder.append(NEW_LINE);
+    //stringBuilder.append(NEW_LINE);
     createRowLine(stringBuilder, headersList.size(), columnMaxWidthMapping);
     stringBuilder.append(NEW_LINE);
 
@@ -67,7 +67,7 @@ class TableGenerator {
   }
 
 
-  private Map<Integer, Integer> getMaximumWidhtOfTable(List<String> headersList,
+  private Map<Integer, Integer> getMaximumWidthOfTable(List<String> headersList,
       List<List<String>> rowsList) {
     Map<Integer, Integer> columnMaxWidthMapping = new HashMap<>();
 

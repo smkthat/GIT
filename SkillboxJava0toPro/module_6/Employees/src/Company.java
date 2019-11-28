@@ -1,26 +1,29 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 public class Company {
 
-  private String companyName;
+  private static Integer idCounter = 0;
+  private String name;
   private double companyIncome = 0;
   private HashMap<Integer, Employee> employees;
   private EmployeeComparator comparator = new EmployeeComparator();
   private Integer id;
-  private static Integer idCounter = 0;
+  private List<Report> reportsList;
 
-  Company(String companyName) {
+  Company(String name) {
     idCounter++;
     employees = new HashMap<>();
-    this.companyName = companyName;
+    reportsList = new LinkedList<>();
+    this.name = name;
     id = idCounter;
   }
 
-  void calcCompanyIncome() {
+  void calcIncome() {
     employees.forEach((key, value) -> {
       if (value.getEmployeeType().equals("Manager")) {
         companyIncome = companyIncome + value.getManagerSales();
@@ -28,12 +31,12 @@ public class Company {
     });
   }
 
-  double getCompanyIncome() {
+  double getIncome() {
     return companyIncome;
   }
 
-  String getCompanyIncomeToString() {
-    return Helper.formatToRUB(companyIncome);
+  String getIncomeToString() {
+    return name + " income:\t" + Helper.formatToRUB(companyIncome);
   }
 
   private Employee getEmployeeById(int id) {
@@ -46,7 +49,7 @@ public class Company {
     System.out.println(
         e.getEmployeeType() +
             " id_" + e.getId() +
-            " hired to " + companyName
+            " hired to " + name
     );
   }
 
@@ -61,8 +64,9 @@ public class Company {
 
   void getTopSalaryStaff(int count) {
     List<Employee> salaryStaff = getSalaryStaff();
-    salaryStaff.sort(comparator);
+    salaryStaff.sort(comparator.reversed());
     List<String> header = Arrays.asList(
+        "N",
         "Id",
         "Employee",
         "Highest salary"
@@ -79,8 +83,9 @@ public class Company {
 
   void getLowestSalaryStaff(int count) {
     List<Employee> salaryStaff = getSalaryStaff();
-    salaryStaff.sort(comparator.reversed());
+    salaryStaff.sort(comparator);
     List<String> header = Arrays.asList(
+        "N",
         "Id",
         "Employee",
         "Lowest salary"
@@ -104,36 +109,40 @@ public class Company {
   }
 
   private Report createReport(String reportName, List<String> header, List<List<String>> data) {
-    return new Report(
+    Report report = new Report(
         reportName,
         header,
         data
     );
+    reportsList.add(report);
+    return report;
   }
 
   private void printReport(Report report) {
-    System.out.println("\t\t" + report.getName().toUpperCase());
-    TableGenerator table = new TableGenerator();
-    System.out.println(table.generateTable(report.getHeader(), report.getDataList()));
+    TableGenerator generator = new TableGenerator();
+    String table = generator.generateTable(report.getHeader(), report.getDataList());
+    int tabsCount = Math.round((table.substring(0, table.indexOf("\n")).length() / 4) / 2);
+    System.out.println("\n" + Helper.getTAB(tabsCount) + report.getName().toUpperCase());
+    System.out.println(table);
   }
 
-  public void dismissEmployee(Employee e) {
+  public void fire(Employee e) {
     e.setCompany(null);
     employees.remove(e.getId());
     System.out.println(
         "Employee id_" + e.getId() +
-            " dismissed from " + companyName
+            " dismissed from " + name
     );
   }
 
-  public void dismissAllEmployees() {
+  public void fireAll() {
     employees.forEach((key, value) -> value.setCompany(null));
     employees.clear();
-    System.out.println("All employees has been dismissed from " + companyName);
+    System.out.println("All employees has been dismissed from " + name);
   }
 
-  void dismissTenEmployee() {
-    for (int i = 0; i < 10; i++) {
+  void fireRandom(int count) {
+    for (int i = 0; i < count; i++) {
       Employee e;
       do {
         int randomId = Helper.randInt(1, employees.size());
@@ -144,24 +153,44 @@ public class Company {
       System.out.println(
           "Random " + e.getEmployeeType() +
               " id_" + e.getId() +
-              " dismissed from " + companyName
+              " dismissed from " + name
       );
     }
   }
 
-  public String getEmployeeSalaryToString(double salary) {
+  String getEmployeeSalaryToString(double salary) {
     return Helper.formatToRUB(salary);
   }
 
-  public Integer getId() {
+  Integer getId() {
     return id;
   }
 
-  public String getCompanyName() {
-    return this.companyName;
+  String getName() {
+    return this.name;
   }
 
-  public HashMap<Integer, Employee> getEmployees() {
+  HashMap<Integer, Employee> getEmployees() {
     return employees;
+  }
+
+  public List<Report> getReportsList() {
+    return reportsList;
+  }
+
+  public void setReportsList(List<Report> reportsList) {
+    this.reportsList = reportsList;
+  }
+
+  public Report getReport(int index) {
+    return reportsList.get(index);
+  }
+
+  public void addReport(Report report) {
+    reportsList.add(report);
+  }
+
+  public void removeReport(int index) {
+    reportsList.remove(index);
   }
 }

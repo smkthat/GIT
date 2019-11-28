@@ -1,5 +1,3 @@
-import java.util.Comparator;
-
 public class Employee {
 
   private Integer id;
@@ -8,7 +6,6 @@ public class Employee {
   private static Integer idCounter = 0;
   private double managerSales;
   private Company company;
-  private double monthSalary;
 
   Employee(String employeeType, double fixSalary) {
     idCounter++;
@@ -17,18 +14,14 @@ public class Employee {
     id = idCounter;
   }
 
-  public void setMonthSalary(double monthSalary) {
-    this.monthSalary = monthSalary;
-  }
-
   public double getMonthSalary() {
-    return monthSalary;
+    return getFixSalary();
   }
 
   void sale(double saleAmount) {
     managerSales = managerSales + saleAmount;
-    System.out.println("The manager earned the company " + saleAmount);
-    company.calcCompanyIncome();
+    System.out.println("The manager earned to company " + saleAmount);
+    company.calcIncome();
   }
 
   double getManagerSales() {
@@ -41,10 +34,6 @@ public class Employee {
 
   double getFixSalary() {
     return fixSalary;
-  }
-
-  public void setFixSalary(double fixSalary) {
-    this.fixSalary = fixSalary;
   }
 
   Company getCompany() {

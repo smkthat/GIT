@@ -1,9 +1,9 @@
-public class Manager extends Employee implements EmployeeInterface {
+class Manager extends Employee implements EmployeeInterface {
 
   private static final double MANAGER_SALE_PERCENT = 0.05;
 
   Manager() {
-    super("Manager", 35000);
+    super("Manager", 40000);
   }
 
   @Override

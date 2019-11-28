@@ -1,6 +1,6 @@
-public class TopManager extends Employee implements EmployeeInterface {
+class TopManager extends Employee implements EmployeeInterface {
 
-  private static final double TOP_MANAGER_SALARY_BONUS = 50000;
+  private static final double TOP_MANAGER_BONUS_PERCENT = 1.5;
 
   TopManager() {
     super("TopManager", 50000);
@@ -8,8 +8,8 @@ public class TopManager extends Employee implements EmployeeInterface {
 
   @Override
   public double getMonthSalary() {
-    if (getCompany().getCompanyIncome() > 10000000) {
-      return getFixSalary() + TOP_MANAGER_SALARY_BONUS;
+    if (getCompany().getIncome() > 10000000) {
+      return getFixSalary() * TOP_MANAGER_BONUS_PERCENT;
     } else {
       return getFixSalary();
     }
