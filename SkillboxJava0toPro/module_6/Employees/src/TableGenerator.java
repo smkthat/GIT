@@ -133,8 +133,6 @@ class TableGenerator {
     }
 
     fillSpace(stringBuilder, cellPaddingSize);
-
     stringBuilder.append(TABLE_V_SPLIT_SYMBOL);
-
   }
 }

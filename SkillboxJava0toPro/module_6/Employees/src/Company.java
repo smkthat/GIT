@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class Company {
 
@@ -122,7 +123,8 @@ public class Company {
     TableGenerator generator = new TableGenerator();
     String table = generator.generateTable(report.getHeader(), report.getDataList());
     int tabsCount = Math.round((table.substring(0, table.indexOf("\n")).length() / 4) / 2);
-    System.out.println("\n" + Helper.getTAB(tabsCount) + report.getName().toUpperCase());
+    System.out.println("\n" + Helper.getTAB(tabsCount + 2) + getName());
+    System.out.println(Helper.getTAB(tabsCount) + report.getName().toUpperCase());
     System.out.println(table);
   }
 
@@ -142,22 +144,12 @@ public class Company {
   }
 
   void fireRandom(int count) {
-    int attemptCount = 0;
     for (int i = 0; i < count; i++) {
-      Employee e;
-      do {
-        attemptCount++;
-        int randomId = Helper.randInt(1, employees.size());
-        e = getEmployeeById(randomId);
-        System.out.println("Attempt - " + attemptCount);
-      } while (e == null);
-      e.setCompany(null);
-      employees.remove(e.getId());
-      System.out.println(
-          "Random " + e.getEmployeeType() +
-              " id_" + e.getId() +
-              " dismissed from " + name
-      );
+      Random random = new Random();
+      List<Integer> keys = new ArrayList<>(employees.keySet());
+      Integer randomKey = keys.get(random.nextInt(keys.size()));
+      Employee e = employees.get(randomKey);
+      fire(e);
     }
   }
 
