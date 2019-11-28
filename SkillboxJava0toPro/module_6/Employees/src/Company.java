@@ -111,10 +111,6 @@ public class Company {
   private void fire(Employee e) {
     e.setCompany(null);
     employees.remove(e.getId());
-//    System.out.println(
-//        "Employee id_" + e.getId() +
-//            " dismissed from " + name
-//    );
   }
 
   void fireRandom(int count) {

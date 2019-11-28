@@ -18,7 +18,6 @@ public abstract class Employee {
 
   void sale(double saleAmount) {
     managerSales = managerSales + saleAmount;
-    //System.out.println("The manager earned to company " + saleAmount);
     company.calcIncome();
   }
 
