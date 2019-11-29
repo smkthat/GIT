@@ -1,20 +1,20 @@
+import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Company {
 
   private static Integer idCounter = 0;
+  private Integer id;
   private String name;
   private double companyIncome = 0;
-  private HashMap<Integer, Employee> employees;
-  private Integer id;
   private List<Report> reportsList;
+  private HashMap<Integer, Employee> employees = new HashMap<>();
 
   Company(String name) {
-    idCounter++;
-    employees = new HashMap<>();
     reportsList = new LinkedList<>();
     this.name = name;
-    id = idCounter;
+    id = ++idCounter;
   }
 
   void calcIncome() {
@@ -36,6 +36,12 @@ public class Company {
   void hireEmployee(Employee e) {
     employees.put(e.getId(), e);
     e.setCompany(this);
+    e.setHireDate(Helper.generateRandomDate(2017,2019));
+  }
+
+  @Override
+  public String toString() {
+    return id.toString() + "\t" + name + "\t" + employees.size() + "\t" + getIncomeToString();
   }
 
   private List<Employee> getSalaryStaff() {
@@ -58,13 +64,14 @@ public class Company {
         "Highest salary"
     );
 
-    Report report = createReport(
+    var report = createReport(
         "top salary staff",
         header,
         Report.generateSalaryStaffData(cropList(salaryStaff, count))
     );
 
     printReport(report);
+    reportsList.add(report);
   }
 
   void getLowestSalaryStaff(int count) {
@@ -82,13 +89,44 @@ public class Company {
         "Lowest salary"
     );
 
-    Report report = createReport(
+    var report = createReport(
         "lowest salary staff",
         header,
         Report.generateSalaryStaffData(cropList(salaryStaff, count))
     );
+    printReport(report);
+    reportsList.add(report);
+  }
+
+  void getMaxSalaryStaffForHireDateYear(int year) {
+    var salaryStaff = getSalaryStaff();
+    salaryStaff = salaryStaff
+        .stream()
+        .filter(e -> e.getHireDate().getYear() == year)
+        .collect(Collectors.toList());
+
+    salaryStaff.sort(
+        Comparator
+            .comparing(Employee::getMonthSalary)
+            .reversed()
+    );
+
+    List<String> header = Arrays.asList(
+        "N",
+        "Id",
+        "Hire date",
+        "Employee",
+        "Highest salary"
+    );
+
+    var report = createReport(
+        "max salary staff hired in " + year,
+        header,
+        Report.generateMaxSalaryStaffDataForHireDate(salaryStaff)
+    );
 
     printReport(report);
+    reportsList.add(report);
   }
 
   private List<Employee> cropList(List<Employee> list, int maxListSize) {
@@ -100,13 +138,11 @@ public class Company {
   }
 
   private Report createReport(String reportName, List<String> header, List<List<String>> data) {
-    Report report = new Report(
+    return new Report(
         reportName,
         header,
         data
     );
-    reportsList.add(report);
-    return report;
   }
 
   private void printReport(Report report) {

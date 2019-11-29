@@ -12,10 +12,9 @@ public class Report {
   private List<List<String>> dataList;
 
   Report(String name, List<String> header) {
-    idCounter++;
     this.name = name + "REPORT";
     this.header = header;
-    id = idCounter;
+    id = ++idCounter;
   }
 
   Report(String name, List<String> header, List<List<String>> dataList) {
@@ -32,6 +31,20 @@ public class Report {
     employees.forEach(e -> dataList.add(Arrays.asList(
         Integer.toString(counter.incrementAndGet()),
         Integer.toString(e.getId()),
+        e.toString(),
+        Helper.formatToRUB(e.getMonthSalary())
+    )));
+
+    return dataList;
+  }
+
+  static List<List<String>> generateMaxSalaryStaffDataForHireDate(List<Employee> employees) {
+    List<List<String>> dataList = new ArrayList<>();
+    final AtomicInteger counter = new AtomicInteger(0);
+    employees.forEach(e -> dataList.add(Arrays.asList(
+        Integer.toString(counter.incrementAndGet()),
+        Integer.toString(e.getId()),
+        e.getHireDateToString(),
         e.toString(),
         Helper.formatToRUB(e.getMonthSalary())
     )));

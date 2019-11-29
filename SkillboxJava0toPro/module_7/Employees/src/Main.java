@@ -6,6 +6,7 @@ public class Main {
     jdCompany.fireRandom(10);
     jdCompany.getTopSalaryStaff(15);
     jdCompany.getLowestSalaryStaff(10);
+    jdCompany.getMaxSalaryStaffForHireDateYear(2017);
     System.out.println(jdCompany.getIncomeToString());
     System.out.println(
         jdCompany.getName() + " staff size: " + jdCompany.getEmployees().size() + " employees");
@@ -19,6 +20,7 @@ public class Main {
     abCraft.fireRandom(100);
     abCraft.getTopSalaryStaff(20);
     abCraft.getLowestSalaryStaff(5);
+    abCraft.getMaxSalaryStaffForHireDateYear(2017);
     System.out.println(abCraft.getIncomeToString());
     System.out.println(
         abCraft.getName() + " staff size: " + abCraft.getEmployees().size() + " employees");

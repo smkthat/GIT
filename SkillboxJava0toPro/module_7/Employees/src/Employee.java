@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public abstract class Employee {
 
   private Integer id;
@@ -5,11 +7,11 @@ public abstract class Employee {
   private static Integer idCounter = 0;
   private double managerSales;
   private Company company;
+  private LocalDate hireDate;
 
   Employee(double fixSalary) {
-    idCounter++;
     this.fixSalary = fixSalary;
-    id = idCounter;
+    id = ++idCounter;
   }
 
   public double getMonthSalary() {
@@ -43,5 +45,17 @@ public abstract class Employee {
 
   Integer getId() {
     return id;
+  }
+
+  LocalDate getHireDate() {
+    return hireDate;
+  }
+
+  String getHireDateToString() {
+    return Helper.formatDate(hireDate);
+  }
+
+  void setHireDate(LocalDate date) {
+    hireDate = date;
   }
 }
