@@ -8,6 +8,7 @@ import java.util.Locale;
 import java.util.Random;
 
 class Helper {
+
   static String formatToRUB(double value) {
     NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("ru", "RU"));
     return formatter.format(value);
@@ -28,7 +29,7 @@ class Helper {
     return date.format(DATE_TIME_FORMATTER);
   }
 
-  static LocalDate generateRandomDate(int yearFrom,int yearTo) {
+  static LocalDate generateRandomDate(int yearFrom, int yearTo) {
     LocalDate date = null;
     while (date == null) {
       int randomYear = Helper.randInt(yearFrom, yearTo);

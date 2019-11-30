@@ -36,7 +36,7 @@ public class Company {
   void hireEmployee(Employee e) {
     employees.put(e.getId(), e);
     e.setCompany(this);
-    e.setHireDate(Helper.generateRandomDate(2017,2019));
+    e.setHireDate(Helper.generateRandomDate(2017, 2019));
   }
 
   @Override
