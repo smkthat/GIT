@@ -1,0 +1,85 @@
+{
+    "stations" : {
+        "1" : [
+            "I-1",
+            "I-2",
+            "I-3",
+            "I-4",
+            "I-5"
+        ],
+        "2" : [
+            "II-1",
+            "II-2",
+            "II-3"
+        ],
+        "3" : [
+            "III-1",
+            "III-2",
+            "III-3",
+            "III-4"
+        ],
+        "4" : [
+            "IV-1",
+            "IV-2",
+            "IV-3"
+        ]
+    },
+    "connections": [
+        [
+            {
+                "line": 3,
+                "station": "III-4"
+            },
+            {
+                "line": 2,
+                "station": "II-1"
+            },
+            {
+                "line": 1,
+                "station": "I-1"
+            }
+        ],
+        [
+            {
+                "line": 2,
+                "station": "II-3"
+            },
+            {
+                "line": 1,
+                "station": "I-5"
+            }
+        ],
+        [
+            {
+                "line": 1,
+                "station": "I-4"
+            },
+            {
+                "line": 4,
+                "station": "IV-3"
+            }
+        ]
+    ],
+    "lines" : [
+        {
+            "number" : 1,
+            "name" : "I",
+            "color" : "red"
+        },
+        {
+            "number" : 2,
+            "name" : "II",
+            "color" : "blue"
+        },
+        {
+            "number" : 3,
+            "name" : "III",
+            "color" : "green"
+        },
+        {
+            "number" : 4,
+            "name" : "IV",
+            "color" : "orange"
+        }
+    ]
+}

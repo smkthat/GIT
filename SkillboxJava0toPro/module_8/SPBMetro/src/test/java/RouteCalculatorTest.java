@@ -34,15 +34,17 @@ import java.util.List;
  * }</pre>
  */
 class RouteCalculatorTest extends TestCase {
+  private RouteCalculator calculator;
+  private Line line1, line2, line3, line4;
 
-  @Test
-  public void testGetShortestRoute() {
+  @Override
+  protected void setUp() {
     StationIndex index = new StationIndex();
 
-    Line line1 = new Line(1, "I");
-    Line line2 = new Line(2, "II");
-    Line line3 = new Line(3, "III");
-    Line line4 = new Line(4, "IV");
+    line1 = new Line(1, "I");
+    line2 = new Line(2, "II");
+    line3 = new Line(3, "III");
+    line4 = new Line(4, "IV");
 
     // Линия I
     line1.addStation(new Station("I-1", line1)); // index 0
@@ -79,7 +81,13 @@ class RouteCalculatorTest extends TestCase {
     index.addLine(line3);
     index.addLine(line4);
 
-    RouteCalculator calculator = new RouteCalculator(index);
+    calculator = new RouteCalculator(index);
+  }
+
+  @Test
+  public void testGetShortestRoute() {
+    setUp();
+
     List<Station> actual;
     List<Station> expected;
     Station from;
@@ -136,28 +144,34 @@ class RouteCalculatorTest extends TestCase {
 
   @Test
   public void testCalculateDuration() {
+    setUp();
+
     List<Station> route = new ArrayList<>();
 
-    Line line1 = new Line(1, "I");
-    Line line2 = new Line(2, "II");
-    Line line3 = new Line(3, "III");
-
-    route.add(new Station("1-1", line1));
-    // 2.5
-    route.add(new Station("1-2", line1));
-    // 3.5
-    route.add(new Station("2-1", line2));
-    // 2.5
-    route.add(new Station("2-2", line2));
-    // 2.5
-    route.add(new Station("2-3", line2));
-    // 3.5
-    route.add(new Station("3-1", line3));
-    // 2.5
-    route.add(new Station("3-2", line3));
+    route.add(line3.getStations().get(0));
+    //2.5
+    route.add(line3.getStations().get(1));
+    //2.5
+    route.add(line3.getStations().get(2));
+    //2.5
+    route.add(line3.getStations().get(3));
+    //3.5
+    route.add(line1.getStations().get(0));
+    //2.5
+    route.add(line1.getStations().get(1));
+    //2.5
+    route.add(line1.getStations().get(2));
+    //2.5
+    route.add(line1.getStations().get(3));
+    //3.5
+    route.add(line4.getStations().get(2));
+    //2.5
+    route.add(line4.getStations().get(1));
+    //2.5
+    route.add(line4.getStations().get(0));
 
     double actual = RouteCalculator.calculateDuration(route);
-    double expected = 17.0;
+    double expected = 27.0;
     assertEquals(expected, actual);
   }
 }
