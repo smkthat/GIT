@@ -88,7 +88,7 @@ public class Main {
       JSONArray connectionsArray = (JSONArray) jsonData.get("connections");
       parseConnections(connectionsArray);
     } catch (Exception ex) {
-      logger.error("Ошибка парсинга map.json файла");
+      logger.error("Ошибка парсинга map.json файла", ex);
       ex.printStackTrace();
     }
   }
