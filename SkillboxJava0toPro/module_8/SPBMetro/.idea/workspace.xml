@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/RouteCalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/testMetro.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/testMetro.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testMetro.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/StationIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/StationIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/Line.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/core/Line.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/Station.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/core/Station.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/SPBMetro.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/RouteCalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/RouteCalculatorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,22 +41,39 @@
     </option>
   </component>
   <component name="ProjectId" id="1UPFc9YSbwPnzmRduQJ8vfB16PW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559622580090" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="RouteCalculator" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="RouteCalculator" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\VlasenkoMV\GIT\SkillboxJava0toPro\module_8\SPBMetro\src\main\resources" />
+      <recent name="C:\Users\VlasenkoMV\GIT\SkillboxJava0toPro\module_8\SPBMetro\src\test" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="RouteCalculator" />
+      <recent name="groovy.util.GroovyTestCase" />
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -53,18 +81,8 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="RouteCalculator" />
-      <recent name="groovy.util.GroovyTestCase" />
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\VlasenkoMV\GIT\SkillboxJava0toPro\module_8\SPBMetro\src\test" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
   </component>
-  <component name="RunManager" selected="JUnit.RouteCalculatorTest.testGetShortestRoute">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="SPBMetro" />
@@ -111,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RouteCalculatorTest.testGetShortestRoute" />
-        <item itemvalue="JUnit.RouteCalculatorTest.testCalculateDuration" />
-        <item itemvalue="JUnit.All in SPBMetro" />
-        <item itemvalue="JUnit.RouteCalculatorTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in SPBMetro" />
+        <item itemvalue="JUnit.RouteCalculatorTest.testCalculateDuration" />
+        <item itemvalue="JUnit.RouteCalculatorTest.testGetShortestRoute" />
+        <item itemvalue="JUnit.RouteCalculatorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -142,6 +160,14 @@
       <option name="presentableId" value="Default" />
       <updated>1559569584327</updated>
     </task>
+    <task id="LOCAL-00001" summary="refactoring">
+      <created>1575267834824</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575267834824</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +183,12 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="first commit, creating JUnit tests" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1575251572587">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -166,42 +198,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="303" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575258554421" />
-    <state x="559" y="114" key="CommitChangelistDialog2" timestamp="1575267654659">
+    <state x="559" y="114" key="CommitChangelistDialog2" timestamp="1575267831260">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="559" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575267654659" />
-    <state width="1877" height="192" key="GridCell.Tab.0.bottom" timestamp="1575267654871">
+    <state x="559" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575267831260" />
+    <state width="1877" height="192" key="GridCell.Tab.0.bottom" timestamp="1575332111957">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="192" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575267654871" />
-    <state width="1877" height="192" key="GridCell.Tab.0.center" timestamp="1575267654870">
+    <state width="1877" height="192" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575332111957" />
+    <state width="1877" height="192" key="GridCell.Tab.0.center" timestamp="1575332111956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="192" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575267654870" />
-    <state width="1877" height="192" key="GridCell.Tab.0.left" timestamp="1575267654870">
+    <state width="1877" height="192" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575332111956" />
+    <state width="1877" height="192" key="GridCell.Tab.0.left" timestamp="1575332111956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="192" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575267654870" />
-    <state width="1877" height="192" key="GridCell.Tab.0.right" timestamp="1575267654871">
+    <state width="1877" height="192" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575332111956" />
+    <state width="1877" height="192" key="GridCell.Tab.0.right" timestamp="1575332111956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="192" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575267654871" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1575266312841">
+    <state width="1877" height="192" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575332111956" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1575331967734">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575266312841" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1575266312840">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575331967734" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1575331967733">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575266312840" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1575266312840">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575331967733" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1575331967733">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575266312840" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1575266312841">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575331967733" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1575331967733">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575266312841" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575331967733" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1575324819469">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575324819469" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1575267873527">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575267873527" />
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575259233674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -210,21 +250,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575258872129" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
