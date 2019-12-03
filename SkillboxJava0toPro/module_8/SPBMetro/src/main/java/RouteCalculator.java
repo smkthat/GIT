@@ -25,6 +25,7 @@ public class RouteCalculator
         }
 
         route = getRouteWithOneConnection(from, to);
+
         if(route != null) {
             return route;
         }
@@ -113,6 +114,11 @@ public class RouteCalculator
                 }
             }
         }
+
+        if (route.isEmpty()) {
+            return null;
+        }
+
         return route;
     }
 
