@@ -13,15 +13,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-  private static Logger logger;
-
+  private static final Logger LOGGER = LogManager.getRootLogger();
   private static String dataFile = "src/main/resources/map.json";
   private static Scanner scanner;
 
   private static StationIndex stationIndex;
 
   public static void main(String[] args) {
-    logger = LogManager.getRootLogger();
+    System.out.println(1);
+    LOGGER.debug("Debug Message Logged !!!");
+
     RouteCalculator calculator = getRouteCalculator();
 
     System.out.println("Программа расчёта маршрутов метрополитена Санкт-Петербурга\n");
@@ -65,10 +66,10 @@ public class Main {
       String line = scanner.nextLine().trim();
       Station station = stationIndex.getStation(line);
       if (station != null) {
-        logger.info("Станция найдена: " + line);
+        LOGGER.info("Станция найдена: " + line);
         return station;
       }
-      logger.warn("Станция не найдена: " + line);
+      LOGGER.warn("Станция не найдена: " + line);
       System.out.println("Станция не найдена :(");
     }
   }
@@ -88,7 +89,7 @@ public class Main {
       JSONArray connectionsArray = (JSONArray) jsonData.get("connections");
       parseConnections(connectionsArray);
     } catch (Exception ex) {
-      logger.error("Ошибка парсинга map.json файла", ex);
+      LOGGER.error("Ошибка парсинга map.json файла", ex);
       ex.printStackTrace();
     }
   }
@@ -148,7 +149,7 @@ public class Main {
     StringBuilder builder = new StringBuilder();
     try {
       List<String> lines = Files.readAllLines(Paths.get(dataFile));
-      lines.forEach(line -> builder.append(line));
+      lines.forEach(builder::append);
     } catch (Exception ex) {
       ex.printStackTrace();
     }
