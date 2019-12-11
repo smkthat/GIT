@@ -13,38 +13,45 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-  private static final Logger LOGGER = LogManager.getRootLogger();
-  private static String dataFile = "src/main/resources/map.json";
+  private static final Logger LOGGER = LogManager.getLogger(Main.class);
+  private static final String dataFile = "src/main/resources/map.json";
   private static Scanner scanner;
 
   private static StationIndex stationIndex;
 
   public static void main(String[] args) {
-    System.out.println(1);
-    LOGGER.debug("Debug Message Logged !!!");
+    try {
+      LOGGER.trace("Старт программы");
+      LOGGER.error("Тест вывода ошибки");
+      RouteCalculator calculator = getRouteCalculator();
+      System.out.println("Программа расчёта маршрутов метрополитена Санкт-Петербурга\n");
+      scanner = new Scanner(System.in);
+      for (; ; ) {
+        Station from = takeStation("Введите станцию отправления:");
+        Station to = takeStation("Введите станцию назначения:");
 
-    RouteCalculator calculator = getRouteCalculator();
+        List<Station> route = calculator.getShortestRoute(from, to);
+        System.out.println("Маршрут:");
+        printRoute(route);
+        double durationTime = RouteCalculator.calculateDuration(route);
+        System.out.println("Длительность: " + durationTime + " минут");
 
-    System.out.println("Программа расчёта маршрутов метрополитена Санкт-Петербурга\n");
-    scanner = new Scanner(System.in);
-    for (; ; ) {
-      Station from = takeStation("Введите станцию отправления:");
-      Station to = takeStation("Введите станцию назначения:");
-
-      List<Station> route = calculator.getShortestRoute(from, to);
-      System.out.println("Маршрут:");
-      printRoute(route);
-
-      System.out.println("Длительность: " + RouteCalculator.calculateDuration(route) + " минут");
+        LOGGER.info("Действительный маршрут: {} -> {}\tВремя: {}", from, to, durationTime);
+      }
+    } catch (Exception ex) {
+      LOGGER.error(ex);
     }
   }
 
   private static RouteCalculator getRouteCalculator() {
+    LOGGER.trace("Индексация станций");
     createStationIndex();
     return new RouteCalculator(stationIndex);
   }
 
   private static void printRoute(List<Station> route) {
+    LOGGER.trace("Печать маршрута");
+
     Station previousStation = null;
     for (Station station : route) {
       if (previousStation != null) {
@@ -66,10 +73,10 @@ public class Main {
       String line = scanner.nextLine().trim();
       Station station = stationIndex.getStation(line);
       if (station != null) {
-        LOGGER.info("Станция найдена: " + line);
+        LOGGER.info("Поиск станции: {}\tРезультат: {}", line, true);
         return station;
       }
-      LOGGER.warn("Станция не найдена: " + line);
+      LOGGER.warn("Поиск станции: {}\tРезультат: {}", line, false);
       System.out.println("Станция не найдена :(");
     }
   }
@@ -95,6 +102,7 @@ public class Main {
   }
 
   private static void parseConnections(JSONArray connectionsArray) {
+    LOGGER.trace("Парсинг связей станций");
     connectionsArray.forEach(
         connectionObject -> {
           JSONArray connection = (JSONArray) connectionObject;
@@ -117,6 +125,7 @@ public class Main {
   }
 
   private static void parseStations(JSONObject stationsObject) {
+    LOGGER.trace("Парсинг станций");
     stationsObject
         .keySet()
         .forEach(
@@ -134,6 +143,7 @@ public class Main {
   }
 
   private static void parseLines(JSONArray linesArray) {
+    LOGGER.trace("Парсинг линий");
     linesArray.forEach(
         lineObject -> {
           JSONObject lineJsonObject = (JSONObject) lineObject;
@@ -146,12 +156,13 @@ public class Main {
   }
 
   private static String getJsonFile() {
+    LOGGER.trace("Загрузка {}", dataFile);
     StringBuilder builder = new StringBuilder();
     try {
       List<String> lines = Files.readAllLines(Paths.get(dataFile));
       lines.forEach(builder::append);
     } catch (Exception ex) {
-      ex.printStackTrace();
+      LOGGER.error("Ошибка чтения json файла", ex);
     }
     return builder.toString();
   }

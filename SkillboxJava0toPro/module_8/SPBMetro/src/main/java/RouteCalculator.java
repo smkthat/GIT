@@ -9,8 +9,8 @@ public class RouteCalculator
 {
     private StationIndex stationIndex;
 
-    private static double interStationDuration = 2.5;
-    private static double interConnectionDuration = 3.5;
+    private static final double interStationDuration = 2.5;
+    private static final double interConnectionDuration = 3.5;
 
     public RouteCalculator(StationIndex stationIndex)
     {
@@ -19,6 +19,7 @@ public class RouteCalculator
 
     public List<Station> getShortestRoute(Station from, Station to)
     {
+
         List<Station> route = getRouteOnTheLine(from, to);
         if(route != null) {
             return route;
