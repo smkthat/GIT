@@ -226,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576046266274</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactoring">
+      <created>1576046626285</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576046626285</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -246,11 +253,11 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit, creating JUnit tests" />
     <MESSAGE value="add logging (log4j)" />
-    <MESSAGE value="refactoring" />
     <MESSAGE value="added new classes tests" />
     <MESSAGE value="123" />
     <MESSAGE value="add JUnit tests and Log4j2 logging" />
-    <option name="LAST_COMMIT_MESSAGE" value="add JUnit tests and Log4j2 logging" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
   <component name="WindowStateProjectService">
     <state x="928" y="236" key="#Log_Highlighting_(ideolog)" timestamp="1576033384543">
@@ -285,30 +292,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576041259145" />
-    <state x="559" y="114" key="CommitChangelistDialog2" timestamp="1576046261605">
+    <state x="559" y="114" key="CommitChangelistDialog2" timestamp="1576046623706">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="559" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576046261605" />
+    <state x="559" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576046623706" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1575957587238">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575957587238" />
-    <state width="1877" height="239" key="GridCell.Tab.0.bottom" timestamp="1576045616507">
+    <state width="1877" height="239" key="GridCell.Tab.0.bottom" timestamp="1576047240393">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="239" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576045616507" />
-    <state width="1877" height="239" key="GridCell.Tab.0.center" timestamp="1576045616506">
+    <state width="1877" height="239" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576047240393" />
+    <state width="1877" height="239" key="GridCell.Tab.0.center" timestamp="1576047240393">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="239" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576045616506" />
-    <state width="1877" height="239" key="GridCell.Tab.0.left" timestamp="1576045616506">
+    <state width="1877" height="239" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576047240393" />
+    <state width="1877" height="239" key="GridCell.Tab.0.left" timestamp="1576047240393">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="239" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576045616506" />
-    <state width="1877" height="239" key="GridCell.Tab.0.right" timestamp="1576045616506">
+    <state width="1877" height="239" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576047240393" />
+    <state width="1877" height="239" key="GridCell.Tab.0.right" timestamp="1576047240393">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="239" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576045616506" />
+    <state width="1877" height="239" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576047240393" />
     <state width="1877" height="242" key="GridCell.Tab.1.bottom" timestamp="1575960746566">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -341,6 +348,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1575258872129" />
+    <state x="662" y="167" key="new project wizard" timestamp="1576102268245">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="662" y="167" key="new project wizard/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576102268245" />
     <state x="702" y="148" key="refactoring.ChangeSignatureDialog" timestamp="1575353361342">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
