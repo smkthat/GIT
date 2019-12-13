@@ -33,10 +33,6 @@ public class FileBrowser {
   private static boolean isRunning;
 
   public static void main(String[] args) throws IOException, InterruptedException {
-    File file = new File("d:\\test");
-    System.out.println(getReadableSize(file.length()));
-    stopProgram();
-
     System.out.println("\n" + getTab(7) + "CONSOLE FILE BROWSER v.2");
     startMainMenu();
   }
