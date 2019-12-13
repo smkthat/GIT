@@ -151,11 +151,6 @@ public class FileManager {
         startMainMenu();
         break;
       }
-      case EXIT: {
-        isRunning = false;
-        startMainMenu();
-        break;
-      }
       default: {
         break;
       }
