@@ -117,7 +117,7 @@ public class FileManager {
                       + " - показать файлы каталога;\n"
                       + "                     "
                       + GET_FAILED_PATH_LIST
-                      + " - показать файлы без доступа;\n"
+                      + " - показать каталоги без доступа;\n"
                       + "                     "
                       + GET_ALL_INFO
                       + " - показать всю информацию о каталоге;\n\n"
@@ -271,7 +271,12 @@ public class FileManager {
 
   private static String printList(List<Path> list) {
     StringBuilder builder = new StringBuilder().append("\n");
-    list.forEach(p -> builder.append(p.toString()).append("\n"));
+    list.forEach(p -> builder
+            .append(p.toString())
+            .append("\tразмер: ")
+            .append(getReadableSize(p.toFile().length()))
+            .append("\n")
+    );
     return builder.toString();
   }
 
