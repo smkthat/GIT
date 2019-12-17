@@ -1,10 +1,14 @@
 import core.Line;
 import core.Station;
-import junit.framework.TestCase;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+// import static junit.framework.TestCase.assertEquals;
 
 /**
  * Metro scheme that used in tests:
@@ -33,13 +37,14 @@ import java.util.List;
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * }</pre>
  */
-class RouteCalculatorTest extends TestCase {
+class RouteCalculatorTest {
   private RouteCalculator calculator;
+  private StationIndex index;
   private Line line1, line2, line3, line4;
 
-  @Override
-  protected void setUp() {
-    StationIndex index = new StationIndex();
+  @BeforeEach
+  public void setUp() {
+    index = new StationIndex();
 
     line1 = new Line(1, "I");
     line2 = new Line(2, "II");
@@ -66,112 +71,174 @@ class RouteCalculatorTest extends TestCase {
     line4.addStation(new Station("IV-2", line4)); // index 1
     line4.addStation(new Station("IV-3", line4)); // index 2
 
-    // Связи I и II линии
-    index.addConnection(Arrays.asList(line1.getStations().get(0), line2.getStations().get(0)));
-    index.addConnection(Arrays.asList(line1.getStations().get(4), line2.getStations().get(2)));
-    // Связь I и III линии
-    index.addConnection(Arrays.asList(line1.getStations().get(0), line3.getStations().get(3)));
-    // Связь II и III линии
-    index.addConnection(Arrays.asList(line2.getStations().get(0), line3.getStations().get(3)));
-    // Связь I и IV линии
-    index.addConnection(Arrays.asList(line1.getStations().get(3), line4.getStations().get(2)));
-
     index.addLine(line1);
     index.addLine(line2);
     index.addLine(line3);
     index.addLine(line4);
 
+    // Связи I и II линии
+    index.addConnection(Arrays.asList(getStation("I-1"), getStation("II-1")));
+    index.addConnection(Arrays.asList(getStation("I-5"), getStation("II-3")));
+    // Связь I и III линии
+    index.addConnection(Arrays.asList(getStation("I-1"), getStation("III-4")));
+    // Связь II и III линии
+    index.addConnection(Arrays.asList(getStation("II-1"), getStation("III-4")));
+    // Связь I и IV линии
+    index.addConnection(Arrays.asList(getStation("I-4"), getStation("IV-3")));
+
     calculator = new RouteCalculator(index);
   }
 
+  private List<Station> getRoutWithTwoConnection() {
+    return Arrays.asList(
+        getStation("III-1"),
+        getStation("III-2"),
+        getStation("III-3"),
+        getStation("III-4"),
+        getStation("I-1"),
+        getStation("I-2"),
+        getStation("I-3"),
+        getStation("I-4"),
+        getStation("IV-3"),
+        getStation("IV-2"),
+        getStation("IV-1"));
+  }
+
+  private List<Station> getRouteWithOneConnection() {
+    return Arrays.asList(
+        getStation("III-1"),
+        getStation("III-2"),
+        getStation("III-3"),
+        getStation("III-4"),
+        getStation("I-1"),
+        getStation("I-2"),
+        getStation("I-3"),
+        getStation("I-4"),
+        getStation("I-5"));
+  }
+
+  private List<Station> getRouteWithoutConnection() {
+    return Arrays.asList(
+        getStation("III-1"), getStation("III-2"), getStation("III-3"), getStation("III-4"));
+  }
+
+  private Station getStation(String name) {
+    String[] data = name.split("-");
+    Line line = null;
+    List<Station> stations;
+    switch (data[0]) {
+      case "I":
+        {
+          line = index.getLine(1);
+          break;
+        }
+      case "II":
+        {
+          line = index.getLine(2);
+          break;
+        }
+      case "III":
+        {
+          line = index.getLine(3);
+          break;
+        }
+      case "IV":
+        {
+          line = index.getLine(4);
+          break;
+        }
+    }
+
+    if (line != null) {
+      stations = line.getStations();
+      int stationIndex = Integer.parseInt(data[1]) - 1;
+      return stations.get(stationIndex);
+    }
+    return null;
+  }
+
   @Test
-  public void testGetShortestRoute() {
-    setUp();
-
-    List<Station> actual;
-    List<Station> expected;
-    Station from;
-    Station to;
-
-    // тест без пересадок
-    from = line3.getStations().get(0); // III-1
-    to = line3.getStations().get(3); // III-4
-    actual = calculator.getShortestRoute(from, to);
-    expected =
-        Arrays.asList(
-            line3.getStations().get(0),
-            line3.getStations().get(1),
-            line3.getStations().get(2),
-            line3.getStations().get(3));
-    assertEquals(expected, actual);
-
+  public void getShortestRouteWithOneConnections() {
     // тест с 1 пересадкой
-    from = line3.getStations().get(0); // III-1
-    to = line1.getStations().get(4); // I-5
-    actual = calculator.getShortestRoute(from, to);
-    expected =
-        Arrays.asList(
-            line3.getStations().get(0),
-            line3.getStations().get(1),
-            line3.getStations().get(2),
-            line3.getStations().get(3),
-            line1.getStations().get(0),
-            line1.getStations().get(1),
-            line1.getStations().get(2),
-            line1.getStations().get(3),
-            line1.getStations().get(4));
-    assertEquals(expected, actual);
-
-    // тест с 2 пересадками
-    from = line3.getStations().get(0); // III-1
-    to = line4.getStations().get(0); // IV-1
-    actual = calculator.getShortestRoute(from, to);
-    expected =
-        Arrays.asList(
-            line3.getStations().get(0),
-            line3.getStations().get(1),
-            line3.getStations().get(2),
-            line3.getStations().get(3),
-            line1.getStations().get(0),
-            line1.getStations().get(1),
-            line1.getStations().get(2),
-            line1.getStations().get(3),
-            line4.getStations().get(2),
-            line4.getStations().get(1),
-            line4.getStations().get(0));
+    Station from = getStation("III-1");
+    Station to = getStation("I-5");
+    List<Station> actual = calculator.getShortestRoute(from, to);
+    List<Station> expected = getRouteWithOneConnection();
     assertEquals(expected, actual);
   }
 
   @Test
-  public void testCalculateDuration() {
-    setUp();
+  public void getShortestRouteWithTwoConnections() {
+    // тест с 2 пересадками
+    Station from = getStation("III-1");
+    Station to = getStation("IV-1");
+    List<Station> actual = calculator.getShortestRoute(from, to);
+    List<Station> expected = getRoutWithTwoConnection();
+    assertEquals(expected, actual);
+  }
 
-    List<Station> route = new ArrayList<>();
+  @Test
+  public void getShortestRouteAtOneStation() {
+    // тест совпадения
+    Station from = getStation("I-1");
+    Station to = getStation("I-1");
+    List<Station> actual = calculator.getShortestRoute(from, to);
+    List<Station> expected = Collections.singletonList(from);
+    assertEquals(expected, actual);
+  }
 
-    route.add(line3.getStations().get(0));
-    //2.5
-    route.add(line3.getStations().get(1));
-    //2.5
-    route.add(line3.getStations().get(2));
-    //2.5
-    route.add(line3.getStations().get(3));
-    //3.5
-    route.add(line1.getStations().get(0));
-    //2.5
-    route.add(line1.getStations().get(1));
-    //2.5
-    route.add(line1.getStations().get(2));
-    //2.5
-    route.add(line1.getStations().get(3));
-    //3.5
-    route.add(line4.getStations().get(2));
-    //2.5
-    route.add(line4.getStations().get(1));
-    //2.5
-    route.add(line4.getStations().get(0));
+  @Test
+  public void getShortestRouteWithoutConnections() {
+    // тест без пересадок
+    Station from = getStation("III-1");
+    Station to = getStation("III-4");
+    List<Station> actual = calculator.getShortestRoute(from, to);
+    List<Station> expected = getRouteWithoutConnection();
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  public void getShortestRouteWithFromNULL() {
+    Station from = null;
+    Station to = getStation("III-4");
+    List<Station> actual = calculator.getShortestRoute(from, to);
+    List<Station> expected = null;
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  public void getShortestRouteWithToNULL() {
+    Station from = getStation("II-3");
+    Station to = null;
+    List<Station> actual = calculator.getShortestRoute(from, to);
+    List<Station> expected = null;
+    assertEquals(expected, actual);
+  }
+
+  private List<Station> getCalculateDurationTestRoute() {
+    return Arrays.asList(
+        getStation("III-1"), // 2.5
+        getStation("III-2"), // 2.5
+        getStation("III-3"), // 2.5
+        getStation("III-4"), // 3.5
+        getStation("I-1"), // 2.5
+        getStation("I-2"), // 2.5
+        getStation("I-3"), // 2.5
+        getStation("I-4"), // 3.5
+        getStation("IV-3"), // 2.5
+        getStation("IV-2"), // 2.5
+        getStation("IV-1"));
+  }
+
+  @Test
+  public void calculateDuration() {
+    List<Station> route = getCalculateDurationTestRoute();
+
+    double stationTime = 3.5;
+    double transitTime = 2.5;
 
     double actual = RouteCalculator.calculateDuration(route);
-    double expected = 27.0;
+    double expected = stationTime * 2 + transitTime * 8;
     assertEquals(expected, actual);
   }
 }
