@@ -1,56 +1,31 @@
 import java.io.IOException;
 import java.nio.file.*;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.text.DecimalFormat;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /** Класс для управления операциями с файлами */
-class FileOperator extends SimpleFileVisitor<Path> {
-  private static final String SEPARATOR_PATH = "\\";
-
+class FileOperator{
   private Path root;
   private Path copyPath;
-  private long totalSize;
-  private List<Path> content;
-  private List<Path> accessDeniedFiles;
-  private String info;
+
+  private FileCopier copier;
+  private FileSizeCounter sizeCounter;
 
   public FileOperator() {
-    content = new ArrayList<>();
-    accessDeniedFiles = new ArrayList<>();
+    copier = new FileCopier();
+    sizeCounter = new FileSizeCounter();
   }
 
-  private void walkingLikeImTalking() {
-    try {
-      Files.walkFileTree(root, this);
-    } catch (IOException e) {
-      System.err.println("ОШИБКА: -невозможно прочитать путь.");
-      System.exit(-1);
-    }
+  public void showPaths() {
+    System.out.println(pathListToString(sizeCounter.getFiles()));
   }
 
-  @Override
-  public FileVisitResult visitFile(Path path, BasicFileAttributes attr) {
-    totalSize += attr.size();
-    content.add(path);
-    return FileVisitResult.CONTINUE;
-  }
-
-  @Override
-  public FileVisitResult preVisitDirectory(Path path, BasicFileAttributes attr) {
-    content.add(path);
-    return FileVisitResult.CONTINUE;
-  }
-
-  @Override
-  public FileVisitResult visitFileFailed(Path path, IOException e) {
-    accessDeniedFiles.add(path);
-    return FileVisitResult.CONTINUE;
+  public void showFailedPaths() {
+    System.out.println(pathListToString(sizeCounter.getAccessDeniedFiles()));
   }
 
   /** Создает строку с информацией о собранных файлах */
-  public String pathListToString(List<Path> list) {
+  private String pathListToString(List<Path> list) {
     if (list.isEmpty()) {
       System.err.println("Нечего печатать!");
       return "";
@@ -70,63 +45,12 @@ class FileOperator extends SimpleFileVisitor<Path> {
         p ->
             builder
                 .append(p.toString())
-                .append(getSpaces(p.toString().length(), maxStringLength.get()))
-                .append(getSpaces(0, 10))
+                .append(Helper.getSpaces(p.toString().length(), maxStringLength.get()))
+                .append(Helper.getSpaces(0, 10))
                 .append(" ")
-                .append(getReadableSize(p.toFile().length()))
+                .append(Helper.getReadableSize(p.toFile().length()))
                 .append("\n"));
     return builder.toString();
-  }
-
-  /** Создаем отступы в зависимости от уровня папки в которой находится File */
-  public static String getTab(int level) {
-    return "\t".repeat(Math.max(0, level));
-  }
-
-  /** Получаем пробелы */
-  private String getSpaces(int start, int max) {
-    int count = max - start;
-    return " ".repeat(count);
-  }
-
-  /** Подсчитывает и выводит шнформацию о файле */
-  public String getInfoToString() {
-    StringBuilder builder = new StringBuilder();
-    try {
-      if (Files.isDirectory(root)) {
-        builder
-            .append(root)
-            .append("\nРазмер: ")
-            .append(getReadableSize(getTotalSize()))
-            .append("\nФайлов: ")
-            .append(getFiles().size())
-            .append("\tиз них не удалось прочесть: ")
-            .append(getAccessDeniedFiles().size())
-            .append("\nВсего: ")
-            .append(getAccessDeniedFiles().size() + getFiles().size());
-      } else {
-        builder.append(root).append("\nРазмер: ").append(getReadableSize(Files.size(root)));
-      }
-    } catch (IOException e) {
-      System.err.println("ОШИБКА: -не удалось получить размер файла.");
-      return null;
-    }
-
-    info = builder.toString();
-    return info;
-  }
-
-  /** Переводит размер файлов к читабельному виду */
-  public static String getReadableSize(long size) {
-    String[] units = new String[] {"B", "KB", "MB", "GB", "TB"};
-    if (size == 0) {
-      return "0 " + units[0];
-    }
-
-    int unitIndex = (int) (Math.log10(size) / 3);
-    double unitValue = 1 << (unitIndex * 10);
-
-    return new DecimalFormat("#,##0.##").format(size / unitValue) + " " + units[unitIndex];
   }
 
   /** Получение пути к существующему файлу/каталогу */
@@ -149,8 +73,8 @@ class FileOperator extends SimpleFileVisitor<Path> {
     do {
       root = validInputExistPath("\nВведите путь к папке\\файлу:");
     } while (root == null);
-    setRootAndWalk(root);
-    System.out.println(getInfoToString());
+    FileSizeCounter sizeCounter = new FileSizeCounter();
+    System.out.println(sizeCounter.gettingInfo(root));
   }
 
   /** Запуск процесса копирования файлов */
@@ -158,7 +82,6 @@ class FileOperator extends SimpleFileVisitor<Path> {
     boolean isCopyConfirmed;
     do {
       root = validInputExistPath("\nВведите путь к копируемой папке\\файлу:");
-      setRootAndWalk(root);
       copyPath = validInputCopyPath("\nВведите путь для копирования:");
 
       if (!Files.exists(copyPath)) {
@@ -172,11 +95,8 @@ class FileOperator extends SimpleFileVisitor<Path> {
 
     boolean copyDone = false;
     if (isCopyConfirmed) {
-      if (Files.isDirectory(root)) {
-        copyDone = copyFolder(root, copyPath);
-      } else {
-        copyDone = copyFile(root, copyPath);
-      }
+      copier = new FileCopier();
+      copyDone = copier.copyPath(root,copyPath);
     }
 
     if (copyDone) {
@@ -186,36 +106,6 @@ class FileOperator extends SimpleFileVisitor<Path> {
     }
 
     FileManager.startMainMenu();
-  }
-
-  private boolean copyFile(Path target, Path copy) {
-    if (!Files.exists(copy)) {
-      try {
-        Files.createDirectories(copy);
-      } catch (IOException e) {
-        System.err.println("Ошибка: -невозможно создать директории для.\n" + copy.toAbsolutePath());
-        return false;
-      }
-    }
-
-    if (Files.exists(copy)) {
-      Path copyFilePath = generateCopyFilePath(target, copy);
-      if (!Files.exists(copyFilePath)) {
-        try {
-          Files.copy(target, copyFilePath);
-        } catch (IOException e) {
-          System.err.println("Ошибка: -копирование файла закончилось неудачей.");
-        }
-        setRootAndWalk(copyFilePath.toAbsolutePath());
-        copyPath = null;
-        System.out.println(getPathInfo(copyFilePath));
-        return true;
-      } else {
-        System.err.println("ОШИБКА: -файл " + copyFilePath + " уже существует.");
-      }
-    }
-
-    return false;
   }
 
   public String getPathInfo(Path path) {
@@ -229,49 +119,20 @@ class FileOperator extends SimpleFileVisitor<Path> {
           .append("\n")
           .append("Размер: ");
       try {
-        builder.append(getReadableSize(Files.size(path)));
+        builder.append(Helper.getReadableSize(Files.size(path)));
       } catch (IOException e) {
         System.err.println("Ошибка: -не удалось получить размер файла.");
       }
     } else {
-      setRootAndWalk(path);
-      return getInfoToString();
+      return sizeCounter.gettingInfo(path);
     }
     return builder.toString();
-  }
-
-  /** Генерируем путь к копии файла */
-  private Path generateCopyFilePath(Path target, Path copy) {
-    return Paths.get(copy + SEPARATOR_PATH + target.getFileName());
   }
 
   /** Получение пути для копирования */
   private Path validInputCopyPath(String message) {
     System.out.println(message);
     return Paths.get(new Scanner(System.in).nextLine());
-  }
-
-  /** Создает новый путь для копии */
-  private Path changePaths(Path path, Path target, Path replacement) {
-    String tar = target.toString();
-    String rep = replacement.toString();
-    return Paths.get(path.toString().replace(tar, rep));
-  }
-
-  /** Проверка на существование каталога и его подкаталогов */
-  private boolean isExistsDirectory(Path target, Path copy) {
-    if (!Files.exists(copy)) {
-      if (Files.isDirectory(target)) {
-        try {
-          Files.createDirectories(copy);
-        } catch (IOException e) {
-          System.err.println("Ошибка создания каталога");
-          return false;
-        }
-      }
-    }
-
-    return true;
   }
 
   /** Проверка пути копирования */
@@ -293,51 +154,12 @@ class FileOperator extends SimpleFileVisitor<Path> {
     return true;
   }
 
-  /** Копирует директорию со всеми вложенными папками и файлами */
-  public boolean copyFolder(Path target, Path copy) {
-    if (!isExistsDirectory(target, copy)) {
-      return false;
-    }
-
-    copy = Paths.get(copy.toString() + SEPARATOR_PATH + target.getName(0));
-    setRootAndWalk(copy);
-
-    List<Path> files = getFiles();
-    for (Path file : files) {
-      Path newCopyPath = changePaths(file, target, copy);
-      try {
-        if (!Files.exists(newCopyPath)) {
-          Files.copy(file, newCopyPath, StandardCopyOption.COPY_ATTRIBUTES);
-        }
-      } catch (IOException e) {
-        System.err.println("ОШИБКА: -не удалось записать файл:\n" + newCopyPath);
-      }
-    }
-
-    setRootAndWalk(copy);
-    System.out.println(pathListToString(getFiles()));
-    return true;
-  }
-
-  public List<Path> getFiles() {
-    return content;
-  }
-
-  public List<Path> getAccessDeniedFiles() {
-    return accessDeniedFiles;
-  }
-
-  public long getTotalSize() {
-    return this.totalSize;
-  }
-
-  /** Устанавливает корневую дерикторию и собирает информацию о ней */
-  private void setRootAndWalk(Path path) {
-    root = path;
-    walkingLikeImTalking();
-  }
-
+  /** */
   public String getInfo() {
-    return info;
+    return sizeCounter.getInfo();
+  }
+
+  public FileSizeCounter getSizeCounter() {
+    return sizeCounter;
   }
 }

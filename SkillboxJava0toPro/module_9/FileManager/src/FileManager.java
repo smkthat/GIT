@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 public class FileManager {
@@ -6,11 +5,9 @@ public class FileManager {
   private static Commander commander;
   private static FileOperator fileOperator;
   private static boolean isRunning = true;
-  private static final int ZERO_STATE = 0;
 
   public static void main(String[] args) {
-    System.out.println("\n" + FileOperator.getTab(6) + "CONSOLE FILE BROWSER v.2");
-    commander = new Commander();
+    System.out.println("\n" + Helper.getTab(6) + "CONSOLE FILE BROWSER v.2");
     startMainMenu();
   }
 
@@ -19,13 +16,13 @@ public class FileManager {
     StringBuilder builder = new StringBuilder();
     builder
         .append("------------------------------------------------------------------------------\n")
-        .append(FileOperator.getTab(0))
+        .append(Helper.getTab(0))
         .append("Доступные команды:\n");
 
     for (Command c : commands) {
       builder
-          .append(FileOperator.getTab(6))
-          .append(c.getId())
+          .append(Helper.getTab(6))
+          .append(c.getName())
           .append("\t- ")
           .append(c.getComment())
           .append("\n");
@@ -37,17 +34,18 @@ public class FileManager {
 
   /** Старт программы с главного меню */
   public static void startMainMenu() {
+    commander = new Commander();
     fileOperator = new FileOperator();
 
     while (isRunning) {
       List<Command> availableCommands = commander.getMainMenuCommands();
       command = null;
-      int input = ZERO_STATE;
+      String input = "";
       do {
         showMenu(availableCommands);
         System.out.println("Введите команду: ");
         try {
-          input = new Scanner(System.in).nextInt();
+          input = new Scanner(System.in).nextLine();
         } catch (InputMismatchException ignored) {
         }
         command = Commander.getValidInputCommand(availableCommands, input);
@@ -62,14 +60,14 @@ public class FileManager {
             stopProgram();
             break;
           }
-        case "GET_SIZE":
+        case "SIZE":
           {
             fileOperator.sizeInfo();
             showFileSizeActionMenu();
             startMainMenu();
             break;
           }
-        case "COPY_PATH":
+        case "COPY":
           {
             fileOperator.startCopy();
             startMainMenu();
@@ -85,15 +83,16 @@ public class FileManager {
     }
   }
 
+  /** Показывает меню подтверждения копирования */
   public static boolean showConfirmCopyActionMenu() {
     List<Command> availableCommands = commander.getConfirmCopyCommands();
-    int input = ZERO_STATE;
+    String input = "";
     command = null;
     do {
       showMenu(availableCommands);
       System.out.println("Введите команду: ");
       try {
-        input = new Scanner(System.in).nextInt();
+        input = new Scanner(System.in).nextLine();
       } catch (InputMismatchException ignored) {
       }
       command = Commander.getValidInputCommand(availableCommands, input);
@@ -112,7 +111,7 @@ public class FileManager {
           System.out.println("Начинаем копирование!\n");
           return true;
         }
-      case "MAIN_MENU":
+      case "MAIN MENU":
         {
           startMainMenu();
           break;
@@ -122,15 +121,16 @@ public class FileManager {
     return false;
   }
 
+  /** Показывает меню доп.действий */
   private static void showFileSizeActionMenu() {
     List<Command> availableCommands = commander.getFileSizeMenuCommands();
-    int input = ZERO_STATE;
+    String input = "";
     command = null;
     do {
       showMenu(availableCommands);
       System.out.println("Введите команду: ");
       try {
-        input = new Scanner(System.in).nextInt();
+        input = new Scanner(System.in).nextLine();
       } catch (InputMismatchException ignored) {
       }
       command = Commander.getValidInputCommand(availableCommands, input);
@@ -139,25 +139,25 @@ public class FileManager {
     /*----------------------------------------------------------------*/
 
     switch (command.getName()) {
-      case "GET_PATH_LIST":
+      case "PATHS":
         {
-          System.out.println(fileOperator.pathListToString(fileOperator.getFiles()));
+          fileOperator.showPaths();
           showFileSizeActionMenu();
           break;
         }
-      case "GET_FAILED_PATH_LIST":
+      case "FAILED PATHS":
         {
-          System.out.println(fileOperator.pathListToString(fileOperator.getAccessDeniedFiles()));
+          fileOperator.showFailedPaths();
           showFileSizeActionMenu();
           break;
         }
-      case "GET_ALL_INFO":
+      case "INFO":
         {
           System.out.println(fileOperator.getInfo());
           showFileSizeActionMenu();
           break;
         }
-      case "MAIN_MENU":
+      case "MAIN MENU":
         {
           startMainMenu();
           break;
