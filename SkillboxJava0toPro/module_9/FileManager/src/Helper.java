@@ -2,10 +2,10 @@ import java.text.DecimalFormat;
 
 public class Helper
 {
-    /** Получаем пробелы */
-    public static String getSpaces(int start, int max) {
+    /** Получаем точки */
+    public static String getDots(int start, int max) {
         int count = max - start;
-        return " ".repeat(count);
+        return ".".repeat(count);
     }
 
     /** Создаем отступы в зависимости от уровня папки в которой находится File */

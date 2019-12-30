@@ -64,7 +64,7 @@ class FileSizeCounter extends SimpleFileVisitor<Path> {
 
       info = builder.toString();
     } else {
-        System.err.println("ОШИБКА: -ошибка получения информации о " + root.toAbsolutePath());
+      System.err.println("ОШИБКА: -ошибка получения информации о " + root.toAbsolutePath());
     }
 
     return info;

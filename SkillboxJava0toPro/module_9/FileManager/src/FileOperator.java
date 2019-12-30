@@ -1,25 +1,20 @@
-import java.io.IOException;
 import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /** Класс для управления операциями с файлами */
-class FileOperator{
+class FileOperator {
   private Path root;
-  private Path copyPath;
 
   private FileCopier copier;
   private FileSizeCounter sizeCounter;
 
-  public FileOperator() {
-    copier = new FileCopier();
-    sizeCounter = new FileSizeCounter();
-  }
-
+  /** Выводит на печать все содержимое директории */
   public void showPaths() {
     System.out.println(pathListToString(sizeCounter.getFiles()));
   }
 
+  /** Выводит на печать пути к которым нет доступа в указанной директории */
   public void showFailedPaths() {
     System.out.println(pathListToString(sizeCounter.getAccessDeniedFiles()));
   }
@@ -45,8 +40,8 @@ class FileOperator{
         p ->
             builder
                 .append(p.toString())
-                .append(Helper.getSpaces(p.toString().length(), maxStringLength.get()))
-                .append(Helper.getSpaces(0, 10))
+                .append(Helper.getDots(p.toString().length(), maxStringLength.get()))
+                .append(Helper.getDots(0, 5))
                 .append(" ")
                 .append(Helper.getReadableSize(p.toFile().length()))
                 .append("\n"));
@@ -73,13 +68,14 @@ class FileOperator{
     do {
       root = validInputExistPath("\nВведите путь к папке\\файлу:");
     } while (root == null);
-    FileSizeCounter sizeCounter = new FileSizeCounter();
+    sizeCounter = new FileSizeCounter();
     System.out.println(sizeCounter.gettingInfo(root));
   }
 
   /** Запуск процесса копирования файлов */
   public void startCopy() {
     boolean isCopyConfirmed;
+    Path copyPath;
     do {
       root = validInputExistPath("\nВведите путь к копируемой папке\\файлу:");
       copyPath = validInputCopyPath("\nВведите путь для копирования:");
@@ -96,7 +92,7 @@ class FileOperator{
     boolean copyDone = false;
     if (isCopyConfirmed) {
       copier = new FileCopier();
-      copyDone = copier.copyPath(root,copyPath);
+      copyDone = copier.copyPath(root, copyPath);
     }
 
     if (copyDone) {
@@ -106,27 +102,6 @@ class FileOperator{
     }
 
     FileManager.startMainMenu();
-  }
-
-  public String getPathInfo(Path path) {
-    StringBuilder builder = new StringBuilder();
-    if (!Files.isDirectory(path)) {
-      builder
-          .append("Имя: ")
-          .append(path.getFileName())
-          .append("\n")
-          .append(path.toAbsolutePath())
-          .append("\n")
-          .append("Размер: ");
-      try {
-        builder.append(Helper.getReadableSize(Files.size(path)));
-      } catch (IOException e) {
-        System.err.println("Ошибка: -не удалось получить размер файла.");
-      }
-    } else {
-      return sizeCounter.gettingInfo(path);
-    }
-    return builder.toString();
   }
 
   /** Получение пути для копирования */
@@ -157,9 +132,5 @@ class FileOperator{
   /** */
   public String getInfo() {
     return sizeCounter.getInfo();
-  }
-
-  public FileSizeCounter getSizeCounter() {
-    return sizeCounter;
   }
 }

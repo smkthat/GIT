@@ -1,25 +1,18 @@
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-import java.util.List;
 
 class FileCopier extends SimpleFileVisitor<Path> {
   private Path target;
   private Path copyTo;
-  private List<Path> accessDeniedList;
 
   private static final String SEPARATOR_PATH = "/";
-
-  public FileCopier() {
-    accessDeniedList = new ArrayList<>();
-  }
 
   public boolean copyPath(Path target, Path copyTo) {
     this.target = target;
     this.copyTo = generateCopyPath(target, copyTo);
 
-    if (!createCopyDirectories(this.target,this.copyTo)) {
+    if (!createCopyDirectories(this.target, this.copyTo)) {
       return false;
     }
 
@@ -94,23 +87,5 @@ class FileCopier extends SimpleFileVisitor<Path> {
     }
 
     return FileVisitResult.CONTINUE;
-  }
-
-  @Override
-  public FileVisitResult visitFileFailed(Path path, IOException e) {
-    accessDeniedList.add(path);
-    return FileVisitResult.CONTINUE;
-  }
-
-  public Path getTarget() {
-    return target;
-  }
-
-  public Path getCopyTo() {
-    return copyTo;
-  }
-
-  public List<Path> getAccessDeniedList() {
-    return accessDeniedList;
   }
 }
