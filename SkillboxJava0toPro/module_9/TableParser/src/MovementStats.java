@@ -1,5 +1,5 @@
 import java.util.*;
-import java.util.stream.*;
+import java.util.stream.Collectors;
 
 public class MovementStats {
   private List<String> header;
@@ -13,37 +13,76 @@ public class MovementStats {
     movementList.add(movement);
   }
 
-  public Double getTotalIncome() {
-    Double total = 0.0;
-    for (Movement m : movementList) {
-      total += m.getIncome();
-    }
+  public String getPartnersSummaryTable() {
+    List<List<String>> data = new ArrayList<>();
 
-    return total;
+    movementList.stream()
+        .collect(
+            Collectors.groupingBy(
+                Movement::getPartner,
+                Collectors.mapping(
+                    p -> new Summary(p.getIncome(), p.getOutcome()),
+                    Collectors.reducing(Summary::merge))))
+        .forEach(
+            (partner, summary) ->
+                data.add(
+                    Arrays.asList(
+                        partner,
+                        Double.toString(summary.get().income),
+                        Double.toString(summary.get().outcome))));
+
+    return getTableName("Partners summary report")
+        + new TableGenerator(Arrays.asList("Partner", "Total income", "Total outcome"), data)
+            .getResult();
   }
 
-  public Double getTotalOutcome() {
-    Double total = 0.0;
-    for (Movement m : movementList) {
-      total += m.getOutcome();
-    }
+  public String getPartnersIncomeTable() {
+    List<List<String>> data = new ArrayList<>();
 
-    return total;
+    movementList.stream()
+        .collect(
+            Collectors.groupingBy(
+                Movement::getPartner, Collectors.summingDouble(Movement::getIncome)))
+        .forEach(
+            (partner, income) -> {
+              if (income != 0.0) {
+                data.add(Arrays.asList(partner, income.toString()));
+              }
+            });
+
+    return getTableName("Partners total income report")
+        + new TableGenerator(Arrays.asList("Partner", "Total income"), data).getResult();
   }
 
-  public List<Movement> getIncomeList() {
-    return movementList.stream().filter(m -> m.getIncome() != 0).collect(Collectors.toList());
+  public String getPartnersOutcomeTable() {
+    List<List<String>> data = new ArrayList<>();
+
+    movementList.stream()
+        .collect(
+            Collectors.groupingBy(
+                Movement::getPartner, Collectors.summingDouble(Movement::getOutcome)))
+        .forEach(
+            (partner, outcome) -> {
+              if (outcome != 0.0) {
+                data.add(Arrays.asList(partner, outcome.toString()));
+              }
+            });
+
+    return getTableName("Partners total outcome report")
+        + new TableGenerator(Arrays.asList("Partner", "Total outcome"), data).getResult();
   }
 
-  public List<Movement> getOutcomeList() {
-    return movementList.stream().filter(m -> m.getOutcome() != 0).collect(Collectors.toList());
+  public List<Movement> getAllMovementsByPartner(String partner) {
+    return movementList.stream()
+        .filter(m -> m.getPartner().equals(partner))
+        .collect(Collectors.toList());
   }
 
-  public List<Movement> getMovementList() {
+  public List<Movement> getParsedMovementList() {
     return movementList;
   }
 
-  public String getTableFromMovementList(List<Movement> list) {
+  public String getTableFromMovementList(String tableName, List<Movement> list) {
     List<List<String>> data = new ArrayList<>();
     list.forEach(
         p ->
@@ -58,6 +97,28 @@ public class MovementStats {
                     p.getIncome().toString(),
                     p.getOutcome().toString())));
 
-    return new TableGenerator(header, data).getResult();
+    return  getTableName(tableName + " -> " + "movements report") + new TableGenerator(header, data).getResult();
+  }
+
+  private String getTableName(String name) {
+    return "\t".repeat(2) + name.toUpperCase() + "\n";
+  }
+
+  private static class Summary {
+    double income;
+    double outcome;
+
+    Summary(double income, double outcome) {
+      this.income = income;
+      this.outcome = outcome;
+    }
+
+    static Summary merge(Summary m1, Summary m2) {
+      return new Summary(m1.income + m2.income, m1.outcome + m2.outcome);
+    }
+
+    static Summary fromMovement(Movement m) {
+      return new Summary(m.getIncome(), m.getOutcome());
+    }
   }
 }

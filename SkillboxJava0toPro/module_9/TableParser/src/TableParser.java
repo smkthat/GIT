@@ -13,7 +13,7 @@ public class TableParser {
 
   public void startParse() {
     if (path == null) {
-      System.out.println("Unable to determine file path!");
+      System.err.println("Please, check path to file!");
     } else {
       loadDataFromFile();
     }
@@ -25,11 +25,10 @@ public class TableParser {
       lines = Files.readAllLines(path);
     } catch (IOException e) {
       e.printStackTrace();
-      System.exit(-1);
     }
 
     if (lines.size() > 1) {
-      CutHeadAndCreateStats(lines)
+      cutHeadAndCreateStats(lines)
           .forEach(
               line -> {
                 try {
@@ -37,19 +36,18 @@ public class TableParser {
                   if (dataLine != null && dataLine.size() == lineLength) {
                     parseDataLine(dataLine);
                   } else {
-                    throw new IOException();
+                    throw new IOException("Wrong line: " + line);
                   }
                 } catch (IOException e) {
-                  System.err.println("Wrong line: " + line);
+                  System.err.println(e.getMessage());
                 }
               });
     } else {
       System.err.println("Empty file data!");
-      System.exit(-1);
     }
   }
 
-  private List<String> CutHeadAndCreateStats(List<String> lines) {
+  private List<String> cutHeadAndCreateStats(List<String> lines) {
     try {
       if (!lines.isEmpty()) {
         List<String> head = CSVHelper.parseLine(new StringReader(lines.get(0)));
@@ -61,7 +59,6 @@ public class TableParser {
       }
     } catch (IOException e) {
       System.err.println("File is empty!");
-      System.exit(-1);
     }
 
     return lines;
@@ -84,6 +81,10 @@ public class TableParser {
             Double.parseDouble(dataLine.get(7).replace(",", "."))));
   }
 
+  public String parsePartner(String data) {
+    return null;
+  }
+
   public MovementStats getStats() {
     return stats;
   }
@@ -94,7 +95,6 @@ public class TableParser {
       return filePath;
     } else {
       System.err.println("File not found!");
-      System.exit(-1);
     }
 
     return null;

@@ -1,3 +1,7 @@
+import java.util.StringJoiner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Movement {
   private String type;
   private String account;
@@ -7,6 +11,8 @@ public class Movement {
   private String description;
   private Double income;
   private Double outcome;
+
+  private String partner;
 
   public Movement(
       String type,
@@ -25,26 +31,53 @@ public class Movement {
     this.description = description;
     this.income = income;
     this.outcome = outcome;
+    this.partner = getPartnerFromDescription();
+  }
+
+  private String getPartnerFromDescription() {
+    String str = description.substring(16).trim();
+    String pattern;
+    Matcher matcher;
+    String partner;
+
+    pattern = "\\d{1,2}\\.\\d{1,2}\\.\\d{2}";
+    matcher = Pattern.compile(pattern).matcher(str);
+
+    if (matcher.find()) {
+      partner = str.substring(0, matcher.start()).trim();
+    } else {
+      System.err.println("Partner not found at: \"" + str + "\"");
+      return "unknown";
+    }
+
+    pattern = "/";
+    matcher = Pattern.compile(pattern).matcher(partner);
+
+    if (matcher.find()) {
+      return partner.substring(partner.lastIndexOf(" ") + 1).trim();
+    } else {
+      return partner.substring(partner.lastIndexOf("\\") + 1).trim();
+    }
   }
 
   @Override
   public String toString() {
     String tab = "\t";
-    return getClass().getSimpleName()
-        + tab
-        + type
-        + tab
-        + account
-        + tab
-        + currency
-        + tab
-        + date
-        + tab
-        + reference
-        + tab
-        + income
-        + tab
-        + outcome;
+    StringJoiner joiner = new StringJoiner(tab);
+    joiner
+        .add(getClass().getSimpleName())
+        .add(type)
+        .add(account)
+        .add(currency)
+        .add(date)
+        .add(reference)
+        .add(income.toString())
+        .add(outcome.toString());
+    return joiner.toString();
+  }
+
+  public String getPartner() {
+    return partner;
   }
 
   public String getType() {

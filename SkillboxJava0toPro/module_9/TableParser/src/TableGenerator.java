@@ -9,15 +9,15 @@ class TableGenerator {
   private int PADDING_SIZE = 2;
 
   public TableGenerator(List<String> head, List<List<String>> data) {
-    result = generateTable(head,data);
+    result = generateTable(head, data);
   }
 
   public String getResult() {
     return result;
   }
 
-  private String generateTable(List<String> headersList, List<List<String>> rowsList,
-      int... overRiddenHeaderHeight) {
+  private String generateTable(
+      List<String> headersList, List<List<String>> rowsList, int... overRiddenHeaderHeight) {
     StringBuilder stringBuilder = new StringBuilder();
 
     int rowHeight = overRiddenHeaderHeight.length > 0 ? overRiddenHeaderHeight[0] : 1;
@@ -43,7 +43,6 @@ class TableGenerator {
       for (int cellIndex = 0; cellIndex < row.size(); cellIndex++) {
         fillCell(stringBuilder, row.get(cellIndex), cellIndex, columnMaxWidthMapping);
       }
-
     }
 
     stringBuilder.append(NEW_LINE);
@@ -58,7 +57,9 @@ class TableGenerator {
     stringBuilder.append(" ".repeat(Math.max(0, length)));
   }
 
-  private void createRowLine(StringBuilder stringBuilder, int headersListSize,
+  private void createRowLine(
+      StringBuilder stringBuilder,
+      int headersListSize,
       Map<Integer, Integer> columnMaxWidthMapping) {
     for (int i = 0; i < headersListSize; i++) {
       String TABLE_JOINT_SYMBOL = "+";
@@ -74,9 +75,8 @@ class TableGenerator {
     }
   }
 
-
-  private Map<Integer, Integer> getMaximumWidthOfTable(List<String> headersList,
-      List<List<String>> rowsList) {
+  private Map<Integer, Integer> getMaximumWidthOfTable(
+      List<String> headersList, List<List<String>> rowsList) {
     Map<Integer, Integer> columnMaxWidthMapping = new HashMap<>();
 
     for (int columnIndex = 0; columnIndex < headersList.size(); columnIndex++) {
@@ -110,8 +110,11 @@ class TableGenerator {
     return columnMaxWidthMapping;
   }
 
-  private int getOptimumCellPadding(int cellIndex, int datalength,
-      Map<Integer, Integer> columnMaxWidthMapping, int cellPaddingSize) {
+  private int getOptimumCellPadding(
+      int cellIndex,
+      int datalength,
+      Map<Integer, Integer> columnMaxWidthMapping,
+      int cellPaddingSize) {
     if (datalength % 2 != 0) {
       datalength++;
     }
@@ -123,11 +126,14 @@ class TableGenerator {
     return cellPaddingSize;
   }
 
-  private void fillCell(StringBuilder stringBuilder, String cell, int cellIndex,
+  private void fillCell(
+      StringBuilder stringBuilder,
+      String cell,
+      int cellIndex,
       Map<Integer, Integer> columnMaxWidthMapping) {
 
-    int cellPaddingSize = getOptimumCellPadding(cellIndex, cell.length(), columnMaxWidthMapping,
-        PADDING_SIZE);
+    int cellPaddingSize =
+        getOptimumCellPadding(cellIndex, cell.length(), columnMaxWidthMapping, PADDING_SIZE);
 
     String TABLE_V_SPLIT_SYMBOL = "|";
     if (cellIndex == 0) {
