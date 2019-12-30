@@ -25,11 +25,13 @@ public class MovementStats {
                     Collectors.reducing(Summary::merge))))
         .forEach(
             (partner, summary) ->
-                data.add(
-                    Arrays.asList(
-                        partner,
-                        Double.toString(summary.get().income),
-                        Double.toString(summary.get().outcome))));
+                summary.ifPresent(
+                    value ->
+                        data.add(
+                            Arrays.asList(
+                                partner,
+                                Double.toString(value.income),
+                                Double.toString(value.outcome)))));
 
     return getTableName("Partners summary report")
         + new TableGenerator(Arrays.asList("Partner", "Total income", "Total outcome"), data)
@@ -97,7 +99,8 @@ public class MovementStats {
                     p.getIncome().toString(),
                     p.getOutcome().toString())));
 
-    return  getTableName(tableName + " -> " + "movements report") + new TableGenerator(header, data).getResult();
+    return getTableName(tableName + " -> " + "movements report")
+        + new TableGenerator(header, data).getResult();
   }
 
   private String getTableName(String name) {
