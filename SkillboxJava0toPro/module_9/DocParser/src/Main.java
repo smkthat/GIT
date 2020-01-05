@@ -8,37 +8,43 @@ import java.nio.file.*;
 import java.util.*;
 
 public class Main {
+
   private static final String URL_STR = "https://lenta.ru/";
-  private static String PATH = "d:\\test";
-  private static final String PATH_SEPARATOR = "\\";
+  private static Path PATH;
 
   public static void main(String[] args) {
+    String url = "d:\\test";
+    PATH = getPathFromString(url);
     startParse();
   }
 
-  private static boolean checkPathTail() {
-    return PATH.endsWith(PATH_SEPARATOR) || PATH.endsWith("/");
+  private static Path getPathFromString(String url) {
+    System.out.println("Getting path from string");
+    return Paths.get(url);
   }
 
   private static void startParse() {
-    System.out.println("Start getting images\nfrom " + URL_STR + "\n  to " + PATH);
-    if (!checkPathTail()) {
-      PATH = PATH + PATH_SEPARATOR;
+    System.out.println("Start getting images from " + URL_STR + "to " + PATH + " :");
+
+    Document doc;
+    try {
+      doc = getDocument();
+    } catch (IOException e) {
+      e.printStackTrace();
+      return;
     }
 
-    Document doc = getDocument();
-    if (doc == null) {
-      System.exit(-1);
-    }
+    String tag = ".g-picture";
+    System.out.println("\t* getting elements from document by tag \"" + tag + "\"");
+    Elements elements = doc.select(tag);
 
-    Elements elements = getSelected(doc, ".g-picture");
     List<String> urls = getElementsAttrToList(elements, "src");
     if (downloadPics(urls)) {
       System.out.println("\nDownloading complete without errors! :)");
     } else {
       System.out.println(
           "\nDownloading complete with some errors! :("
-              + "\nСheck the console for detailed error information");
+              + "\nСheсk the console for detailed error information");
     }
   }
 
@@ -46,9 +52,10 @@ public class Main {
     boolean withoutErrors = true;
     System.out.println("Downloading:");
     for (String u : urls) {
-      if (download(u)) {
+      try {
+        download(u);
         System.out.println("\t* file\t" + u + " downloaded");
-      } else {
+      } catch (IOException e) {
         withoutErrors = false;
         System.err.println("\t* error\t" + u);
       }
@@ -57,61 +64,46 @@ public class Main {
     return withoutErrors;
   }
 
-  private static boolean download(String strUrl) {
-    boolean isWrited = false;
-    Path pathToFile = Paths.get(PATH + getNameFromURL(strUrl));
+  private static void download(String strUrl) throws IOException {
+    Path pathToFile = Paths.get(PATH.toString(), getNameFromURL(strUrl));
     BufferedInputStream bis = getBISFromURL(strUrl);
     if (bis != null) {
-      isWrited = writeFile(bis, pathToFile);
+      writeFile(bis, pathToFile);
+      bis.close();
     }
-
-    return isWrited;
   }
 
   private static BufferedInputStream getBISFromURL(String strUrl) {
-    URL url;
-    URLConnection connection;
-    BufferedInputStream bis;
-
     try {
-      url = new URL(strUrl);
-      connection = url.openConnection();
+      URL url = new URL(strUrl);
+      URLConnection connection = url.openConnection();
       connection.setDoOutput(true);
       connection.setDoInput(true);
 
-      bis = new BufferedInputStream(connection.getInputStream());
+      return new BufferedInputStream(connection.getInputStream());
     } catch (IOException e) {
       e.printStackTrace();
       return null;
     }
-
-    return bis;
   }
 
-  private static boolean writeFile(BufferedInputStream bis, Path path) {
+  private static void writeFile(BufferedInputStream bis, Path path) {
     try {
       if (Files.exists(path)) {
         System.out.println("\t* file \"" + path + "\" exists, will be overwritten");
       } else {
-        Files.createDirectories(Paths.get(PATH));
+        Files.createDirectories(PATH);
         Files.createFile(path);
       }
 
       Files.write(path, bis.readAllBytes());
     } catch (IOException e) {
       e.printStackTrace();
-      return false;
     }
-    return true;
   }
 
   private static String getNameFromURL(String url) {
     return url.substring(url.lastIndexOf("/") + 1);
-  }
-
-  private static Elements getSelected(Document doc, String tag) {
-    System.out.println("\t* getting elements from document by tag \"" + tag + "\"");
-    return doc.select(tag);
   }
 
   private static List<String> getElementsAttrToList(Elements elements, String attr) {
@@ -123,15 +115,8 @@ public class Main {
     return attrs;
   }
 
-  private static Document getDocument() {
+  private static Document getDocument() throws IOException {
     System.out.println("\t* getting document");
-    Document doc;
-    try {
-      doc = Jsoup.connect(URL_STR).get();
-    } catch (IOException e) {
-      e.printStackTrace();
-      return null;
-    }
-    return doc;
+    return Jsoup.connect(URL_STR).maxBodySize(0).get();
   }
 }
