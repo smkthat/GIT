@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Vector;
 
 public class CSVHelper {
-  /** Returns a null when the input stream is empty */
+
+  /**
+   * Returns a null when the input stream is empty
+   */
   public static List<String> parseLine(Reader r) throws IOException {
     int ch = r.read();
     while (ch == '\r') {

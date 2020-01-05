@@ -3,6 +3,7 @@ import java.util.*;
 import java.io.*;
 
 public class TableParser {
+
   private Path path;
   private MovementStats stats;
   private int lineLength;
@@ -79,10 +80,6 @@ public class TableParser {
             dataLine.get(5),
             Double.parseDouble(dataLine.get(6).replace(",", ".")),
             Double.parseDouble(dataLine.get(7).replace(",", "."))));
-  }
-
-  public String parsePartner(String data) {
-    return null;
   }
 
   public MovementStats getStats() {
