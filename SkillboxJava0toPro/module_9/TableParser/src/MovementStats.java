@@ -2,6 +2,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class MovementStats {
+
   private List<String> header;
   private List<Movement> movementList = new ArrayList<>();
 
@@ -22,20 +23,20 @@ public class MovementStats {
                 Movement::getPartner,
                 Collectors.mapping(
                     p -> new Summary(p.getIncome(), p.getOutcome()),
-                    Collectors.reducing(Summary::merge))))
+                    Collectors.reducing(
+                        new Summary(0, 0),
+                        Summary::merge))))
         .forEach(
             (partner, summary) ->
-                summary.ifPresent(
-                    value ->
-                        data.add(
-                            Arrays.asList(
-                                partner,
-                                Double.toString(value.income),
-                                Double.toString(value.outcome)))));
+                data.add(
+                    Arrays.asList(
+                        partner,
+                        Double.toString(summary.income),
+                        Double.toString(summary.outcome))));
 
     return getTableName("Partners summary report")
         + new TableGenerator(Arrays.asList("Partner", "Total income", "Total outcome"), data)
-            .getResult();
+        .getResult();
   }
 
   public String getPartnersIncomeTable() {
@@ -108,6 +109,7 @@ public class MovementStats {
   }
 
   private static class Summary {
+
     double income;
     double outcome;
 

@@ -3,6 +3,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Movement {
+
   private String type;
   private String account;
   private String currency;
@@ -35,29 +36,21 @@ public class Movement {
   }
 
   private String getPartnerFromDescription() {
-    String str = description.substring(16).trim();
-    String pattern;
-    Matcher matcher;
-    String partner;
-
-    pattern = "\\d{1,2}\\.\\d{1,2}\\.\\d{2}";
-    matcher = Pattern.compile(pattern).matcher(str);
+    String str;
+    String pattern = "\\d{1,2}\\.\\d{1,2}\\.\\d{2}";
+    Matcher matcher = Pattern.compile(pattern).matcher(description);
 
     if (matcher.find()) {
-      partner = str.substring(0, matcher.start()).trim();
-    } else {
-      System.err.println("Partner not found at: \"" + str + "\"");
-      return "unknown";
+      str = description.substring(0, matcher.start()).trim();
+      pattern = "\\b\\w+>\\w+$|\\w+\\s\\w+\\s\\w+$|\\w+\\s\\w+$|\\w+$";
+      matcher = Pattern.compile(pattern).matcher(str);
+      if (matcher.find()) {
+        return matcher.group(0);
+      }
     }
 
-    pattern = "/";
-    matcher = Pattern.compile(pattern).matcher(partner);
-
-    if (matcher.find()) {
-      return partner.substring(partner.lastIndexOf(" ") + 1).trim();
-    } else {
-      return partner.substring(partner.lastIndexOf("\\") + 1).trim();
-    }
+    System.err.println("Partner not found at: \"" + description + "\"");
+    return "unknown";
   }
 
   @Override

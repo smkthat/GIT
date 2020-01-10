@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 class TableGenerator {
+
   private String result;
 
   private int PADDING_SIZE = 2;
