@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="refactoring and create new tests">
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/.idea/google-java-format.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/.idea/libraries/json_20190722.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/.idea/libraries/jsoup_1_12_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/JSONParser_MSKMetro.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/lib/json-20190722.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/lib/jsoup-1.12.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/src/Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/src/HTMLParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/src/JSONParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/src/Line.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/src/Station.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/DocParser/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="refactoring and create new tests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
