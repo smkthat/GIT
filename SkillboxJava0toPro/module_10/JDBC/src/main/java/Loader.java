@@ -6,13 +6,25 @@
 public class Loader {
   public static void main(String[] args) {
     JDBC jdbc = new JDBC();
+
     jdbc.printTableFromQuery(
-        "SELECT course_name Course,"
+        "SELECT course_name Course, "
             + "COUNT(subscription_date) / TIMESTAMPDIFF(MONTH,MIN(subscription_date),MAX(subscription_date)) \"Avg subscription per month\" "
             + "FROM purchaselist "
             + "GROUP BY course_name;");
 
-    jdbc.printTableFromQuery("SELECT c.name course,c.type, t.name teacher FROM courses c JOIN teachers t ON c.teacher_id=t.id ORDER BY teacher");
+    jdbc.printTableFromQuery(
+        "SELECT c.name Course, "
+            + "COUNT(s.subscription_date) / TIMESTAMPDIFF(MONTH,MIN(s.subscription_date),MAX(s.subscription_date)) \"Avg subscription per month\" "
+            + "FROM courses c "
+            + "JOIN subscriptions s ON c.id=s.course_id "
+            + "GROUP BY c.name;");
+
+    jdbc.printTableFromQuery(
+        "SELECT c.name course,c.type, t.name teacher "
+            + "FROM courses c "
+            + "JOIN teachers t ON c.teacher_id=t.id "
+            + "ORDER BY teacher");
 
     jdbc.printTableFromQuery("SHOW TABLES;");
 
@@ -20,6 +32,6 @@ public class Loader {
 
     jdbc.printTableFromQuery("UPDATE");
 
-
+    System.out.println("Goodbye :)");
   }
 }
