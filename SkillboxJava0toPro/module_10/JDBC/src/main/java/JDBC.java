@@ -2,11 +2,15 @@ import java.sql.*;
 import java.util.*;
 import java.util.regex.*;
 
-class JDBC {
-  // Resources
-  private Statement statement;
+class JDBC implements AutoCloseable {
+
   private Connection connection;
-  private ResultSet resultSet;
+  @Override
+  public void close() throws Exception {
+    if (connection != null) {
+      connection.close();
+    }
+  }
 
   // Database credentials
   private static final String USER = "root";
@@ -33,6 +37,51 @@ class JDBC {
   // Console helpers
   private static final String CNSL = ">\t";
 
+  public JDBC() {
+    consoleMessage("Connecting to a \"" + DB_NAME + "\" database...");
+    try {
+      connection = DriverManager.getConnection(DB_URL_STRING);
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    consoleMessage("Connected database successfully...");
+  }
+
+  public void printTableFromQuery(String query) {
+    consoleMessage("Execute query...\n");
+    System.err.println(query);
+
+    try {
+      Thread.sleep(100);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+
+    List<String> headList = null;
+
+    if (query.toUpperCase().contains("SELECT *")) {
+      System.out.println("Please set the table columns to search in the query");
+    } else if (query.toUpperCase().contains("SHOW")) {
+      headList = Collections.singletonList("Tables_in_" + DB_NAME);
+    } else if (query.toUpperCase().contains("SELECT")) {
+      headList = getHeadFromSELECT(query);
+    } else if (query.toUpperCase().contains("DESCRIBE")) {
+      headList = Arrays.asList("Field", "Type", "Null", "Key", "Default", "Extra");
+    }
+
+    if (headList != null && !headList.isEmpty()) {
+      try (Statement statement = connection.createStatement();
+           ResultSet resultSet = statement.executeQuery(query)) {
+        List<List<String>> data = getDataFromResultSet(resultSet, headList);
+        System.out.println(new TableGenerator(headList, data).getResult());
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    } else {
+      System.out.println("Nothing to print :(");
+    }
+  }
+
   private void consoleMessage(String message) {
     System.out.println(CNSL + message);
   }
@@ -48,7 +97,7 @@ class JDBC {
       matcher = Pattern.compile(pattern).matcher(query);
 
       while (matcher.find()) {
-        query = matcher.group().replaceAll("[\",]", "").substring(2);
+        query = matcher.group().replaceAll("[\"',]", "").substring(2);
         list.add(query);
       }
 
@@ -57,7 +106,7 @@ class JDBC {
       matcher = Pattern.compile(pattern).matcher(query);
 
       while (matcher.find()) {
-        query = matcher.group().replaceAll("[\",]", "");
+        query = matcher.group().replaceAll("[\"',]", "");
         list.add(query);
       }
     }
@@ -71,91 +120,12 @@ class JDBC {
     while (set.next()) {
       List<String> row = new ArrayList<>();
       for (String s : head) {
-        row.add(set.getString(s));
+        String str = set.getString(s);
+        row.add(Objects.requireNonNullElse(str, ""));
       }
       data.add(row);
     }
 
     return data;
-  }
-
-  public void printTableFromQuery(String query) {
-    try {
-      if (gettingResources()) {
-        consoleMessage("Execute query...\n");
-        System.err.println(query);
-
-        try {
-          Thread.sleep(100);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-
-        List<String> headList = null;
-
-        if (query.contains("SELECT *")) {
-          System.out.println("Please set the table columns to search in the query");
-        } else if (query.contains("SHOW")) {
-          headList = Collections.singletonList("Tables_in_" + DB_NAME);
-        } else if (query.contains("SELECT")) {
-          headList = getHeadFromSELECT(query);
-        }
-
-        if (headList != null && !headList.isEmpty()) {
-          resultSet = statement.executeQuery(query);
-          System.out.println(new TableGenerator(headList, getDataFromResultSet(resultSet, headList)).getResult());
-        } else {
-          System.out.println("Nothing to print :(");
-        }
-      }
-
-      closeResources();
-    } catch (SQLException se) {
-      se.printStackTrace();
-    } // Handle errors for Class.forName
-    finally {
-      // finally block used to close resources
-      try {
-        if (statement != null) {
-          connection.close();
-        }
-      } catch (SQLException ignored) {
-      }
-      try {
-        if (connection != null) {
-          connection.close();
-        }
-      } catch (SQLException se) {
-        se.printStackTrace();
-      }
-    }
-  }
-
-  private void closeResources() throws SQLException {
-    System.out.println();
-    consoleMessage("Closing connection, statement and result set...");
-
-    resultSet.close();
-    statement.close();
-    connection.close();
-    consoleMessage("Closing successfully...\n\n");
-  }
-
-  private boolean gettingResources() {
-    connection = null;
-    statement = null;
-    try {
-      consoleMessage("Connecting to a \"" + DB_NAME + "\" database...");
-      connection = DriverManager.getConnection(DB_URL_STRING);
-      consoleMessage("Connected database successfully...");
-
-      consoleMessage("Getting statement in given database...");
-      statement = connection.createStatement();
-    } catch (Exception se) {
-      se.printStackTrace();
-      return false;
-    }
-
-    return true;
   }
 }

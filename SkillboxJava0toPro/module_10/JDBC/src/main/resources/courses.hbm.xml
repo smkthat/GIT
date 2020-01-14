@@ -1,0 +1,26 @@
+<?xml version='1.0'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="main.java">
+    <class name="Courses" table="courses">
+        <id name="id" type="java.lang.Integer" column="id" >
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String" column="name"/>
+        <property name="duration" type="java.lang.String" column="duration"/>
+
+        <property name="type">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">main.java.CourseType</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+        
+        <property name="description" type="java.lang.String" column="description"/>
+        <property name="teacherId" type="java.lang.Integer" column="teacher_id"/>
+        <property name="studentsCount" type="java.lang.Integer" column="students_count"/>
+        <property name="price" type="java.lang.Integer" column="price"/>
+        <property name="pricePerHour" type="java.lang.Float" column="price_per_hour"/>
+    </class>
+</hibernate-mapping>

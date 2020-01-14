@@ -5,32 +5,41 @@
  */
 public class Loader {
   public static void main(String[] args) {
-    JDBC jdbc = new JDBC();
+    try (JDBC jdbc = new JDBC()) {
 
-    jdbc.printTableFromQuery(
-        "SELECT course_name Course, "
-            + "COUNT(subscription_date) / TIMESTAMPDIFF(MONTH,MIN(subscription_date),MAX(subscription_date)) \"Avg subscription per month\" "
-            + "FROM purchaselist "
-            + "GROUP BY course_name;");
+      jdbc.printTableFromQuery(
+          "SELECT course_name Course, "
+              + "COUNT(subscription_date) / TIMESTAMPDIFF(MONTH,MIN(subscription_date),MAX(subscription_date)) \"Avg subscription per month\" "
+              + "FROM purchaselist "
+              + "GROUP BY course_name;");
 
-    jdbc.printTableFromQuery(
-        "SELECT c.name Course, "
-            + "COUNT(s.subscription_date) / TIMESTAMPDIFF(MONTH,MIN(s.subscription_date),MAX(s.subscription_date)) \"Avg subscription per month\" "
-            + "FROM courses c "
-            + "JOIN subscriptions s ON c.id=s.course_id "
-            + "GROUP BY c.name;");
+      jdbc.printTableFromQuery(
+          "SELECT c.name Course, "
+              + "COUNT(s.subscription_date) / TIMESTAMPDIFF(MONTH,MIN(s.subscription_date),MAX(s.subscription_date)) \"Avg subscription per month\" "
+              + "FROM courses c "
+              + "JOIN subscriptions s ON c.id=s.course_id "
+              + "GROUP BY c.name;");
 
-    jdbc.printTableFromQuery(
-        "SELECT c.name course,c.type, t.name teacher "
-            + "FROM courses c "
-            + "JOIN teachers t ON c.teacher_id=t.id "
-            + "ORDER BY teacher");
+      jdbc.printTableFromQuery(
+          "SELECT c.name course,c.type, t.name teacher "
+              + "FROM courses c "
+              + "JOIN teachers t ON c.teacher_id=t.id "
+              + "ORDER BY teacher");
 
-    jdbc.printTableFromQuery("SHOW TABLES;");
+      jdbc.printTableFromQuery("SHOW TABLES;");
 
-    jdbc.printTableFromQuery("SELECT * FROM teachers;");
+      jdbc.printTableFromQuery("SELECT * FROM teachers;");
 
-    jdbc.printTableFromQuery("UPDATE");
+      jdbc.printTableFromQuery("DESCRIBE Courses;");
+
+      jdbc.printTableFromQuery("UPDATE");
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
+    //Hiber hiber = new Hiber();
+
 
     System.out.println("Goodbye :)");
   }
