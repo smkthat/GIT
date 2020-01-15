@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5aef8692-1760-43a5-a2d7-4e76949e5e48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CourseType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hiber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/courses.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+    <list default="true" id="5aef8692-1760-43a5-a2d7-4e76949e5e48" name="Default Changelist" comment="JDBC class refactoring">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CourseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Enums/CourseType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hiber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hiber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/courses.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/courses.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/JDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JDBC.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Loader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/src/Main.java" afterDir="false" />
@@ -50,11 +50,15 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last.edited.regexp" value="SELECT course_name AS Course,COUNT(subscription_date) / TIMESTAMPDIFF( MONTH, MIN(subscription_date), MAX(subscription_date) ) &quot;Avg subscription per month&quot;, fff &quot;afwaf fgafa afsa aw FW  1313 aD 12E1 1 &quot;" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Enums" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\VlasenkoMV\GIT\SkillboxJava0toPro\module_10\JDBC\src\main\java" />
     </key>
@@ -107,63 +111,79 @@
       <option name="project" value="LOCAL" />
       <updated>1578625659522</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="JDBC class refactoring">
+      <created>1578960661179</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578960661179</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="add new query for example" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new query for example" />
+    <MESSAGE value="JDBC class refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="JDBC class refactoring" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1578871041365">
+    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1578966387290">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578871041365" />
+    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578966387290" />
+    <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1579070344841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579070344841" />
+    <state x="756" y="380" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1579070346007">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="756" y="380" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579070346007" />
     <state x="368" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578636723591">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="368" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578636723591" />
-    <state x="581" y="115" key="CommitChangelistDialog2" timestamp="1578625657005">
+    <state x="861" y="226" key="CommitChangelistDialog2" timestamp="1578985689571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="581" y="115" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578625657005" />
+    <state x="861" y="226" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578985689571" />
     <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1578625773311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578625773311" />
-    <state width="1877" height="191" key="GridCell.Tab.0.bottom" timestamp="1578960374393">
+    <state width="1877" height="531" key="GridCell.Tab.0.bottom" timestamp="1579071298939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="191" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578960374393" />
-    <state width="1877" height="191" key="GridCell.Tab.0.center" timestamp="1578960374392">
+    <state width="1877" height="531" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579071298939" />
+    <state width="1877" height="531" key="GridCell.Tab.0.center" timestamp="1579071298939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="191" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578960374392" />
-    <state width="1877" height="191" key="GridCell.Tab.0.left" timestamp="1578960374391">
+    <state width="1877" height="531" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579071298939" />
+    <state width="1877" height="531" key="GridCell.Tab.0.left" timestamp="1579071298938">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="191" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578960374391" />
-    <state width="1877" height="191" key="GridCell.Tab.0.right" timestamp="1578960374392">
+    <state width="1877" height="531" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579071298938" />
+    <state width="1877" height="531" key="GridCell.Tab.0.right" timestamp="1579071298939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="191" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578960374392" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1578639742658">
+    <state width="1877" height="531" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579071298939" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1578985695258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578639742658" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1578639742658">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578985695258" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1578985695258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578639742658" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1578639742658">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578985695258" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1578985695258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578639742658" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1578639742658">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578985695258" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1578985695258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578639742658" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578985695258" />
     <state x="672" y="237" width="1007" height="566" key="MultipleFileMergeDialog" timestamp="1578621893038">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -172,10 +192,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578626836332" />
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1578625667228">
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1578960676632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578625667228" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578960676632" />
+    <state x="690" y="276" key="extract.method.dialog" timestamp="1578961011712">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="276" key="extract.method.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578961011712" />
     <state x="917" y="236" width="737" height="589" key="find.popup" timestamp="1578626891398">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

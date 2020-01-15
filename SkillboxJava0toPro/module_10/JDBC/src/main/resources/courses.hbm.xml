@@ -2,21 +2,21 @@
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="main.java">
-    <class name="Courses" table="courses">
+<hibernate-mapping>
+    <class name="Course" table="courses">
         <id name="id" type="java.lang.Integer" column="id" >
             <generator class="assigned" />
         </id>
         <property name="name" type="java.lang.String" column="name"/>
-        <property name="duration" type="java.lang.String" column="duration"/>
+        <property name="duration" type="java.lang.Integer" column="duration"/>
 
-        <property name="type">
+        <property name="type" column="type">
             <type name="org.hibernate.type.EnumType">
-                <param name="enumClass">main.java.CourseType</param>
+                <param name="enumClass">Enums.CourseType</param>
                 <param name="useNamed">true</param>
             </type>
         </property>
-        
+
         <property name="description" type="java.lang.String" column="description"/>
         <property name="teacherId" type="java.lang.Integer" column="teacher_id"/>
         <property name="studentsCount" type="java.lang.Integer" column="students_count"/>

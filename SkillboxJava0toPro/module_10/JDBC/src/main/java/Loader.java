@@ -5,6 +5,21 @@
  */
 public class Loader {
   public static void main(String[] args) {
+    //runJDBC();
+    runHibernate();
+
+    System.out.println("Goodbye :)");
+  }
+
+  private static void runHibernate() {
+    try (Hiber hiber = new Hiber()) {
+      hiber.executeHQuery("from courses");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  private static void runJDBC() {
     try (JDBC jdbc = new JDBC()) {
 
       jdbc.printTableFromQuery(
@@ -37,10 +52,5 @@ public class Loader {
     } catch (Exception e) {
       e.printStackTrace();
     }
-
-    //Hiber hiber = new Hiber();
-
-
-    System.out.println("Goodbye :)");
   }
 }

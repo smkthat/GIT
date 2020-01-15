@@ -5,6 +5,7 @@ import java.util.regex.*;
 class JDBC implements AutoCloseable {
 
   private Connection connection;
+
   @Override
   public void close() throws Exception {
     if (connection != null) {
@@ -41,10 +42,11 @@ class JDBC implements AutoCloseable {
     consoleMessage("Connecting to a \"" + DB_NAME + "\" database...");
     try {
       connection = DriverManager.getConnection(DB_URL_STRING);
+      consoleMessage("Connected to database successfully...");
     } catch (SQLException e) {
-      e.printStackTrace();
+      System.err.println("Connected to database unsuccessfully!");
+      throw new RuntimeException(e);
     }
-    consoleMessage("Connected database successfully...");
   }
 
   public void printTableFromQuery(String query) {
@@ -71,7 +73,7 @@ class JDBC implements AutoCloseable {
 
     if (headList != null && !headList.isEmpty()) {
       try (Statement statement = connection.createStatement();
-           ResultSet resultSet = statement.executeQuery(query)) {
+          ResultSet resultSet = statement.executeQuery(query)) {
         List<List<String>> data = getDataFromResultSet(resultSet, headList);
         System.out.println(new TableGenerator(headList, data).getResult());
       } catch (SQLException e) {
