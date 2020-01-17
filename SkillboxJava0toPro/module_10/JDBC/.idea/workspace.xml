@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5aef8692-1760-43a5-a2d7-4e76949e5e48" name="Default Changelist" comment="JDBC class refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Enums/CourseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Enums/CourseType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hiber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hiber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Loader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/courses.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JDBC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Loader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +115,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579071402754</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Hibernate connected">
+      <created>1579242640293</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579242640294</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactoring">
+      <created>1579242816852</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1579242816852</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -132,7 +137,9 @@
     <MESSAGE value="add new query for example" />
     <MESSAGE value="JDBC class refactoring" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="Hibernate connected" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1579242518005">
@@ -151,46 +158,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="368" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578636723591" />
-    <state x="861" y="226" key="CommitChangelistDialog2" timestamp="1579242632297">
+    <state x="861" y="226" key="CommitChangelistDialog2" timestamp="1579242814671">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="861" y="226" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242632297" />
+    <state x="861" y="226" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242814671" />
     <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1578625773311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578625773311" />
-    <state width="1877" height="340" key="GridCell.Tab.0.bottom" timestamp="1579242468851">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1579242905916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242468851" />
-    <state width="1877" height="340" key="GridCell.Tab.0.center" timestamp="1579242468850">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905916" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1579242905916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="340" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242468850" />
-    <state width="1877" height="340" key="GridCell.Tab.0.left" timestamp="1579242468850">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905916" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1579242905915">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="340" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242468850" />
-    <state width="1877" height="340" key="GridCell.Tab.0.right" timestamp="1579242468850">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905915" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1579242905916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="340" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242468850" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1579240450524">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905916" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1579242905917">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579240450524" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1579240450524">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905917" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1579242905916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579240450524" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1579240450524">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905916" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1579242905916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579240450524" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1579240450524">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905916" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1579242905916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579240450524" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905916" />
     <state x="672" y="237" width="1007" height="566" key="MultipleFileMergeDialog" timestamp="1578621893038">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -199,10 +206,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578626836332" />
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1579242646736">
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1579242825088">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242646736" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242825088" />
     <state x="690" y="276" key="extract.method.dialog" timestamp="1578961011712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
