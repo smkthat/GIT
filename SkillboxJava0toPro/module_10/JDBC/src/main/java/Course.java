@@ -8,13 +8,13 @@ public class Course {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
-  private int id;
+  private Integer id;
 
   @Column(name = "name")
   private String name;
 
   @Column(name = "duration")
-  private int duration;
+  private Integer duration;
 
   @Enumerated(EnumType.STRING)
   @Column(columnDefinition = "enum")
@@ -24,27 +24,27 @@ public class Course {
   private String description;
 
   @Column(name = "teacher_id")
-  private int teacherId;
+  private Integer teacherId;
 
   @Column(name = "students_count")
-  private int studentsCount;
+  private Integer studentsCount;
 
   @Column(name = "price")
-  private int price;
+  private Integer price;
 
   @Column(name = "price_per_hour")
-  private float pricePerHour;
+  private Float pricePerHour;
 
   public Course(
-      int id,
+      Integer id,
       String name,
-      int duration,
+      Integer duration,
       CourseType type,
       String description,
-      int teacherId,
-      int studentsCount,
-      int price,
-      float pricePerHour) {
+      Integer teacherId,
+      Integer studentsCount,
+      Integer price,
+      Float pricePerHour) {
     this.id = id;
     this.name = name;
     this.duration = duration;
@@ -83,11 +83,11 @@ public class Course {
         + "]";
   }
 
-  public int getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
@@ -99,11 +99,11 @@ public class Course {
     this.name = name;
   }
 
-  public int getDuration() {
+  public Integer getDuration() {
     return duration;
   }
 
-  public void setDuration(int duration) {
+  public void setDuration(Integer duration) {
     this.duration = duration;
   }
 
@@ -123,35 +123,35 @@ public class Course {
     this.description = description;
   }
 
-  public int getTeacherId() {
+  public Integer getTeacherId() {
     return teacherId;
   }
 
-  public void setTeacherId(int teacherId) {
+  public void setTeacherId(Integer teacherId) {
     this.teacherId = teacherId;
   }
 
-  public int getStudentsCount() {
+  public Integer getStudentsCount() {
     return studentsCount;
   }
 
-  public void setStudentsCount(int studentsCount) {
+  public void setStudentsCount(Integer studentsCount) {
     this.studentsCount = studentsCount;
   }
 
-  public int getPrice() {
+  public Integer getPrice() {
     return price;
   }
 
-  public void setPrice(int price) {
+  public void setPrice(Integer price) {
     this.price = price;
   }
 
-  public float getPricePerHour() {
+  public Float getPricePerHour() {
     return pricePerHour;
   }
 
-  public void setPricePerHour(float pricePerHour) {
+  public void setPricePerHour(Float pricePerHour) {
     this.pricePerHour = pricePerHour;
   }
 }

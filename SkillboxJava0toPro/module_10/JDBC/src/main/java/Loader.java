@@ -2,10 +2,15 @@
  * Написать код, который выведет для каждого курса среднее количество покупок в месяц. Лучше только
  * средствами SQL (вариант “со звёздочкой”), но группировку по месяцам можно реализовать и с помощью
  * Java.
+ *
+ * <p>Подключите в вашем проекте Hibernate и напишите код, выводящий информацию о каком-нибудь
+ * курсе.
  */
 public class Loader {
+
   public static void main(String[] args) {
-    //runJDBC();
+
+    runJDBC();
     runHibernate();
 
     System.out.println("Goodbye :)");
@@ -13,7 +18,8 @@ public class Loader {
 
   private static void runHibernate() {
     try (Hiber hiber = new Hiber()) {
-      hiber.executeHQuery("from courses");
+      hiber.printDBTable("purchaselist");
+      hiber.printCourseTable();
     } catch (Exception e) {
       e.printStackTrace();
     }

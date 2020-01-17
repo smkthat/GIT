@@ -1,9 +1,9 @@
 package Enums;
 
 public enum CourseType {
-    DESIGN,
-    PROGRAMMING,
-    MARKETING,
-    MANAGEMENT,
-    BUSINESS
+  DESIGN,
+  PROGRAMMING,
+  MARKETING,
+  MANAGEMENT,
+  BUSINESS
 }

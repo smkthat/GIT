@@ -13,10 +13,8 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">false</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">validate</property>
 
-        <!--
-        <mapping class="main.java.Course"/>
-        -->
+        <mapping class="Course"/>
     </session-factory>
 </hibernate-configuration>

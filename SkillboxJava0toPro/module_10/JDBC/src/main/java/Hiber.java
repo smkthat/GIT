@@ -1,47 +1,116 @@
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.hql.internal.ast.QuerySyntaxException;
-import org.hibernate.query.Query;
-import org.hibernate.service.ServiceRegistry;
 
-import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Hiber implements AutoCloseable {
 
   private SessionFactory sessionFactory;
+
   @Override
   public void close() {
     sessionFactory.close();
   }
 
   Hiber() {
-    Configuration cfg =
-        new Configuration()
-            .addResource("hibernate.cfg.xml")
-            .addResource("courses.hbm.xml")
-            .configure();
-
-    ServiceRegistry registry =
-        new StandardServiceRegistryBuilder().applySettings(cfg.getProperties()).build();
-
-//     Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
-//     sessionFactory = metadata.getSessionFactoryBuilder().build();
-    sessionFactory = cfg.buildSessionFactory(registry);
+    sessionFactory =
+        new MetadataSources(
+                new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build())
+            .getMetadataBuilder()
+            .build()
+            .getSessionFactoryBuilder()
+            .build();
   }
 
-  public void executeHQuery(String query) {
+  public void printDBTable(String tableName) {
+    System.out.println(
+        new TableGenerator(getColumnsNameFromDBTable(tableName), getRowsFromDBTable(tableName))
+            .getResult());
+  }
+
+  private List<String> getColumnsNameFromDBTable(String tableName) {
+    String SQLQuery = "SHOW FIELDS FROM " + tableName + ";";
     try (Session session = sessionFactory.openSession()) {
-      List<Course> courses = session.createQuery(query, Course.class).list();
-      System.out.println(Arrays.toString(courses.toArray()));
-    } catch (QuerySyntaxException qse) {
-      qse.printStackTrace();
+      List<String> headList = new ArrayList<>();
+      for (Object[] column : (List<Object[]>) session.createSQLQuery(SQLQuery).list()) {
+        headList.add(column[0].toString());
+      }
+      return headList;
+    } catch (IllegalArgumentException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  private List<List<String>> getRowsFromDBTable(String tableName) {
+    String SQLQuery = "SELECT * FROM " + tableName + ";";
+    try (Session session = sessionFactory.openSession()) {
+      List<List<String>> dataList = new ArrayList<>();
+      for (Object[] row : (List<Object[]>) session.createSQLQuery(SQLQuery).list()) {
+        List<String> rowList = new ArrayList<>();
+        for (int i = 0; i < row.length; i++) {
+          if (row[i] == null) {
+            row[i] = "";
+          }
+          rowList.add(row[i].toString());
+        }
+        dataList.add(rowList);
+      }
+
+      return dataList;
+    } catch (IllegalArgumentException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public void printCourseTable() {
+    try (Session session = sessionFactory.openSession()) {
+      List<List<String>> tableData = new ArrayList<>();
+
+      for (Object c : session.createQuery("from Course").list()) {
+        tableData.add(getDataForTable((Course) c));
+      }
+
+      System.out.println(new TableGenerator(getHeadForTable(), tableData).getResult());
+    } catch (IllegalArgumentException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  private List<String> getDataForTable(Course c) {
+    return Arrays.asList(
+        nullReplacer(c.getId()),
+        nullReplacer(c.getName()),
+        nullReplacer(c.getDuration()),
+        nullReplacer(c.getType()),
+        nullReplacer(c.getDescription()),
+        nullReplacer(c.getTeacherId()),
+        nullReplacer(c.getStudentsCount()),
+        nullReplacer(c.getPrice()),
+        nullReplacer(c.getPricePerHour()));
+  }
+
+  private List<String> getHeadForTable() {
+    return Arrays.asList(
+        "id",
+        "name",
+        "duration",
+        "type",
+        "description",
+        "teacherId",
+        "studentsCount",
+        "price",
+        "pricePerHour");
+  }
+
+  private String nullReplacer(Object o) {
+    if (o == null) {
+      return "";
+    } else {
+      return o.toString();
     }
   }
 }

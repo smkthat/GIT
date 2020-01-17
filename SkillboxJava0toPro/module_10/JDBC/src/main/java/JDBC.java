@@ -77,7 +77,7 @@ class JDBC implements AutoCloseable {
         List<List<String>> data = getDataFromResultSet(resultSet, headList);
         System.out.println(new TableGenerator(headList, data).getResult());
       } catch (SQLException e) {
-        e.printStackTrace();
+        throw new RuntimeException(e);
       }
     } else {
       System.out.println("Nothing to print :(");
