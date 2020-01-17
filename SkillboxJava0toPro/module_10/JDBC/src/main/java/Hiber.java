@@ -33,10 +33,10 @@ public class Hiber implements AutoCloseable {
   }
 
   private List<String> getColumnsNameFromDBTable(String tableName) {
-    String SQLQuery = "SHOW FIELDS FROM " + tableName + ";";
+    String query = "SHOW FIELDS FROM " + tableName + ";";
     try (Session session = sessionFactory.openSession()) {
       List<String> headList = new ArrayList<>();
-      for (Object[] column : (List<Object[]>) session.createSQLQuery(SQLQuery).list()) {
+      for (Object[] column : (List<Object[]>) session.createSQLQuery(query).list()) {
         headList.add(column[0].toString());
       }
       return headList;
@@ -46,10 +46,10 @@ public class Hiber implements AutoCloseable {
   }
 
   private List<List<String>> getRowsFromDBTable(String tableName) {
-    String SQLQuery = "SELECT * FROM " + tableName + ";";
+    String query = "SELECT * FROM " + tableName + ";";
     try (Session session = sessionFactory.openSession()) {
       List<List<String>> dataList = new ArrayList<>();
-      for (Object[] row : (List<Object[]>) session.createSQLQuery(SQLQuery).list()) {
+      for (Object[] row : (List<Object[]>) session.createSQLQuery(query).list()) {
         List<String> rowList = new ArrayList<>();
         for (int i = 0; i < row.length; i++) {
           if (row[i] == null) {
