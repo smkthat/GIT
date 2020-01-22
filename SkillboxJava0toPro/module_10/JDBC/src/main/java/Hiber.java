@@ -3,6 +3,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -71,16 +72,73 @@ public class Hiber implements AutoCloseable {
       List<List<String>> tableData = new ArrayList<>();
 
       for (Object c : session.createQuery("from Course").list()) {
-        tableData.add(getDataForTable((Course) c));
+        tableData.add(getCourseDataForTable((Course) c));
       }
 
-      System.out.println(new TableGenerator(getHeadForTable(), tableData).getResult());
+      System.out.println(new TableGenerator(getCourseHeadForTable(), tableData).getResult());
     } catch (IllegalArgumentException e) {
       throw new RuntimeException(e);
     }
   }
 
-  private List<String> getDataForTable(Course c) {
+  public void printStudentsTable() {
+    try (Session session = sessionFactory.openSession()) {
+      List<List<String>> tableData = new ArrayList<>();
+
+      for (Object student : session.createQuery("from Student").list()) {
+        tableData.add(getStudentsDataForTable((Student) student));
+      }
+
+      System.out.println(new TableGenerator(getStudentHeadForTable(), tableData).getResult());
+    } catch (IllegalArgumentException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public void printTeachersTable() {
+    try (Session session = sessionFactory.openSession()) {
+      List<List<String>> tableData = new ArrayList<>();
+
+      for (Object teacher : session.createQuery("from Teacher").list()) {
+        tableData.add(getTeacherDataForTable((Teacher) teacher));
+      }
+
+      System.out.println(new TableGenerator(getTeacherHeadForTable(), tableData).getResult());
+    } catch (IllegalArgumentException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public void printSubscriptionsTable() {
+    try (Session session = sessionFactory.openSession()) {
+      List<List<String>> tableData = new ArrayList<>();
+
+      for (Object subscription : session.createQuery("from Subscription").list()) {
+        tableData.add(getSubscriptionDataForTable((Subscription) subscription));
+      }
+
+      System.out.println(new TableGenerator(getSubscriptionHeadForTable(), tableData).getResult());
+    } catch (IllegalArgumentException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  private List<String> getSubscriptionDataForTable(Subscription s) {
+    return Arrays.asList(
+            nullReplacer(s.getStudent().getId()),
+            nullReplacer(s.getCourse().getId()),
+            nullReplacer(new SimpleDateFormat("dd-M-yyyy hh:mm:ss").format(s.getSubscriptionDate())));
+  }
+
+  private List<String> getStudentsDataForTable(Student s) {
+    return Arrays.asList(
+        nullReplacer(s.getId()),
+        nullReplacer(s.getName()),
+        nullReplacer(s.getAge()),
+        nullReplacer(new SimpleDateFormat("dd-M-yyyy hh:mm:ss").format(s.getRegistrationDate())));
+  }
+
+  private List<String> getCourseDataForTable(Course c) {
     return Arrays.asList(
         nullReplacer(c.getId()),
         nullReplacer(c.getName()),
@@ -93,7 +151,15 @@ public class Hiber implements AutoCloseable {
         nullReplacer(c.getPricePerHour()));
   }
 
-  private List<String> getHeadForTable() {
+  private List<String> getTeacherDataForTable(Teacher t) {
+    return Arrays.asList(
+        nullReplacer(t.getId()),
+        nullReplacer(t.getName()),
+        nullReplacer(t.getSalary()),
+        nullReplacer(t.getAge()));
+  }
+
+  private List<String> getCourseHeadForTable() {
     return Arrays.asList(
         "id",
         "name",
@@ -104,6 +170,18 @@ public class Hiber implements AutoCloseable {
         "studentsCount",
         "price",
         "pricePerHour");
+  }
+
+  private List<String> getStudentHeadForTable() {
+    return Arrays.asList("id", "name", "age", "registration_date");
+  }
+
+  private List<String> getTeacherHeadForTable() {
+    return Arrays.asList("id", "name", "salary", "age");
+  }
+
+  private List<String> getSubscriptionHeadForTable() {
+    return Arrays.asList("student_id", "course_id", "subscription_date");
   }
 
   private String nullReplacer(Object o) {

@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5aef8692-1760-43a5-a2d7-4e76949e5e48" name="Default Changelist" comment="JDBC class refactoring">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Purchase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Subscription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Teacher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/JSONParser_MSKMetro/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hiber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hiber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Loader.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +50,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last.edited.regexp" value="SELECT course_name AS Course,COUNT(subscription_date) / TIMESTAMPDIFF( MONTH, MIN(subscription_date), MAX(subscription_date) ) &quot;Avg subscription per month&quot;, fff &quot;afwaf fgafa afsa aw FW  1313 aD 12E1 1 &quot;" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="D:/WORKPLACE/JAVA/Projects/Hibernate" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Enums" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\VlasenkoMV\GIT\SkillboxJava0toPro\module_10\JDBC\src\main\java" />
@@ -135,17 +146,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="add new query for example" />
-    <MESSAGE value="JDBC class refactoring" />
     <MESSAGE value="commit" />
     <MESSAGE value="Hibernate connected" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="JDBC class refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="JDBC class refactoring" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1579242518005">
+    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1579732093704">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242518005" />
+    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579732093704" />
     <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1579070344841">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -154,50 +165,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="756" y="380" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579070346007" />
-    <state x="368" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578636723591">
+    <state x="368" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579562779173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="368" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578636723591" />
-    <state x="861" y="226" key="CommitChangelistDialog2" timestamp="1579242814671">
+    <state x="368" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579562779173" />
+    <state x="861" y="226" key="CommitChangelistDialog2" timestamp="1579736384327">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="861" y="226" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242814671" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1578625773311">
+    <state x="861" y="226" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579736384327" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1579570991743">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578625773311" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1579242905916">
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579570991743" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1579736234931">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905916" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1579242905916">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579736234931" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1579736234930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905916" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1579242905915">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579736234930" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1579736234930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905915" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1579242905916">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579736234930" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1579736234930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905916" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1579242905917">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579736234930" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1579736234640">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905917" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1579242905916">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579736234640" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1579736234639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905916" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1579242905916">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579736234639" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1579736234639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905916" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1579242905916">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579736234639" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1579736234639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579242905916" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579736234639" />
     <state x="672" y="237" width="1007" height="566" key="MultipleFileMergeDialog" timestamp="1578621893038">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -218,5 +229,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="917" y="236" width="763" height="606" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579146138774" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Hiber.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

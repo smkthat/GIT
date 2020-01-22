@@ -1,6 +1,7 @@
 import Enums.CourseType;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "courses")
@@ -34,6 +35,10 @@ public class Course {
 
   @Column(name = "price_per_hour")
   private Float pricePerHour;
+
+  @OneToMany
+  @JoinColumn(name = "course_id")
+  private Set<Subscription> subscriptions;
 
   public Course(
       Integer id,
@@ -153,5 +158,13 @@ public class Course {
 
   public void setPricePerHour(Float pricePerHour) {
     this.pricePerHour = pricePerHour;
+  }
+
+  public Set<Subscription> getSubscriptions() {
+    return subscriptions;
+  }
+
+  public void setSubscriptions(Set<Subscription> subscriptions) {
+    this.subscriptions = subscriptions;
   }
 }
