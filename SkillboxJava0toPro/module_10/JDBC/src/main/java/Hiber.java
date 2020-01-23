@@ -1,3 +1,7 @@
+import entitys.Course;
+import entitys.Student;
+import entitys.Subscription;
+import entitys.Teacher;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -71,7 +75,7 @@ public class Hiber implements AutoCloseable {
     try (Session session = sessionFactory.openSession()) {
       List<List<String>> tableData = new ArrayList<>();
 
-      for (Object c : session.createQuery("from Course").list()) {
+      for (Object c : session.createQuery("from entitys.Course").list()) {
         tableData.add(getCourseDataForTable((Course) c));
       }
 
@@ -85,7 +89,7 @@ public class Hiber implements AutoCloseable {
     try (Session session = sessionFactory.openSession()) {
       List<List<String>> tableData = new ArrayList<>();
 
-      for (Object student : session.createQuery("from Student").list()) {
+      for (Object student : session.createQuery("from entitys.Student").list()) {
         tableData.add(getStudentsDataForTable((Student) student));
       }
 
@@ -99,7 +103,7 @@ public class Hiber implements AutoCloseable {
     try (Session session = sessionFactory.openSession()) {
       List<List<String>> tableData = new ArrayList<>();
 
-      for (Object teacher : session.createQuery("from Teacher").list()) {
+      for (Object teacher : session.createQuery("from entitys.Teacher").list()) {
         tableData.add(getTeacherDataForTable((Teacher) teacher));
       }
 
@@ -113,7 +117,7 @@ public class Hiber implements AutoCloseable {
     try (Session session = sessionFactory.openSession()) {
       List<List<String>> tableData = new ArrayList<>();
 
-      for (Object subscription : session.createQuery("from Subscription").list()) {
+      for (Object subscription : session.createQuery("from entitys.Subscription").list()) {
         tableData.add(getSubscriptionDataForTable((Subscription) subscription));
       }
 
@@ -125,9 +129,9 @@ public class Hiber implements AutoCloseable {
 
   private List<String> getSubscriptionDataForTable(Subscription s) {
     return Arrays.asList(
-            nullReplacer(s.getStudent().getId()),
-            nullReplacer(s.getCourse().getId()),
-            nullReplacer(new SimpleDateFormat("dd-M-yyyy hh:mm:ss").format(s.getSubscriptionDate())));
+        nullReplacer(s.getStudent().getName()),
+        nullReplacer(s.getCourse().getName()),
+        nullReplacer(new SimpleDateFormat("dd-MM-yyyy hh:mm:ss").format(s.getSubscriptionDate())));
   }
 
   private List<String> getStudentsDataForTable(Student s) {
@@ -135,7 +139,7 @@ public class Hiber implements AutoCloseable {
         nullReplacer(s.getId()),
         nullReplacer(s.getName()),
         nullReplacer(s.getAge()),
-        nullReplacer(new SimpleDateFormat("dd-M-yyyy hh:mm:ss").format(s.getRegistrationDate())));
+        nullReplacer(new SimpleDateFormat("dd-MM-yyyy hh:mm:ss").format(s.getRegistrationDate())));
   }
 
   private List<String> getCourseDataForTable(Course c) {
@@ -181,7 +185,7 @@ public class Hiber implements AutoCloseable {
   }
 
   private List<String> getSubscriptionHeadForTable() {
-    return Arrays.asList("student_id", "course_id", "subscription_date");
+    return Arrays.asList("student_name", "course_name", "subscription_date");
   }
 
   private String nullReplacer(Object o) {

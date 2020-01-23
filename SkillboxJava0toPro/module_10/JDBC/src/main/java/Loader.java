@@ -20,9 +20,9 @@ public class Loader {
     try (Hiber hiber = new Hiber()) {
       //hiber.printDBTable("purchaselist");
       //hiber.printCourseTable();
-      hiber.printStudentsTable();
+      //hiber.printStudentsTable();
 
-      //hiber.printSubscriptionsTable();
+      hiber.printSubscriptionsTable();
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -32,13 +32,13 @@ public class Loader {
     try (JDBC jdbc = new JDBC()) {
 
       jdbc.printTableFromQuery(
-          "SELECT course_name Course, "
+          "SELECT course_name entitys.Course, "
               + "COUNT(subscription_date) / TIMESTAMPDIFF(MONTH,MIN(subscription_date),MAX(subscription_date)) \"Avg subscription per month\" "
               + "FROM purchaselist "
               + "GROUP BY course_name;");
 
       jdbc.printTableFromQuery(
-          "SELECT c.name Course, "
+          "SELECT c.name entitys.Course, "
               + "COUNT(s.subscription_date) / TIMESTAMPDIFF(MONTH,MIN(s.subscription_date),MAX(s.subscription_date)) \"Avg subscription per month\" "
               + "FROM courses c "
               + "JOIN subscriptions s ON c.id=s.course_id "

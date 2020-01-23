@@ -1,4 +1,6 @@
-import Enums.CourseType;
+package entitys;
+
+import entitys.enums.CourseType;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -67,7 +69,7 @@ public class Course {
 
   @Override
   public String toString() {
-    return "Course [id="
+    return "entitys.Course [id="
         + id
         + ", name="
         + name
