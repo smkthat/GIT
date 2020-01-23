@@ -1,5 +1,6 @@
 package entities;
 
+import java.util.List;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -7,6 +8,7 @@ import java.util.Set;
 @Entity
 @Table(name = "students")
 public class Student {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
@@ -24,7 +26,7 @@ public class Student {
 
   @OneToMany
   @JoinColumn(name = "student_id")
-  private Set<Subscription> subscriptions;
+  private List<Subscription> subscriptions;
 
   public Student(Integer id, String name, Integer age, Date registrationDate) {
     this.id = id;
@@ -69,11 +71,11 @@ public class Student {
     this.registrationDate = registrationDate;
   }
 
-  public Set<Subscription> getSubscriptions() {
+  public List<Subscription> getSubscriptions() {
     return subscriptions;
   }
 
-  public void setSubscriptions(Set<Subscription> subscriptions) {
+  public void setSubscriptions(List<Subscription> subscriptions) {
     this.subscriptions = subscriptions;
   }
 }

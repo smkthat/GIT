@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5aef8692-1760-43a5-a2d7-4e76949e5e48" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hiber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hiber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Loader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entitys/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entitys/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entitys/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Subscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entitys/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entitys/enums/CourseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/enums/CourseType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Loader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Subscription.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +44,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last.edited.regexp" value="SELECT course_name AS Course,COUNT(subscription_date) / TIMESTAMPDIFF( MONTH, MIN(subscription_date), MAX(subscription_date) ) &quot;Avg subscription per month&quot;, fff &quot;afwaf fgafa afsa aw FW  1313 aD 12E1 1 &quot;" />
-    <property name="last_opened_file_path" value="D:/WORKPLACE/JAVA/Projects/Hibernate" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -90,6 +87,9 @@
         </serviceView>
       </list>
     </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -169,6 +169,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Annotations mapping added for Students, Teachers, Courses and Subscriptions" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579768937971">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1579768937971" />
     <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1579732093704">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -177,6 +181,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579760931509" />
+    <state x="412" y="147" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579768936489">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="412" y="147" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1579768936489" />
     <state x="756" y="380" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1579070346007">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -237,14 +245,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="775" y="455" key="ReplaceDuplicatesPrompt/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579761674871" />
-    <state x="461" y="163" key="SettingsEditor" timestamp="1578626836332">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="326" y="0" key="SettingsEditor" timestamp="1579774607413">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="326" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1579774607413" />
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578626836332" />
     <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1579761110255">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579761110255" />
+    <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1579768846498">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1579768846498" />
     <state x="690" y="276" width="540" height="468" key="extract.method.dialog" timestamp="1579761640879">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -8,9 +8,13 @@ import java.util.Date;
 @Table(name = "subscriptions")
 public class Subscription implements Serializable {
 
-  @EmbeddedId @ManyToOne private Student student;
+  @EmbeddedId
+  @ManyToOne
+  private Student student;
 
-  @EmbeddedId @ManyToOne private Course course;
+  @EmbeddedId
+  @ManyToOne
+  private Course course;
 
   @Column(name = "subscription_date", columnDefinition = "TIMESTAMP")
   @Temporal(TemporalType.TIMESTAMP)

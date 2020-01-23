@@ -2,12 +2,14 @@ package entities;
 
 import entities.enums.CourseType;
 
+import java.util.List;
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "courses")
 public class Course {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
@@ -40,7 +42,7 @@ public class Course {
 
   @OneToMany
   @JoinColumn(name = "course_id")
-  private Set<Subscription> subscriptions;
+  private List<Subscription> subscriptions;
 
   public Course(
       Integer id,
@@ -162,11 +164,11 @@ public class Course {
     this.pricePerHour = pricePerHour;
   }
 
-  public Set<Subscription> getSubscriptions() {
+  public List<Subscription> getSubscriptions() {
     return subscriptions;
   }
 
-  public void setSubscriptions(Set<Subscription> subscriptions) {
+  public void setSubscriptions(List<Subscription> subscriptions) {
     this.subscriptions = subscriptions;
   }
 }
