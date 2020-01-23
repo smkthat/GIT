@@ -1,6 +1,6 @@
-package entitys;
+package entities;
 
-import entitys.enums.CourseType;
+import entities.enums.CourseType;
 
 import javax.persistence.*;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package entitys.enums;
+package entities.enums;
 
 public enum CourseType {
   DESIGN,

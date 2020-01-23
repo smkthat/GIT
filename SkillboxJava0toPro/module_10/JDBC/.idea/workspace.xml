@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5aef8692-1760-43a5-a2d7-4e76949e5e48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entitys/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entitys/Subscription.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entitys/Teacher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entitys/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Enums/CourseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entitys/enums/CourseType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hiber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hiber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Loader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Purchase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Subscription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Teacher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entitys/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entitys/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entitys/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Subscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entitys/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entitys/enums/CourseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/enums/CourseType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Loader.class" afterDir="false" />
     </list>
@@ -59,6 +55,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="entitys" />
       <recent name="Enums" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -151,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579736418226</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Annotations mapping added for Students, Teachers, Courses and Subscriptions">
+      <created>1579761103638</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1579761103639</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -161,7 +165,8 @@
     <MESSAGE value="Hibernate connected" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="JDBC class refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="JDBC class refactoring" />
+    <MESSAGE value="Annotations mapping added for Students, Teachers, Courses and Subscriptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Annotations mapping added for Students, Teachers, Courses and Subscriptions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1579732093704">
@@ -184,30 +189,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="368" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579562779173" />
-    <state x="861" y="226" key="CommitChangelistDialog2" timestamp="1579736410267">
+    <state x="767" y="226" key="CommitChangelistDialog2" timestamp="1579761099763">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="861" y="226" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579736410267" />
+    <state x="767" y="226" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579761099763" />
     <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1579570991743">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579570991743" />
-    <state width="1877" height="434" key="GridCell.Tab.0.bottom" timestamp="1579760961641">
+    <state width="1877" height="434" key="GridCell.Tab.0.bottom" timestamp="1579761945097">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="434" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579760961641" />
-    <state width="1877" height="434" key="GridCell.Tab.0.center" timestamp="1579760961641">
+    <state width="1877" height="434" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579761945097" />
+    <state width="1877" height="434" key="GridCell.Tab.0.center" timestamp="1579761945097">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="434" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579760961641" />
-    <state width="1877" height="434" key="GridCell.Tab.0.left" timestamp="1579760961641">
+    <state width="1877" height="434" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579761945097" />
+    <state width="1877" height="434" key="GridCell.Tab.0.left" timestamp="1579761945096">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="434" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579760961641" />
-    <state width="1877" height="434" key="GridCell.Tab.0.right" timestamp="1579760961641">
+    <state width="1877" height="434" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579761945096" />
+    <state width="1877" height="434" key="GridCell.Tab.0.right" timestamp="1579761945097">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="434" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579760961641" />
+    <state width="1877" height="434" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579761945097" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1579760434466">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -228,18 +233,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="672" y="237" width="1007" height="566" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578621893038" />
+    <state x="775" y="455" key="ReplaceDuplicatesPrompt" timestamp="1579761674871">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="775" y="455" key="ReplaceDuplicatesPrompt/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579761674871" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1578626836332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578626836332" />
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1579736422671">
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1579761110255">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579736422671" />
-    <state x="690" y="276" key="extract.method.dialog" timestamp="1578961011712">
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579761110255" />
+    <state x="690" y="276" width="540" height="468" key="extract.method.dialog" timestamp="1579761640879">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="276" key="extract.method.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578961011712" />
+    <state x="690" y="276" width="540" height="468" key="extract.method.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579761640879" />
     <state x="917" y="236" width="763" height="606" key="find.popup" timestamp="1579146138774">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

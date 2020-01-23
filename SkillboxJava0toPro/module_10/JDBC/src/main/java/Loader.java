@@ -18,10 +18,11 @@ public class Loader {
 
   private static void runHibernate() {
     try (Hiber hiber = new Hiber()) {
-      //hiber.printDBTable("purchaselist");
-      //hiber.printCourseTable();
-      //hiber.printStudentsTable();
+      hiber.printDBTable("subscriptions");
 
+      hiber.printCourseTable();
+      hiber.printStudentsTable();
+      hiber.printTeachersTable();
       hiber.printSubscriptionsTable();
     } catch (Exception e) {
       e.printStackTrace();

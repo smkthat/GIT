@@ -1,7 +1,7 @@
-import entitys.Course;
-import entitys.Student;
-import entitys.Subscription;
-import entitys.Teacher;
+import entities.Course;
+import entities.Student;
+import entities.Subscription;
+import entities.Teacher;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -32,9 +32,9 @@ public class Hiber implements AutoCloseable {
   }
 
   public void printDBTable(String tableName) {
+    System.out.println(tableName.toUpperCase() + " TABLE");
     System.out.println(
-        new TableGenerator(getColumnsNameFromDBTable(tableName), getRowsFromDBTable(tableName))
-            .getResult());
+        getTableToString(getColumnsNameFromDBTable(tableName), getRowsFromDBTable(tableName)));
   }
 
   private List<String> getColumnsNameFromDBTable(String tableName) {
@@ -75,11 +75,12 @@ public class Hiber implements AutoCloseable {
     try (Session session = sessionFactory.openSession()) {
       List<List<String>> tableData = new ArrayList<>();
 
-      for (Object c : session.createQuery("from entitys.Course").list()) {
+      for (Object c : session.createQuery("from entities.Course").list()) {
         tableData.add(getCourseDataForTable((Course) c));
       }
 
-      System.out.println(new TableGenerator(getCourseHeadForTable(), tableData).getResult());
+      System.out.println("Course table".toUpperCase());
+      System.out.println(getTableToString(getCourseHeadForTable(), tableData));
     } catch (IllegalArgumentException e) {
       throw new RuntimeException(e);
     }
@@ -89,11 +90,12 @@ public class Hiber implements AutoCloseable {
     try (Session session = sessionFactory.openSession()) {
       List<List<String>> tableData = new ArrayList<>();
 
-      for (Object student : session.createQuery("from entitys.Student").list()) {
+      for (Object student : session.createQuery("from entities.Student").list()) {
         tableData.add(getStudentsDataForTable((Student) student));
       }
 
-      System.out.println(new TableGenerator(getStudentHeadForTable(), tableData).getResult());
+      System.out.println("Students table".toUpperCase());
+      System.out.println(getTableToString(getStudentHeadForTable(), tableData));
     } catch (IllegalArgumentException e) {
       throw new RuntimeException(e);
     }
@@ -103,11 +105,12 @@ public class Hiber implements AutoCloseable {
     try (Session session = sessionFactory.openSession()) {
       List<List<String>> tableData = new ArrayList<>();
 
-      for (Object teacher : session.createQuery("from entitys.Teacher").list()) {
+      for (Object teacher : session.createQuery("from entities.Teacher").list()) {
         tableData.add(getTeacherDataForTable((Teacher) teacher));
       }
 
-      System.out.println(new TableGenerator(getTeacherHeadForTable(), tableData).getResult());
+      System.out.println("Teachers table".toUpperCase());
+      System.out.println(getTableToString(getTeacherHeadForTable(), tableData));
     } catch (IllegalArgumentException e) {
       throw new RuntimeException(e);
     }
@@ -117,14 +120,19 @@ public class Hiber implements AutoCloseable {
     try (Session session = sessionFactory.openSession()) {
       List<List<String>> tableData = new ArrayList<>();
 
-      for (Object subscription : session.createQuery("from entitys.Subscription").list()) {
+      for (Object subscription : session.createQuery("from entities.Subscription").list()) {
         tableData.add(getSubscriptionDataForTable((Subscription) subscription));
       }
 
-      System.out.println(new TableGenerator(getSubscriptionHeadForTable(), tableData).getResult());
+      System.out.println("Subscriptions table".toUpperCase());
+      System.out.println(getTableToString(getSubscriptionHeadForTable(), tableData));
     } catch (IllegalArgumentException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  private String getTableToString(List<String> head, List<List<String>> data) {
+    return new TableGenerator(head, data).getResult();
   }
 
   private List<String> getSubscriptionDataForTable(Subscription s) {
