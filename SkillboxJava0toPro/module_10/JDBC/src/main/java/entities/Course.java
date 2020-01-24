@@ -2,7 +2,6 @@ package entities;
 
 import entities.enums.CourseType;
 
-import java.util.List;
 import javax.persistence.*;
 import java.util.Set;
 
@@ -42,7 +41,7 @@ public class Course {
 
   @OneToMany
   @JoinColumn(name = "course_id")
-  private List<Subscription> subscriptions;
+  private Set<Subscription> subscriptions;
 
   public Course(
       Integer id,
@@ -67,6 +66,19 @@ public class Course {
 
   public Course() {
     // used by Hibernate
+  }
+
+  @Override
+  public boolean equals(Object other) {
+    boolean result = false;
+    if (other instanceof Course) {
+      Course that = (Course) other;
+      result =
+          (this.getId().equals(that.getId())
+              && this.getName().equals(that.getName())
+              && this.getType() == that.getType());
+    }
+    return result;
   }
 
   @Override
@@ -164,11 +176,11 @@ public class Course {
     this.pricePerHour = pricePerHour;
   }
 
-  public List<Subscription> getSubscriptions() {
+  public Set<Subscription> getSubscriptions() {
     return subscriptions;
   }
 
-  public void setSubscriptions(List<Subscription> subscriptions) {
+  public void setSubscriptions(Set<Subscription> subscriptions) {
     this.subscriptions = subscriptions;
   }
 }

@@ -1,18 +1,17 @@
 package entities;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "subscriptions")
-public class Subscription implements Serializable {
-
+public class Subscription {
   @EmbeddedId
+  protected StudentCoursePK studentCoursePK;
+
   @ManyToOne
   private Student student;
 
-  @EmbeddedId
   @ManyToOne
   private Course course;
 
@@ -52,5 +51,13 @@ public class Subscription implements Serializable {
 
   public void setSubscriptionDate(Date subscriptionDate) {
     this.subscriptionDate = subscriptionDate;
+  }
+
+  public StudentCoursePK getStudentCoursePK() {
+    return studentCoursePK;
+  }
+
+  public void setStudentCoursePK(StudentCoursePK studentCoursePK) {
+    this.studentCoursePK = studentCoursePK;
   }
 }

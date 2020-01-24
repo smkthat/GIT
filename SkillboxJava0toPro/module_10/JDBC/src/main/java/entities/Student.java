@@ -1,6 +1,5 @@
 package entities;
 
-import java.util.List;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -26,7 +25,7 @@ public class Student {
 
   @OneToMany
   @JoinColumn(name = "student_id")
-  private List<Subscription> subscriptions;
+  private Set<Subscription> subscriptions;
 
   public Student(Integer id, String name, Integer age, Date registrationDate) {
     this.id = id;
@@ -37,6 +36,16 @@ public class Student {
 
   public Student() {
     // used by Hibernate
+  }
+
+  @Override
+  public boolean equals(Object other) {
+    boolean result = false;
+    if (other instanceof Student) {
+      Student that = (Student) other;
+      result = (this.getId().equals(that.getId()) && this.getName().equals(that.getName()));
+    }
+    return result;
   }
 
   public Integer getId() {
@@ -71,11 +80,11 @@ public class Student {
     this.registrationDate = registrationDate;
   }
 
-  public List<Subscription> getSubscriptions() {
+  public Set<Subscription> getSubscriptions() {
     return subscriptions;
   }
 
-  public void setSubscriptions(List<Subscription> subscriptions) {
+  public void setSubscriptions(Set<Subscription> subscriptions) {
     this.subscriptions = subscriptions;
   }
 }
