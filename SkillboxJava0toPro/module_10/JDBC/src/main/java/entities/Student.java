@@ -23,8 +23,7 @@ public class Student {
   @Temporal(TemporalType.TIMESTAMP)
   private Date registrationDate;
 
-  @OneToMany
-  @JoinColumn(name = "student_id")
+  @OneToMany(mappedBy = "student")
   private Set<Subscription> subscriptions;
 
   public Student(Integer id, String name, Integer age, Date registrationDate) {

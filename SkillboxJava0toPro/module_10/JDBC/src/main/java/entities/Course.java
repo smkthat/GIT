@@ -39,8 +39,7 @@ public class Course {
   @Column(name = "price_per_hour")
   private Float pricePerHour;
 
-  @OneToMany
-  @JoinColumn(name = "course_id")
+  @OneToMany(mappedBy = "course")
   private Set<Subscription> subscriptions;
 
   public Course(
