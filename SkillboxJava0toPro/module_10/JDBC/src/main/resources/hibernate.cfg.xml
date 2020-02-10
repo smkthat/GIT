@@ -13,11 +13,13 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">false</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
-        <property name="hbm2ddl.auto">validate</property>
+        <property name="hbm2ddl.auto">update</property>
 
         <mapping class="entities.Course"/>
         <mapping class="entities.Student"/>
         <mapping class="entities.Teacher"/>
         <mapping class="entities.Subscription"/>
+        <mapping class="entities.PurchaseList"/>
+        <mapping class="entities.LinkedPurchaseList"/>
     </session-factory>
 </hibernate-configuration>

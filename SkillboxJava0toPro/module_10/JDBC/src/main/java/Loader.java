@@ -10,7 +10,7 @@ public class Loader {
 
   public static void main(String[] args) {
 
-    //runJDBC();
+    // runJDBC();
     runHibernate();
 
     System.out.println("Goodbye :)");
@@ -18,12 +18,15 @@ public class Loader {
 
   private static void runHibernate() {
     try (Hiber hiber = new Hiber()) {
-      hiber.printDBTable("subscriptions");
+      hiber.fillLinkedPurchaseListTable();
+      hiber.printDBTable("linked_purchase_list");
 
-      hiber.printCourseTable();
-      hiber.printStudentsTable();
-      hiber.printTeachersTable();
-      hiber.printSubscriptionsTable();
+//      hiber.printDBTable("subscriptions");
+//      hiber.printCourseTable();
+//      hiber.printStudentsTable();
+//      hiber.printTeachersTable();
+//      hiber.printSubscriptionsTable();
+//      hiber.printPurchaseListTable();
     } catch (Exception e) {
       e.printStackTrace();
     }

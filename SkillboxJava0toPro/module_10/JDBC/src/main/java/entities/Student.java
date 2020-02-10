@@ -26,6 +26,9 @@ public class Student {
   @OneToMany(mappedBy = "student")
   private Set<Subscription> subscriptions;
 
+  @OneToMany(mappedBy = "student")
+  private Set<LinkedPurchaseList> linkedPurchaseLists;
+
   public Student(Integer id, String name, Integer age, Date registrationDate) {
     this.id = id;
     this.name = name;
@@ -45,6 +48,14 @@ public class Student {
       result = (this.getId().equals(that.getId()) && this.getName().equals(that.getName()));
     }
     return result;
+  }
+
+  public Set<LinkedPurchaseList> getLinkedPurchaseLists() {
+    return linkedPurchaseLists;
+  }
+
+  public void setLinkedPurchaseLists(Set<LinkedPurchaseList> linkedPurchaseLists) {
+    this.linkedPurchaseLists = linkedPurchaseLists;
   }
 
   public Integer getId() {

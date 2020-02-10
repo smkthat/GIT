@@ -42,6 +42,9 @@ public class Course {
   @OneToMany(mappedBy = "course")
   private Set<Subscription> subscriptions;
 
+  @OneToMany(mappedBy = "student")
+  private Set<LinkedPurchaseList> linkedPurchaseLists;
+
   public Course(
       Integer id,
       String name,
@@ -82,7 +85,7 @@ public class Course {
 
   @Override
   public String toString() {
-    return "entitys.Course [id="
+    return "entities.Course [id="
         + id
         + ", name="
         + name
@@ -101,6 +104,14 @@ public class Course {
         + ", pricePerHour="
         + pricePerHour
         + "]";
+  }
+
+  public Set<LinkedPurchaseList> getLinkedPurchaseLists() {
+    return linkedPurchaseLists;
+  }
+
+  public void setLinkedPurchaseLists(Set<LinkedPurchaseList> linkedPurchaseLists) {
+    this.linkedPurchaseLists = linkedPurchaseLists;
   }
 
   public Integer getId() {

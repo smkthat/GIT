@@ -1,11 +1,10 @@
-import entities.Course;
-import entities.Student;
-import entities.Subscription;
-import entities.Teacher;
+import entities.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -29,6 +28,41 @@ public class Hiber implements AutoCloseable {
             .build()
             .getSessionFactoryBuilder()
             .build();
+  }
+
+  public void fillLinkedPurchaseListTable() {
+    String query = "from entities.PurchaseList";
+    try (Session session = sessionFactory.openSession()) {
+      List<PurchaseList> purchaseLists =
+          (List<PurchaseList>) session.createQuery(query).getResultList();
+      for (PurchaseList p : purchaseLists) {
+
+        DetachedCriteria studentsCriteria =
+            DetachedCriteria.forClass(Student.class)
+                .add(Restrictions.eq("name", p.getStudentName()));
+        Student student =
+            (Student)
+                studentsCriteria.getExecutableCriteria(session).list().stream().findFirst().get();
+
+        DetachedCriteria courseCriteria =
+            DetachedCriteria.forClass(Course.class).add(Restrictions.eq("name", p.getCourseName()));
+        Course course =
+            (Course)
+                courseCriteria.getExecutableCriteria(session).list().stream().findFirst().get();
+
+        LinkedPurchaseList lpl =
+            new LinkedPurchaseList(
+                new LinkedPurchaseList.Id(student.getId(), course.getId()),
+                student,
+                course,
+                course.getPrice(),
+                p.getSubscriptionDate());
+
+        session.save(lpl);
+      }
+    } catch (IllegalArgumentException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   public void printDBTable(String tableName) {
@@ -81,6 +115,21 @@ public class Hiber implements AutoCloseable {
 
       System.out.println("Course table".toUpperCase());
       System.out.println(getTableToString(getCourseHeadForTable(), tableData));
+    } catch (IllegalArgumentException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public void printPurchaseListTable() {
+    try (Session session = sessionFactory.openSession()) {
+      List<List<String>> tableData = new ArrayList<>();
+
+      for (Object pl : session.createQuery("from entities.PurchaseList").list()) {
+        tableData.add(getPurchaseListDataForTable((PurchaseList) pl));
+      }
+
+      System.out.println("PurchaseList table".toUpperCase());
+      System.out.println(getTableToString(getPurchaseListHeadForTable(), tableData));
     } catch (IllegalArgumentException e) {
       throw new RuntimeException(e);
     }
@@ -161,6 +210,18 @@ public class Hiber implements AutoCloseable {
         nullReplacer(c.getStudentsCount()),
         nullReplacer(c.getPrice()),
         nullReplacer(c.getPricePerHour()));
+  }
+
+  private List<String> getPurchaseListDataForTable(PurchaseList pl) {
+    return Arrays.asList(
+        nullReplacer(pl.getStudentName()),
+        nullReplacer(pl.getCourseName()),
+        nullReplacer(pl.getPrice()),
+        nullReplacer(pl.getSubscriptionDate()));
+  }
+
+  private List<String> getPurchaseListHeadForTable() {
+    return Arrays.asList("student_name", "course_name", "price", "subscription_date");
   }
 
   private List<String> getTeacherDataForTable(Teacher t) {
