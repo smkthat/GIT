@@ -1,9 +1,5 @@
-import org.hibernate.Session;
-
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.sql.*;
 import java.util.*;
 import java.util.regex.*;
@@ -149,10 +145,10 @@ class JDBC implements AutoCloseable {
       String query;
       try {
         query =
-                Files.readString(scriptPath)
-                        .replaceAll("\r", "")
-                        .replaceAll("\n", "")
-                        .replaceAll("\\s+", " ");
+            Files.readString(scriptPath)
+                .replaceAll("\r", "")
+                .replaceAll("\n", "")
+                .replaceAll("\\s+", " ");
       } catch (IOException e) {
         throw new RuntimeException(e);
       }
@@ -171,7 +167,7 @@ class JDBC implements AutoCloseable {
 
   private Path getScriptPath(String scriptName) {
     String classPath =
-            this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
+        this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
     String resPath = classPath.substring(1, classPath.indexOf("/target")) + "/src/main/resources/";
 
     return Paths.get(resPath + scriptName);

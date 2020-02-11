@@ -17,7 +17,7 @@ public class Loader {
   }
 
   private static void runHibernate() {
-    createLinkedPurchaseTable();
+    createLinkedPurchaseTableByJDBC();
     try (Hiber hiber = new Hiber()) {
       hiber.fillLinkedPurchaseListTable();
       hiber.printLinkedPurchaseListTable();
@@ -33,7 +33,7 @@ public class Loader {
     }
   }
 
-  private static void createLinkedPurchaseTable() {
+  private static void createLinkedPurchaseTableByJDBC() {
     try (JDBC jdbc = new JDBC()) {
       jdbc.executeScript("linked_purchase_list_creation_script.sql");
     } catch (Exception e) {
