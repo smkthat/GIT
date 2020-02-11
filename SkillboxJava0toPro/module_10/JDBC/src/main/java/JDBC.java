@@ -1,3 +1,9 @@
+import org.hibernate.Session;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*;
 import java.util.*;
 import java.util.regex.*;
@@ -129,5 +135,45 @@ class JDBC implements AutoCloseable {
     }
 
     return data;
+  }
+
+  public void executeScript(String scriptName) {
+    consoleMessage("Execute script " + scriptName);
+
+    if (!scriptName.endsWith(".sql")) {
+      throw new RuntimeException("\"" + scriptName + "\" is not a .sql script!");
+    }
+
+    Path scriptPath = getScriptPath(scriptName);
+    if (Files.exists(scriptPath)) {
+      String query;
+      try {
+        query =
+                Files.readString(scriptPath)
+                        .replaceAll("\r", "")
+                        .replaceAll("\n", "")
+                        .replaceAll("\\s+", " ");
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+
+      try (Statement statement = connection.createStatement()) {
+        statement.executeUpdate(query);
+      } catch (SQLException e) {
+        throw new RuntimeException(e);
+      }
+    } else {
+      throw new RuntimeException("\"" + scriptName + "\" is not found at resources path!");
+    }
+
+    consoleMessage("Executing successfully complete...");
+  }
+
+  private Path getScriptPath(String scriptName) {
+    String classPath =
+            this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
+    String resPath = classPath.substring(1, classPath.indexOf("/target")) + "/src/main/resources/";
+
+    return Paths.get(resPath + scriptName);
   }
 }

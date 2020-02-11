@@ -10,23 +10,32 @@ public class Loader {
 
   public static void main(String[] args) {
 
-    // runJDBC();
+//    runJDBC();
     runHibernate();
 
     System.out.println("Goodbye :)");
   }
 
   private static void runHibernate() {
+    createLinkedPurchaseTable();
     try (Hiber hiber = new Hiber()) {
       hiber.fillLinkedPurchaseListTable();
       hiber.printLinkedPurchaseListTable();
 
-//      hiber.printDBTable("subscriptions");
 //      hiber.printCourseTable();
 //      hiber.printStudentsTable();
 //      hiber.printTeachersTable();
 //      hiber.printSubscriptionsTable();
 //      hiber.printPurchaseListTable();
+//      hiber.printDBTable("subscriptions");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  private static void createLinkedPurchaseTable() {
+    try (JDBC jdbc = new JDBC()) {
+      jdbc.executeScript("linked_purchase_list_creation_script.sql");
     } catch (Exception e) {
       e.printStackTrace();
     }

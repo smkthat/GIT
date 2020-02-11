@@ -87,10 +87,10 @@ public class LinkedPurchaseList {
   @Embeddable
   public static class Id implements Serializable {
 
-    @Column(name = "student_id", columnDefinition = "INT(11) UNSIGNED")
+    @Column(name = "student_id")//, columnDefinition = "INT(11) UNSIGNED")
     private Integer studentId;
 
-    @Column(name = "course_id", columnDefinition = "INT(11) UNSIGNED")
+    @Column(name = "course_id")//, columnDefinition = "INT(11) UNSIGNED")
     private Integer courseId;
 
     public Id() {
