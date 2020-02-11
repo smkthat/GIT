@@ -19,7 +19,7 @@ public class Loader {
   private static void runHibernate() {
     try (Hiber hiber = new Hiber()) {
       hiber.fillLinkedPurchaseListTable();
-      hiber.printDBTable("linked_purchase_list");
+      hiber.printLinkedPurchaseListTable();
 
 //      hiber.printDBTable("subscriptions");
 //      hiber.printCourseTable();

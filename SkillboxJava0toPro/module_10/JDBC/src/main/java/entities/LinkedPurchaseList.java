@@ -35,6 +35,10 @@ public class LinkedPurchaseList {
     return id;
   }
 
+  public LinkedPurchaseList() {
+    //used by Hibernate
+  }
+
   public LinkedPurchaseList(
       Id id, Student student, Course course, Integer price, Date subscriptionDate) {
     this.id = id;
@@ -83,10 +87,10 @@ public class LinkedPurchaseList {
   @Embeddable
   public static class Id implements Serializable {
 
-    @Column(name = "student_id")
+    @Column(name = "student_id", columnDefinition = "INT(11) UNSIGNED")
     private Integer studentId;
 
-    @Column(name = "course_id")
+    @Column(name = "course_id", columnDefinition = "INT(11) UNSIGNED")
     private Integer courseId;
 
     public Id() {
