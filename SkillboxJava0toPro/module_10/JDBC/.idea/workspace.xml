@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5aef8692-1760-43a5-a2d7-4e76949e5e48" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hiber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hiber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Loader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/LinkedPurchaseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/LinkedPurchaseList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,11 +46,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last.edited.regexp" value="SELECT course_name AS Course,COUNT(subscription_date) / TIMESTAMPDIFF( MONTH, MIN(subscription_date), MAX(subscription_date) ) &quot;Avg subscription per month&quot;, fff &quot;afwaf fgafa afsa aw FW  1313 aD 12E1 1 &quot;" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../module_9/FileManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -63,6 +61,7 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\VlasenkoMV\GIT\SkillboxJava0toPro\module_10\JDBC" />
       <recent name="C:\Users\VlasenkoMV\GIT\SkillboxJava0toPro\module_10\JDBC\src\main\java" />
     </key>
   </component>
@@ -187,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581390455241</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="refactoring LinkedPurchaseList.java&#10;added method to fill db table &quot;linked_purchase_list&quot;&#10;added method to get LinkedPurchaseList table&#10;added script to create linked_purchase_list table">
+      <created>1581392036947</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1581392036947</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -238,11 +244,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="368" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579562779173" />
-    <state x="2635" y="121" key="CommitChangelistDialog2" timestamp="1581390448977">
+    <state x="2635" y="121" key="CommitChangelistDialog2" timestamp="1581392034416">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="121" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581311065122" />
-    <state x="2635" y="121" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581390448977" />
+    <state x="2635" y="121" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581392034416" />
     <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1581310961332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -295,16 +301,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="775" y="455" key="ReplaceDuplicatesPrompt/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579761674871" />
-    <state x="326" y="0" key="SettingsEditor" timestamp="1579774607413">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="2378" y="0" key="SettingsEditor" timestamp="1581392592385">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="326" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1579774607413" />
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578626836332" />
-    <state x="2472" y="254" key="Vcs.Push.Dialog.v2" timestamp="1581390605692">
+    <state x="2378" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581392592385" />
+    <state x="2472" y="254" key="Vcs.Push.Dialog.v2" timestamp="1581392043899">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581311082586" />
-    <state x="2472" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581390605692" />
+    <state x="2472" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581392043899" />
     <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1579768846498">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
