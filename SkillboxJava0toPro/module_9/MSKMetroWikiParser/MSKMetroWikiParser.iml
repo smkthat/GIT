@@ -9,5 +9,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jsoup-1.12.1" level="project" />
     <orderEntry type="library" name="json-20190722" level="project" />
+    <orderEntry type="library" name="jackson-databind-2.10.3" level="project" />
+    <orderEntry type="library" name="jackson-core-2.10.3" level="project" />
+    <orderEntry type="library" name="jackson-annotations-2.10.3" level="project" />
+    <orderEntry type="library" name="lombok" level="project" />
   </component>
 </module>

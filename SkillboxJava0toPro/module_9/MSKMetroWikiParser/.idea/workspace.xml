@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="11642b35-0bfe-49c2-85c4-896dfa9a3ee7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_annotations_2_10_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_core_2_10_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_databind_2_10_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20190722.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_12_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lombok.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MSKMetroWikiParser.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jackson-annotations-2.10.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jackson-core-2.10.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jackson-databind-2.10.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jsoup-1.12.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/lombok.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metro.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/MSKMetroWikiParser/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/MSKMetroWikiParser/MetroParser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/MSKMetroWikiParser/metro/Connection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/MSKMetroWikiParser/metro/Line.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MetroParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/metro/Connection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/metro/Line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/JDBC.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/src/main/java/TableGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/src/main/java/entities/Teacher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/src/main/java/entities/enums/CourseType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/target/classes/TableGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FileManager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/libraries/json_20190722.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/libraries/jsoup_1_12_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/JSONParser_MSKMetro.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/ff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/lib/json-20190722.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/lib/jsoup-1.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/JSONParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/JSOUPParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/Parser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/TableGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/metro/Connection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/metro/Line.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/metro/Station.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\M\GIT\SkillboxJava0toPro\module_9\JSONParser_MSKMetro\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Vxopy2za3nGk3q8HNy5yZtbHgR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="pojo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\M\GIT\SkillboxJava0toPro\module_9\JSONParser_MSKMetro\lib" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="MSKMetroWikiParser" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="11642b35-0bfe-49c2-85c4-896dfa9a3ee7" name="Default Changelist" comment="" />
+      <created>1578204294080</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578204294080</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578283519572">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1578283519572" />
+    <state x="488" y="64" key="#com.intellij.ide.util.MemberChooser" timestamp="1584097400671">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="64" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1584097400671" />
+    <state x="413" y="144" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1584097140861">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="144" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1584097140861" />
+    <state x="412" y="147" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1578283508634">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="412" y="147" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1578283508634" />
+    <state x="479" y="248" width="407" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584097141911">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="479" y="248" width="407" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1584097141911" />
+    <state x="294" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584099744931">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="294" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1584099744931" />
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584094765970">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1584094765970" />
+    <state x="256" y="0" key="CommitChangelistDialog2" timestamp="1584100433391">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="256" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1584100433391" />
+    <state x="389" y="105" key="FileChooserDialogImpl" timestamp="1584094942165">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584094942165" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1584100139625">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584100139625" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1584100139624">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584100139624" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1584100139624">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584100139624" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1584100139625">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584100139625" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1584099799161">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584099799161" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1584099799161">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1584099799161" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1584099799161">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1584099799161" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1584099799161">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1584099799161" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1584099700631">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584099700631" />
+    <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1584086426025">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584086426025" />
+  </component>
+</project>
