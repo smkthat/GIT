@@ -2,75 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11642b35-0bfe-49c2-85c4-896dfa9a3ee7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_annotations_2_10_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_core_2_10_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_databind_2_10_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20190722.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_12_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lombok.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MSKMetroWikiParser.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jackson-annotations-2.10.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jackson-core-2.10.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jackson-databind-2.10.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jsoup-1.12.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lombok.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metro.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MSKMetroWikiParser/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MSKMetroWikiParser/MetroParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MSKMetroWikiParser/metro/Connection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MSKMetroWikiParser/metro/Line.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MetroParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/metro/Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/metro/Line.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/.idea/google-java-format.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/JDBC.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/src/main/java/TableGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/src/main/java/entities/Teacher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/src/main/java/entities/enums/CourseType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_10/JDBC/target/classes/TableGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FileManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/google-java-format.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/libraries/json_20190722.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/libraries/jsoup_1_12_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/JSONParser_MSKMetro.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/ff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/lib/json-20190722.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/lib/jsoup-1.12.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/map.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/JSONParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/JSOUPParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/Parser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/TableGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/metro/Connection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/metro/Line.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JSONParser_MSKMetro/src/metro/Station.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metro.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Connection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTMLParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JSOUPParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Line.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MetroParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MetroParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Parser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Station.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metro/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metro/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metro/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metro/Line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metro/Station.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,10 +101,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1578283519572" />
-    <state x="488" y="64" key="#com.intellij.ide.util.MemberChooser" timestamp="1584097400671">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="686" y="91" key="#com.intellij.ide.util.MemberChooser" timestamp="1584321517846">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="488" y="64" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1584097400671" />
+    <state x="686" y="91" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584321517846" />
     <state x="413" y="144" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1584097140861">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -175,10 +122,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="294" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1584099744931" />
-    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584094765970">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="580" y="157" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584321277371">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1584094765970" />
+    <state x="580" y="157" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584321277371" />
     <state x="256" y="0" key="CommitChangelistDialog2" timestamp="1584100433391">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -223,6 +171,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584099700631" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1584321733777">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584321733777" />
     <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1584086426025">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

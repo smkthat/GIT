@@ -1,64 +1,42 @@
 package metro;
 
-import java.util.HashSet;
-import java.util.Objects;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-public class Line implements Comparable<Line>{
+@Data
+@AllArgsConstructor
+public class Line {
   private String number;
   private String name;
-  private String color;
-  private HashSet<Station> stations;
+  private int stationsCount;
 
-  public Line(String number, String name) {
+  public Line(String number, String name, int stationsCount) {
     this.number = number;
     this.name = name;
-    stations = new HashSet<>();
+    this.stationsCount = stationsCount;
   }
 
   public String getNumber() {
     return number;
   }
 
+  public void setNumber(String number) {
+    this.number = number;
+  }
+
   public String getName() {
     return name;
   }
 
-  public String getColor() {
-    return color;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public HashSet<Station> getStations() {
-    return stations;
+  public int getStationsCount() {
+    return stationsCount;
   }
 
-  public void addStation(Station station) {
-    stations.add(station);
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (!(o instanceof Line)) return false;
-    Line line = (Line) o;
-    return number.equals(line.number) &&
-            name.equals(line.name);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(number, name);
-  }
-
-  @Override
-  public int compareTo(Line line) {
-    return this.name.compareTo(line.getName());
-  }
-
-  @Override
-  public String toString() {
-    return "Line{" +
-            "number='" + number + '\'' +
-            ", name='" + name + '\'' +
-            '}';
+  public void setStationsCount(int stationsCount) {
+    this.stationsCount = stationsCount;
   }
 }

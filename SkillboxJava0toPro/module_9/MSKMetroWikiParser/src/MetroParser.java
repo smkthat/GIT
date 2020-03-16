@@ -1,14 +1,8 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import metro.Connection;
-import metro.Line;
+import java.util.*;
+import metro.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -36,56 +30,59 @@ public class MetroParser {
     Set<String> lineNumbers = new LinkedHashSet<>();
     tablesRows.stream()
         .filter(tr -> !tr.select("td:nth-child(1) span:nth-child(1)").text().isEmpty())
-        .forEach(d -> {
-          String number = d.select("td:nth-child(1) span:nth-child(1)").text();
-          lineNumbers.add(number);
-        });
+        .forEach(
+            d -> {
+              String number = d.select("td:nth-child(1) span:nth-child(1)").text();
+              lineNumbers.add(number);
+            });
 
     System.out.println("\t* getting lines and stations");
     Set<Line> linesSet = new LinkedHashSet<>();
     Map<String, Set<String>> lineStations = new LinkedHashMap<>();
-    lineNumbers.forEach(line -> {
-      Set<String> stationsList = new LinkedHashSet<>();
-      tablesRows.parallelStream()
-          .filter(tr -> tr.select("td:nth-child(1) span:nth-child(1)").text().equals(line))
-          .forEach(d -> {
-            d.select("td:nth-child(2) small").remove();
-            String stationName = d.select("td:nth-child(2)").text();
-            if (!stationName.isEmpty()) {
-              stationsList.add(stationName);
-            }
-          });
+    lineNumbers.forEach(
+        line -> {
+          Set<String> stationsList = new LinkedHashSet<>();
+          tablesRows
+              .parallelStream()
+              .filter(tr -> tr.select("td:nth-child(1) span:nth-child(1)").text().equals(line))
+              .forEach(
+                  d -> {
+                    d.select("td:nth-child(2) small").remove();
+                    String stationName = d.select("td:nth-child(2)").text();
+                    if (!stationName.isEmpty()) {
+                      stationsList.add(stationName);
+                    }
+                  });
 
-      lineStations.put(line, stationsList);
+          lineStations.put(line, stationsList);
 
-      tablesRows.parallelStream().filter(d ->
-          d.select("td:nth-child(1) span:nth-child(1)").text().equals(line))
-          .findFirst()
-          .ifPresent(x -> {
-            String lineName = x.select("td:nth-child(1) span:nth-child(2)").attr("title");
-            linesSet.add(new Line(
-                line,
-                lineName,
-                stationsList.size()));
-          });
-    });
-
+          tablesRows
+              .parallelStream()
+              .filter(d -> d.select("td:nth-child(1) span:nth-child(1)").text().equals(line))
+              .findFirst()
+              .ifPresent(
+                  x -> {
+                    String lineName = x.select("td:nth-child(1) span:nth-child(2)").attr("title");
+                    linesSet.add(new Line(line, lineName, stationsList.size()));
+                  });
+        });
 
     System.out.println("\t* getting connections");
     List<List<Connection>> connections = new ArrayList<>();
-    tablesRows.parallelStream().filter(tr -> !tr.select("td:nth-child(4)").text().isEmpty())
-        .forEach(tr -> {
-          List<Connection> connList = new ArrayList<>();
-          List<Element> elements = new ArrayList<>(tr.select("td:nth-child(4) span"));
-          for (int i = 0; i < elements.size() - 1; i += 2) {
-            String fullConnStationName = elements.get(i + 1).attr("title");
-            connList.add(new Connection(
-                elements.get(i).text(),
-                getSimpleName(fullConnStationName))
-            );
-          }
-          connections.add(connList);
-        });
+    tablesRows
+        .parallelStream()
+        .filter(tr -> !tr.select("td:nth-child(4)").text().isEmpty())
+        .forEach(
+            tr -> {
+              List<Connection> connList = new ArrayList<>();
+              List<Element> elements = new ArrayList<>(tr.select("td:nth-child(4) span"));
+              for (int i = 0; i < elements.size() - 1; i += 2) {
+                String fullConnStationName = elements.get(i + 1).attr("title");
+                connList.add(
+                    new Connection(elements.get(i).text(), getSimpleName(fullConnStationName)));
+              }
+              connections.add(connList);
+            });
 
     System.out.println("\t* fill metro data");
     Map<String, Object> metro = new LinkedHashMap<>();
@@ -100,8 +97,9 @@ public class MetroParser {
   }
 
   private static String getSimpleName(String spanTitleAttribute) {
-    return spanTitleAttribute.isEmpty() ? " - " : spanTitleAttribute.substring(
-        spanTitleAttribute.indexOf("ю ") + 1);
+    return spanTitleAttribute.isEmpty()
+        ? " - "
+        : spanTitleAttribute.substring(spanTitleAttribute.indexOf("ю ") + 1);
   }
 
   private Elements getTablesRows(Document doc) {
