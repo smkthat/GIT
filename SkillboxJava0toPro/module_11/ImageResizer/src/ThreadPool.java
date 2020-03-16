@@ -18,27 +18,31 @@ public class ThreadPool {
 
   public void startResize(File[] files, int newWidth, String dstFolder) {
     System.out.println("\t* creating tasks:");
-    int partLength = files.length / SYS_LOGIC_PROCESSORS_COUNT;
-    int lastPartLength = files.length - (partLength * SYS_LOGIC_PROCESSORS_COUNT) + partLength;
+    int taskFileLength = files.length / SYS_LOGIC_PROCESSORS_COUNT;
+    int different = files.length - taskFileLength * SYS_LOGIC_PROCESSORS_COUNT;
 
     System.out.println("\t\timages founded: " + files.length);
     System.out.println("\t\tlogic processors available: " + SYS_LOGIC_PROCESSORS_COUNT);
-    System.out.println("\t\tparts of files calculated: " + SYS_LOGIC_PROCESSORS_COUNT);
-    System.out.println("\t\taverage number per part: " + partLength);
+    System.out.println("\t\ttasks of files calculated: " + SYS_LOGIC_PROCESSORS_COUNT);
+    System.out.println("\t\taverage number per task: " + taskFileLength + "\n");
 
+    int filesPerTaskCounted = 0;
     for (int i = 0; i < SYS_LOGIC_PROCESSORS_COUNT; i++) {
-      File[] filesPart;
-      if (i + 1 == SYS_LOGIC_PROCESSORS_COUNT) {
-        filesPart = new File[lastPartLength];
-        System.arraycopy(
-            files, (SYS_LOGIC_PROCESSORS_COUNT - 1) * partLength, filesPart, 0, filesPart.length);
+      File[] filesTask;
+      if (different != 0 && i < different) {
+        filesTask = new File[taskFileLength + 1];
       } else {
-        filesPart = new File[partLength];
-        System.arraycopy(files, i * partLength, filesPart, 0, filesPart.length);
+        filesTask = new File[taskFileLength];
       }
 
-      taskList.add(new ImageSizeChanger(dstFolder, filesPart, newWidth));
+      System.arraycopy(files, filesPerTaskCounted, filesTask, 0, filesTask.length);
+      filesPerTaskCounted += filesTask.length;
+      System.out.println("\t\t\t\t\t\t task " + (i + 1) + ": " + filesTask.length);
+      taskList.add(new ImageSizeChanger(dstFolder, filesTask, newWidth));
     }
+
+    System.out.println("\t\t\t\t\t\t ----------");
+    System.out.println("\t\t\t\t\t\t  total: " + filesPerTaskCounted);
 
     if (!startExecutingTasks()) {
       System.err.println("Troubles founded!");
