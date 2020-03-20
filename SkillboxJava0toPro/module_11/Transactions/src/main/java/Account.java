@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.Objects;
+
 public class Account {
   private long money;
   private String accNumber;
@@ -11,7 +13,7 @@ public class Account {
     blocked = false;
   }
 
-  public boolean decrease(long amount) {
+  public synchronized boolean decrease(long amount) {
     boolean isDecreased = getBalance() >= amount;
     if (isDecreased) {
       money -= amount;
@@ -19,7 +21,7 @@ public class Account {
     return isDecreased;
   }
 
-  public void increase(long amount) {
+  public synchronized void increase(long amount) {
     money += amount;
   }
 
@@ -41,5 +43,18 @@ public class Account {
 
   public void blockAccount() {
     blocked = true;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof Account)) return false;
+    Account account = (Account) o;
+    return accNumber.equals(account.accNumber);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(accNumber, money, blocked);
   }
 }

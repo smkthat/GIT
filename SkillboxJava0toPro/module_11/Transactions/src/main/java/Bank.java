@@ -11,8 +11,12 @@ public class Bank {
     accounts = new HashMap<>();
   }
 
-  public void setAccounts(HashMap<String,Account> accounts) {
+  public void setAccounts(HashMap<String, Account> accounts) {
     this.accounts = accounts;
+  }
+
+  public HashMap<String, Account> getAccounts() {
+    return accounts;
   }
 
   private void generateRandomAcc(int accountsCount, long minMoney, long maxMoney) {
@@ -31,7 +35,8 @@ public class Bank {
   public synchronized boolean isFraud(String fromAccountNum, String toAccountNum, long amount)
       throws InterruptedException {
     Thread.sleep(1000);
-    return random.nextBoolean();
+    //return random.nextBoolean();
+    return true;
   }
 
   /**
@@ -44,7 +49,7 @@ public class Bank {
     Account from = accounts.get(fromAccountNum);
     Account to = accounts.get(toAccountNum);
 
-    if (from.isBlocked() || to.isBlocked()) {
+    if (fromAccountNum.equals(toAccountNum) || from.isBlocked() || to.isBlocked()) {
       return;
     }
 
@@ -62,7 +67,7 @@ public class Bank {
             + to.getBalance()
             + "]");
 
-    if (from.hashCode() < to.hashCode()) {
+    if (true) { //(from.hashCode() < to.hashCode()) {
       synchronized (from) {
         synchronized (to) {
           doTransfer(from, to, amount);
@@ -87,7 +92,6 @@ public class Bank {
       if (isFraud(from.getAccNumber(), to.getAccNumber(), amount)) {
         from.blockAccount();
         to.blockAccount();
-        Thread.currentThread().interrupt();
       }
     }
   }
