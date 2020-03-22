@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Account {
   private long money;
   private String accNumber;
-  private boolean blocked;
+  private volatile boolean blocked;
 
   public Account(String accNumber, long money) {
     this.accNumber = accNumber;
@@ -13,7 +13,7 @@ public class Account {
     blocked = false;
   }
 
-  public synchronized boolean decrease(long amount) {
+  public boolean decrease(long amount) {
     boolean isDecreased = getBalance() >= amount;
     if (isDecreased) {
       money -= amount;
@@ -21,7 +21,7 @@ public class Account {
     return isDecreased;
   }
 
-  public synchronized void increase(long amount) {
+  public void increase(long amount) {
     money += amount;
   }
 

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.*;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.Function;
@@ -33,6 +32,22 @@ public class BankTest {
     lockedAcc.blockAccount();
     bank.addAccount(lockedAcc);
 
+    return bank;
+  }
+
+  private Bank createBankWithTenAccounts() {
+    Bank bank = new Bank();
+    HashMap<String, Account> accounts =
+            IntStream.rangeClosed(1, 10)
+                    .boxed()
+                    .map(String::valueOf)
+                    .collect(
+                            Collectors.toMap(
+                                    Function.identity(),
+                                    s -> new Account(s, 500_000L),
+                                    (e1, e2) -> e1,
+                                    HashMap::new));
+    bank.setAccounts(accounts);
     return bank;
   }
 
@@ -72,23 +87,7 @@ public class BankTest {
     assertArrayEquals(expected, actual);
   }
 
-  private Bank createBankWithTenAccounts() {
-    Bank bank = new Bank();
-    HashMap<String, Account> accounts =
-        IntStream.rangeClosed(1, 10)
-            .boxed()
-            .map(String::valueOf)
-            .collect(
-                Collectors.toMap(
-                    Function.identity(),
-                    s -> new Account(s, 500_000L),
-                    (e1, e2) -> e1,
-                    HashMap::new));
-    bank.setAccounts(accounts);
-    return bank;
-  }
-
-  @Test
+  @Test(timeout = 5_000) // ms
   public void multiThreadTransferCheck() {
     Bank bank = createBankWithTenAccounts();
     Object[] expected = Stream.generate(() -> 500_000L).limit(10).toArray();
@@ -99,7 +98,8 @@ public class BankTest {
     for (int i = 0; i < 1000; i++) {
       for (int j = 1; j <= 10; j++) {
         final int f = j;
-        transfersTasks.add(() -> {
+        transfersTasks.add(
+            () -> {
               try {
                 bank.transfer(Integer.toString(f), Integer.toString(11 - f), 1_000L);
               } catch (InterruptedException e) {
@@ -114,17 +114,18 @@ public class BankTest {
 
     int notExecutedTasks = 0;
     try {
-      notExecutedTasks = executor.invokeAll(transfersTasks).stream()
-                      .map(
-                              f -> {
-                                try {
-                                  return f.get();
-                                } catch (Exception e) {
-                                  throw new IllegalStateException(e);
-                                }
-                              })
-                      .mapToInt(Integer::intValue)
-                      .sum();
+      notExecutedTasks =
+          executor.invokeAll(transfersTasks).stream()
+              .map(
+                  f -> {
+                    try {
+                      return f.get();
+                    } catch (Exception e) {
+                      throw new IllegalStateException(e);
+                    }
+                  })
+              .mapToInt(Integer::intValue)
+              .sum();
     } catch (InterruptedException e) {
       e.printStackTrace();
     } finally {
@@ -148,38 +149,41 @@ public class BankTest {
 
   @Test
   public void happensBeforeBlock() {
-    // создаем банк с 10 аккаунтами
     Bank bank = createBankWithTenAccounts();
     Object[] expected = Stream.generate(() -> 500_000L).limit(10).toArray();
 
-    // готовим 11 потоков
     ExecutorService executor = Executors.newFixedThreadPool(11);
-    ReadWriteLock rw = new ReentrantReadWriteLock();
-    // блокируем writeLock, чтобы 10 потоков ждали первого.
-    Lock lock = rw.writeLock();
-    // создаем первый поток
-    executor.submit(() -> {
-      // он должен заблочить все акакаунты
-      bank.getAccounts().values().forEach(Account::blockAccount);
-      // далее он открывает лок и говорит 10 потокам - фас
-      lock.unlock();
-    });
+    ReadWriteLock lock = new ReentrantReadWriteLock();
 
-    // создаем 10 потоков
+    executor.submit(
+        () -> {
+          lock.writeLock().lock();
+          try {
+            bank.getAccounts().values().forEach(Account::blockAccount);
+            Thread.sleep(3000);
+          } catch (InterruptedException ignored) {
+            // ignored
+          } finally {
+            // System.out.println("You can now transfer");
+            lock.writeLock().unlock();
+          }
+        });
+
     for (int threads = 1; threads <= 10; threads++) {
-      executor.submit(() -> {
-        // в этой точке 10 потоков замируют в ожидании lock.unlock();
-        rw.readLock().lock();
-        // и пробуют совершить трансфер с любого на любой аккаунт с 1 рублем
-        try {
-          bank.transfer("1","10",1);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-      });
+      executor.submit(
+          () -> {
+            lock.readLock().lock();
+            try {
+              // System.out.println("start transfer");
+              bank.transfer("1", "10", 1);
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            } finally {
+              lock.readLock().unlock();
+            }
+          });
     }
 
-    // ждем пока всё уляжется
     try {
       if (!executor.awaitTermination(10, TimeUnit.SECONDS)) {
         executor.shutdownNow();
@@ -191,8 +195,7 @@ public class BankTest {
 
     Object[] actual = bank.getAccounts().values().stream().map(Account::getBalance).toArray();
 
-    // проверяем что балансы аккаунтов не поменялись.
-    assertArrayEquals(expected,actual);
+    assertArrayEquals(expected, actual);
   }
 
   @Test

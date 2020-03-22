@@ -35,8 +35,7 @@ public class Bank {
   public synchronized boolean isFraud(String fromAccountNum, String toAccountNum, long amount)
       throws InterruptedException {
     Thread.sleep(1000);
-    //return random.nextBoolean();
-    return true;
+    return random.nextBoolean();
   }
 
   /**
@@ -49,25 +48,15 @@ public class Bank {
     Account from = accounts.get(fromAccountNum);
     Account to = accounts.get(toAccountNum);
 
+    System.out.printf(
+        "\nTransfer %s : %s[%s] -> %s[%s]",
+        amount, from.getAccNumber(), from.getBalance(), to.getAccNumber(), to.getBalance());
+
     if (fromAccountNum.equals(toAccountNum) || from.isBlocked() || to.isBlocked()) {
       return;
     }
 
-    System.out.println(
-        "Transfer "
-            + amount
-            + " : "
-            + fromAccountNum
-            + "["
-            + from.getBalance()
-            + "]"
-            + " -> "
-            + toAccountNum
-            + "["
-            + to.getBalance()
-            + "]");
-
-    if (true) { //(from.hashCode() < to.hashCode()) {
+    if (from.hashCode() < to.hashCode()) {
       synchronized (from) {
         synchronized (to) {
           doTransfer(from, to, amount);
@@ -84,6 +73,7 @@ public class Bank {
 
   private void doTransfer(final Account from, final Account to, final long amount)
       throws InterruptedException {
+
     if (from.decrease(amount)) {
       to.increase(amount);
     }
@@ -98,11 +88,22 @@ public class Bank {
 
   /** TODO: реализовать метод. Возвращает остаток на счёте. */
   public long getBalance(String accountNum) {
-    return accounts.get(accountNum).getBalance();
+    Account account = accounts.get(accountNum);
+    synchronized (account) {
+      return account.getBalance();
+    }
   }
 
   public long getBankBalance() {
-    return accounts.values().stream().map(Account::getBalance).mapToLong(Long::longValue).sum();
+    return accounts.values().stream()
+        .map(
+            account -> {
+              synchronized (account) {
+                return account.getBalance();
+              }
+            })
+        .mapToLong(Long::longValue)
+        .sum();
   }
 
   public Account getAccount(String accountNum) {
