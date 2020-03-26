@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d71cd778-2a81-4f76-b368-5740cedb784f" name="Default" comment="fix happensBeforeBlock() test and other issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Transactions/main/java/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Transactions/main/java/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Transactions/main/java/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Transactions/main/java/Bank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Transactions/test/java/BankTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BankTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BankTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BankTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TransfersTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/metro.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/metro.json" afterDir="false" />
@@ -60,6 +63,7 @@
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/junit-jupiter-params-5.6.0.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -75,7 +79,7 @@
       <recent name="C:\Users\VlasenkoMV\GIT\SkillboxJava0toPro\module_11\Transactions\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BankTest">
+  <component name="RunManager" selected="JUnit.TransfersTest.happensBeforeBlock">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -129,7 +133,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BankTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TransfersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Transactions" />
       <extension name="coverage">
         <pattern>
@@ -138,14 +142,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.java" />
-      <option name="MAIN_CLASS_NAME" value="test.java.BankTest" />
+      <option name="MAIN_CLASS_NAME" value="test.java.TransfersTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BankTest.happensBeforeBlock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TransfersTest.happensBeforeBlock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Transactions" />
       <extension name="coverage">
         <pattern>
@@ -154,7 +158,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.java" />
-      <option name="MAIN_CLASS_NAME" value="test.java.BankTest" />
+      <option name="MAIN_CLASS_NAME" value="test.java.TransfersTest" />
       <option name="METHOD_NAME" value="happensBeforeBlock" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -162,7 +166,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BankTest.multiThreadTransferCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TransfersTest.multiThreadTransferCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Transactions" />
       <extension name="coverage">
         <pattern>
@@ -171,7 +175,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.java" />
-      <option name="MAIN_CLASS_NAME" value="test.java.BankTest" />
+      <option name="MAIN_CLASS_NAME" value="test.java.TransfersTest" />
       <option name="METHOD_NAME" value="multiThreadTransferCheck" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -179,7 +183,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BankTest.oneThreadTransfer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TransfersTest.oneThreadTransfer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Transactions" />
       <extension name="coverage">
         <pattern>
@@ -188,7 +192,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.java" />
-      <option name="MAIN_CLASS_NAME" value="test.java.BankTest" />
+      <option name="MAIN_CLASS_NAME" value="test.java.TransfersTest" />
       <option name="METHOD_NAME" value="oneThreadTransfer" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -196,7 +200,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BankTest.transferFromToBlockedAcc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TransfersTest.transferFromToBlockedAcc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Transactions" />
       <extension name="coverage">
         <pattern>
@@ -205,7 +209,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.java" />
-      <option name="MAIN_CLASS_NAME" value="test.java.BankTest" />
+      <option name="MAIN_CLASS_NAME" value="test.java.TransfersTest" />
       <option name="METHOD_NAME" value="transferFromToBlockedAcc" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -240,11 +244,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BankTest" />
-        <item itemvalue="JUnit.BankTest.happensBeforeBlock" />
-        <item itemvalue="JUnit.BankTest.multiThreadTransferCheck" />
-        <item itemvalue="JUnit.BankTest.transferFromToBlockedAcc" />
-        <item itemvalue="JUnit.BankTest.oneThreadTransfer" />
+        <item itemvalue="JUnit.TransfersTest.happensBeforeBlock" />
+        <item itemvalue="JUnit.TransfersTest" />
+        <item itemvalue="JUnit.TransfersTest.oneThreadTransfer" />
+        <item itemvalue="JUnit.TransfersTest.multiThreadTransferCheck" />
+        <item itemvalue="JUnit.TransfersTest.transferFromToBlockedAcc" />
       </list>
     </recent_temporary>
   </component>
@@ -292,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584686838252</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix happensBeforeBlock() test and other issues">
+      <created>1584920804491</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584920804491</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -316,19 +327,19 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2477" y="152" key="#All_in_Transactions/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584410509846" />
-    <state x="2334" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584410683504">
+    <state x="2334" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585101634305">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2334" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584410683504" />
+    <state x="2334" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585101634305" />
     <state x="2012" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584500262849">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2012" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584500262849" />
-    <state x="2685" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1584335132460">
+    <state x="2685" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1585094471322">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584327042376" />
-    <state x="2685" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584335132460" />
+    <state x="2685" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585094471322" />
     <state x="2582" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584336530545">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -337,58 +348,66 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2610" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584402572242" />
-    <state x="2747" y="142" key="CommitChangelistDialog2" timestamp="1584920483918">
+    <state x="2747" y="142" key="CommitChangelistDialog2" timestamp="1584920787884">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2747" y="142" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584920483918" />
+    <state x="2747" y="142" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584920787884" />
     <state x="2660" y="276" key="FileChooserDialogImpl" timestamp="1584408948827">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2660" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584408948827" />
-    <state width="1921" height="289" key="GridCell.Tab.0.bottom" timestamp="1584920697806">
+    <state width="1921" height="388" key="GridCell.Tab.0.bottom" timestamp="1585263082717">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584920697806" />
-    <state width="1921" height="289" key="GridCell.Tab.0.center" timestamp="1584920697806">
+    <state width="1921" height="388" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585263082717" />
+    <state width="1921" height="388" key="GridCell.Tab.0.center" timestamp="1585263082717">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="289" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584920697806" />
-    <state width="1921" height="289" key="GridCell.Tab.0.left" timestamp="1584920697805">
+    <state width="1921" height="388" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585263082717" />
+    <state width="1921" height="388" key="GridCell.Tab.0.left" timestamp="1585263082716">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="289" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584920697805" />
-    <state width="1921" height="289" key="GridCell.Tab.0.right" timestamp="1584920697806">
+    <state width="1921" height="388" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585263082716" />
+    <state width="1921" height="388" key="GridCell.Tab.0.right" timestamp="1585263082717">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="289" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584920697806" />
-    <state width="1921" height="423" key="GridCell.Tab.1.bottom" timestamp="1584919192250">
+    <state width="1921" height="388" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585263082717" />
+    <state width="1921" height="176" key="GridCell.Tab.1.bottom" timestamp="1585262331332">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="423" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584919192250" />
-    <state width="1921" height="423" key="GridCell.Tab.1.center" timestamp="1584919192249">
+    <state width="1921" height="176" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585262331332" />
+    <state width="1921" height="176" key="GridCell.Tab.1.center" timestamp="1585262331332">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="423" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584919192249" />
-    <state width="1921" height="423" key="GridCell.Tab.1.left" timestamp="1584919192249">
+    <state width="1921" height="176" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585262331332" />
+    <state width="1921" height="176" key="GridCell.Tab.1.left" timestamp="1585262331332">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="423" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584919192249" />
-    <state width="1921" height="423" key="GridCell.Tab.1.right" timestamp="1584919192250">
+    <state width="1921" height="176" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585262331332" />
+    <state width="1921" height="176" key="GridCell.Tab.1.right" timestamp="1585262331332">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="423" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584919192250" />
+    <state width="1921" height="176" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585262331332" />
+    <state x="2695" y="455" key="ReplaceDuplicatesPrompt" timestamp="1585093992316">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2695" y="455" key="ReplaceDuplicatesPrompt/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585093992316" />
     <state x="2360" y="95" key="SettingsEditor" timestamp="1584413581718">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2360" y="95" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584413581718" />
-    <state x="2472" y="254" key="Vcs.Push.Dialog.v2" timestamp="1584686867883">
+    <state x="2472" y="254" key="Vcs.Push.Dialog.v2" timestamp="1584920821448">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584686867883" />
+    <state x="2472" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584920821448" />
     <state x="2584" y="414" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584413519697">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2584" y="414" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584413519697" />
+    <state x="2610" y="276" width="540" height="496" key="extract.method.dialog" timestamp="1585093986851">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2610" y="276" width="540" height="496" key="extract.method.dialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585093986851" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Transactions$BankTest_multiThreadTransferCheck.ic" NAME="BankTest.multiThreadTransferCheck Coverage Results" MODIFIED="1584415451122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 
 import static org.junit.Assert.*;
 
-public class BankTest {
+public class TransfersTest {
 
   private Bank createBank() {
     Bank bank = new Bank();
@@ -38,15 +38,15 @@ public class BankTest {
   private Bank createBankWithTenAccounts() {
     Bank bank = new Bank();
     HashMap<String, Account> accounts =
-            IntStream.rangeClosed(1, 10)
-                    .boxed()
-                    .map(String::valueOf)
-                    .collect(
-                            Collectors.toMap(
-                                    Function.identity(),
-                                    s -> new Account(s, 500_000L),
-                                    (e1, e2) -> e1,
-                                    HashMap::new));
+        IntStream.rangeClosed(1, 10)
+            .boxed()
+            .map(String::valueOf)
+            .collect(
+                Collectors.toMap(
+                    Function.identity(),
+                    s -> new Account(s, 500_000L),
+                    (e1, e2) -> e1,
+                    HashMap::new));
     bank.setAccounts(accounts);
     return bank;
   }
@@ -155,31 +155,36 @@ public class BankTest {
     ExecutorService executor = Executors.newFixedThreadPool(11);
     ReadWriteLock lock = new ReentrantReadWriteLock();
 
+    System.out.println("write lock");
     executor.submit(
         () -> {
           lock.writeLock().lock();
           try {
-            bank.getAccounts().values().forEach(Account::blockAccount);
+            System.out.println("blocking accounts");
             Thread.sleep(3000);
-          } catch (InterruptedException ignored) {
-            // ignored
+            bank.getAccounts().values().forEach(Account::blockAccount);
+            System.out.println("all accounts blocked");
+          } catch (InterruptedException e) {
+            e.printStackTrace();
           } finally {
-            // System.out.println("You can now transfer");
+            System.out.println("write unlock");
             lock.writeLock().unlock();
           }
         });
 
     for (int threads = 1; threads <= 10; threads++) {
+      //System.out.println("create transfers threads");
       executor.submit(
           () -> {
-            lock.readLock().lock();
+             lock.readLock().lock();
+             //System.out.println("write lock");
             try {
-              // System.out.println("start transfer");
               bank.transfer("1", "10", 1);
             } catch (InterruptedException e) {
               e.printStackTrace();
             } finally {
-              lock.readLock().unlock();
+               //System.out.println("read unlock");
+               lock.readLock().unlock();
             }
           });
     }

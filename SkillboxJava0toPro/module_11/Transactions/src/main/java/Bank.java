@@ -52,11 +52,11 @@ public class Bank {
         "\nTransfer %s : %s[%s] -> %s[%s]",
         amount, from.getAccNumber(), from.getBalance(), to.getAccNumber(), to.getBalance());
 
-    if (fromAccountNum.equals(toAccountNum) || from.isBlocked() || to.isBlocked()) {
+    if (isNotCorrectTransfer(from, to)) {
       return;
     }
 
-    if (from.hashCode() < to.hashCode()) {
+    if (from.getId().equals(to.getId())) {
       synchronized (from) {
         synchronized (to) {
           doTransfer(from, to, amount);
@@ -69,6 +69,10 @@ public class Bank {
         }
       }
     }
+  }
+
+  private boolean isNotCorrectTransfer(Account from, Account to) {
+    return from.equals(to) || from.isBlocked() || to.isBlocked();
   }
 
   private void doTransfer(final Account from, final Account to, final long amount)

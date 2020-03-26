@@ -1,13 +1,15 @@
 package main.java;
 
-import java.util.Objects;
+import java.util.UUID;
 
 public class Account {
+  private String id;
   private long money;
   private String accNumber;
-  private volatile boolean blocked;
+  private boolean blocked;
 
   public Account(String accNumber, long money) {
+    id = UUID.randomUUID().toString();
     this.accNumber = accNumber;
     this.money = money;
     blocked = false;
@@ -45,16 +47,19 @@ public class Account {
     blocked = true;
   }
 
-  @Override
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (!(o instanceof Account)) return false;
     Account account = (Account) o;
-    return accNumber.equals(account.accNumber);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(accNumber, money, blocked);
+    return accNumber.equals(account.accNumber) && id.equals(account.id);
   }
 }
