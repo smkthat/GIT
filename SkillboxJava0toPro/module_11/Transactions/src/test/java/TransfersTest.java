@@ -87,7 +87,7 @@ public class TransfersTest {
     assertArrayEquals(expected, actual);
   }
 
-  @Test(timeout = 5_000) // ms
+  @Test(timeout = 20_000) // ms
   public void multiThreadTransferCheck() {
     Bank bank = createBankWithTenAccounts();
     Object[] expected = Stream.generate(() -> 500_000L).limit(10).toArray();
@@ -95,7 +95,7 @@ public class TransfersTest {
     ExecutorService executor = Executors.newFixedThreadPool(100);
     List<Callable<Integer>> transfersTasks = new ArrayList<>();
 
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 10000; i++) {
       for (int j = 1; j <= 10; j++) {
         final int f = j;
         transfersTasks.add(

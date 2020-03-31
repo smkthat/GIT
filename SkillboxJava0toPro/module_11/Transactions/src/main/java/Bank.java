@@ -56,7 +56,7 @@ public class Bank {
       return;
     }
 
-    if (from.getId().equals(to.getId())) {
+    if (from.getId().compareTo(to.getId()) > 0) {
       synchronized (from) {
         synchronized (to) {
           doTransfer(from, to, amount);
