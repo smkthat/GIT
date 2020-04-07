@@ -34,8 +34,7 @@ public class Bank {
 
   public synchronized boolean isFraud(String fromAccountNum, String toAccountNum, long amount)
       throws InterruptedException {
-    Thread.sleep(1000);
-    return random.nextBoolean();
+    return true;
   }
 
   /**
@@ -55,6 +54,8 @@ public class Bank {
     if (isNotCorrectTransfer(from, to)) {
       return;
     }
+
+    BankTest.delayAfterBlockCheck();
 
     if (from.getId().compareTo(to.getId()) > 0) {
       synchronized (from) {
