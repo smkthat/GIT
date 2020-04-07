@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class Bank {
+
   private HashMap<String, Account> accounts;
   private final Random random = new Random();
 
@@ -34,13 +35,14 @@ public class Bank {
 
   public synchronized boolean isFraud(String fromAccountNum, String toAccountNum, long amount)
       throws InterruptedException {
-    return true;
+    return random.nextBoolean();
   }
 
   /**
    * TODO: реализовать метод. Метод переводит деньги между счетами. Если сумма транзакции > 50000,
    * то после совершения транзакции, она отправляется на проверку Службе Безопасности – вызывается
-   * метод isFraud. Если возвращается true, то делается блокировка счетов (как – на ваше усмотрение)
+   * метод isFraud. Если возвращается true, то делается блокировка счетов (как – на ваше
+   * усмотрение)
    */
   public void transfer(String fromAccountNum, String toAccountNum, long amount)
       throws InterruptedException {
@@ -51,22 +53,20 @@ public class Bank {
         "\nTransfer %s : %s[%s] -> %s[%s]",
         amount, from.getAccNumber(), from.getBalance(), to.getAccNumber(), to.getBalance());
 
-    if (isNotCorrectTransfer(from, to)) {
-      return;
-    }
-
-    BankTest.delayAfterBlockCheck();
-
     if (from.getId().compareTo(to.getId()) > 0) {
       synchronized (from) {
         synchronized (to) {
-          doTransfer(from, to, amount);
+          if (!isNotCorrectTransfer(from, to)) {
+            doTransfer(from, to, amount);
+          }
         }
       }
     } else {
       synchronized (to) {
         synchronized (from) {
-          doTransfer(from, to, amount);
+          if (!isNotCorrectTransfer(from, to)) {
+            doTransfer(from, to, amount);
+          }
         }
       }
     }
@@ -91,7 +91,9 @@ public class Bank {
     }
   }
 
-  /** TODO: реализовать метод. Возвращает остаток на счёте. */
+  /**
+   * TODO: реализовать метод. Возвращает остаток на счёте.
+   */
   public long getBalance(String accountNum) {
     Account account = accounts.get(accountNum);
     synchronized (account) {

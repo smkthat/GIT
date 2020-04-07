@@ -2,7 +2,143 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11642b35-0bfe-49c2-85c4-896dfa9a3ee7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/ConsoleCustomerList.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/src/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/src/CustomerStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/SPBMetro.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/logs/app-allLogs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/logs/app-errors.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/logs/app-searchesInfo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/logs/app-stationsNotFound.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/RouteCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/StationIndex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/core/Line.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/core/Station.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/resources/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/resources/map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/test/java/RouteCalculatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/test/java/StationIndexTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/RouteCalculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/StationIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/core/Line.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/core/Station.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/errors.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/spb-metro-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/spb-metro-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/surefire-reports/RouteCalculatorTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/surefire-reports/TEST-RouteCalculatorTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/test-classes/META-INF/SPBMetro.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/test-classes/RouteCalculatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/test-classes/StationIndexTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/.idea/libraries/jsoup_1_12_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/DocParser.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/lib/jsoup-1.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/out/production/DocParser/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DocParser/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileBrowserV2/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileBrowserV2/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileBrowserV2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileBrowserV2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileBrowserV2/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileBrowserV2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileBrowserV2/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileBrowserV2/FileBrowser.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileBrowserV2/out/production/FileBrowser/FileBrowser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileBrowserV2/src/FileBrowser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/FileManager.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/out/production/FileManager/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/out/production/FileManager/Commander.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/out/production/FileManager/FileManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/out/production/FileManager/FileOperator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/out/production/FileManager/META-INF/FileManager.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/src/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/src/Commander.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/src/FileCopier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/src/FileManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/src/FileOperator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/src/FileSizeCounter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileManager/src/Helper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jackson_annotations_2_10_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jackson_core_2_10_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jackson_databind_2_10_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jsoup_1_12_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lombok.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSKMetroWikiParser.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jackson-annotations-2.10.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jackson-core-2.10.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jackson-databind-2.10.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jsoup-1.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lombok.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MSKMetroWikiParser/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MSKMetroWikiParser/metro/Line.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/TableParser.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/resources/movementList.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/src/CSVHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/src/Movement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/src/MovementStats.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/src/TableGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TableParser/src/TableParser.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +157,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1Vxopy2za3nGk3q8HNy5yZtbHgR" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -33,7 +169,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../module_11/ImageResizer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../module_11/Transactions" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -129,10 +265,10 @@
     </state>
     <state x="256" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1584100433391" />
     <state x="360" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584321784097" />
-    <state x="547" y="150" key="FileChooserDialogImpl" timestamp="1584321896609">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="389" y="105" key="FileChooserDialogImpl" timestamp="1585623965880">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584094942165" />
+    <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585623965880" />
     <state x="547" y="150" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584321896609" />
     <state width="1921" height="289" key="GridCell.Tab.0.bottom" timestamp="1584321898512">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -178,10 +314,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584321801232" />
-    <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1584086426025">
+    <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1585623957087">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584086426025" />
+    <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585623957087" />
     <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584321837109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -2,10 +2,146 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d71cd778-2a81-4f76-b368-5740cedb784f" name="Default" comment="fix happensBeforeBlock() test and other issues">
-      <change afterPath="$PROJECT_DIR$/src/main/java/BankTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Transactions/main/java/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Transactions/main/java/Bank.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/ConsoleCustomerList.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/src/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/src/CustomerStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/SPBMetro.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/logs/app-allLogs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/logs/app-errors.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/logs/app-searchesInfo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/logs/app-stationsNotFound.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/RouteCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/StationIndex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/core/Line.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/core/Station.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/resources/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/resources/map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/test/java/RouteCalculatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/test/java/StationIndexTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/RouteCalculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/StationIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/core/Line.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/core/Station.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/errors.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/spb-metro-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/spb-metro-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/surefire-reports/RouteCalculatorTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/surefire-reports/TEST-RouteCalculatorTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/test-classes/META-INF/SPBMetro.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/test-classes/RouteCalculatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/test-classes/StationIndexTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/libraries/jsoup_1_12_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/DocParser.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/lib/jsoup-1.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/out/production/DocParser/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/FileBrowser.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/out/production/FileBrowser/FileBrowser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/src/FileBrowser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/FileManager.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/out/production/FileManager/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/out/production/FileManager/Commander.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/out/production/FileManager/FileManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/out/production/FileManager/FileOperator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/out/production/FileManager/META-INF/FileManager.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/Commander.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/FileCopier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/FileManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/FileOperator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/FileSizeCounter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/Helper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/libraries/jackson_annotations_2_10_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/libraries/jackson_core_2_10_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/libraries/jackson_databind_2_10_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/libraries/jsoup_1_12_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/libraries/lombok.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/MSKMetroWikiParser.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/lib/jackson-annotations-2.10.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/lib/jackson-core-2.10.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/lib/jackson-databind-2.10.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/lib/jsoup-1.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/lib/lombok.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/out/production/MSKMetroWikiParser/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/out/production/MSKMetroWikiParser/metro/Line.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/TableParser.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/resources/movementList.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/src/CSVHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/src/Movement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/src/MovementStats.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/src/TableGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/src/TableParser.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +214,7 @@
       <recent name="C:\Users\VlasenkoMV\GIT\SkillboxJava0toPro\module_11\Transactions\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BankTest.test_that_only_one_transaction_will_pass">
+  <component name="RunManager" selected="JUnit.TransfersTest">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -122,15 +258,6 @@
     </configuration>
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file enabled="true" id="idea.log" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -240,13 +367,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TransfersTest" />
+        <item itemvalue="JUnit.BankTest" />
         <item itemvalue="JUnit.BankTest.test_that_only_one_transaction_will_pass" />
         <item itemvalue="JUnit.BankTest.testParallelism" />
         <item itemvalue="JUnit.BankTest.testWillRespectBlock" />
-        <item itemvalue="JUnit.BankTest" />
-        <item itemvalue="JUnit.TransfersTest" />
       </list>
     </recent_temporary>
   </component>
@@ -356,28 +492,28 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2660" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584408948827" />
-    <state width="1398" height="116" key="GridCell.Tab.0.bottom" timestamp="1585662063069">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1323" height="309" key="GridCell.Tab.0.bottom" timestamp="1586240925323">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585625730328" />
+    <state width="1323" height="309" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586240925323" />
     <state width="1921" height="388" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585263082717" />
     <state width="1398" height="116" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1585662063069" />
-    <state width="1398" height="116" key="GridCell.Tab.0.center" timestamp="1585662063068">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1323" height="309" key="GridCell.Tab.0.center" timestamp="1586240925322">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585625730327" />
+    <state width="1323" height="309" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586240925322" />
     <state width="1921" height="388" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585263082717" />
     <state width="1398" height="116" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1585662063068" />
-    <state width="1398" height="116" key="GridCell.Tab.0.left" timestamp="1585662063068">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1323" height="309" key="GridCell.Tab.0.left" timestamp="1586240925322">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585625730327" />
+    <state width="1323" height="309" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586240925322" />
     <state width="1921" height="388" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585263082716" />
     <state width="1398" height="116" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1585662063068" />
-    <state width="1398" height="116" key="GridCell.Tab.0.right" timestamp="1585662063068">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1323" height="309" key="GridCell.Tab.0.right" timestamp="1586240925322">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585625730327" />
+    <state width="1323" height="309" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586240925322" />
     <state width="1921" height="388" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585263082717" />
     <state width="1398" height="116" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1585662063068" />
     <state width="1398" height="280" key="GridCell.Tab.1.bottom" timestamp="1585660840365">
@@ -416,6 +552,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2584" y="414" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584413519697" />
+    <state x="341" y="13" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586240691984">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="341" y="13" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1586240691984" />
     <state x="518" y="256" width="524" height="432" key="extract.method.dialog" timestamp="1585660636879">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -427,10 +567,10 @@
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1585661708147" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Transactions$BankTest_multiThreadTransferCheck.ic" NAME="BankTest.multiThreadTransferCheck Coverage Results" MODIFIED="1584415451122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Transactions$BankTest.ic" NAME="BankTest Coverage Results" MODIFIED="1584919966782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.java.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Transactions$BankTest.ic" NAME="BankTest Coverage Results" MODIFIED="1584919966782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Transactions$BankTest_multiThreadTransferCheck.ic" NAME="BankTest.multiThreadTransferCheck Coverage Results" MODIFIED="1584415451122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.java.*</FILTER>
     </SUITE>
   </component>
