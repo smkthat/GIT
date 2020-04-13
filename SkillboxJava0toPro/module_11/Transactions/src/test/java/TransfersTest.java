@@ -176,15 +176,15 @@ public class TransfersTest {
       //System.out.println("create transfers threads");
       executor.submit(
           () -> {
-             lock.readLock().lock();
-             //System.out.println("write lock");
+            lock.readLock().lock();
+            //System.out.println("write lock");
             try {
               bank.transfer("1", "10", 1);
             } catch (InterruptedException e) {
               e.printStackTrace();
             } finally {
-               //System.out.println("read unlock");
-               lock.readLock().unlock();
+              //System.out.println("read unlock");
+              lock.readLock().unlock();
             }
           });
     }

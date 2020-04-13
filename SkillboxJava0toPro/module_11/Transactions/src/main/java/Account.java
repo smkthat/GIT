@@ -39,20 +39,12 @@ public class Account {
     return blocked;
   }
 
-  public void unblockAccount() {
-    blocked = false;
-  }
-
   public void blockAccount() {
     blocked = true;
   }
 
-    public UUID getId() {
+  public UUID getId() {
         return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     @Override

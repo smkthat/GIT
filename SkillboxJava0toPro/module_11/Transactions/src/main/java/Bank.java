@@ -20,21 +20,11 @@ public class Bank {
     return accounts;
   }
 
-  private void generateRandomAcc(int accountsCount, long minMoney, long maxMoney) {
-    for (int i = 0; i < accountsCount; i++) {
-      String accNumber = Integer.toString(i + 1);
-      accounts.put(
-          accNumber,
-          new Account(accNumber, random.nextInt((int) (maxMoney - minMoney) + 1) + minMoney));
-    }
-  }
-
   public void addAccount(Account account) {
     accounts.put(account.getAccNumber(), account);
   }
 
-  public synchronized boolean isFraud(String fromAccountNum, String toAccountNum, long amount)
-      throws InterruptedException {
+  public synchronized boolean isFraud(String fromAccountNum, String toAccountNum, long amount) {
     return random.nextBoolean();
   }
 
@@ -76,9 +66,7 @@ public class Bank {
     return from.equals(to) || from.isBlocked() || to.isBlocked();
   }
 
-  private void doTransfer(final Account from, final Account to, final long amount)
-      throws InterruptedException {
-
+  private void doTransfer(final Account from, final Account to, final long amount) {
     if (from.decrease(amount)) {
       to.increase(amount);
     }
