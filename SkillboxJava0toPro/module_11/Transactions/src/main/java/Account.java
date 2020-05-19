@@ -3,13 +3,13 @@ package main.java;
 import java.util.UUID;
 
 public class Account {
-  private UUID id;
+  private String id;
   private long money;
   private String accNumber;
   private boolean blocked;
 
   public Account(String accNumber, long money) {
-    id = UUID.randomUUID();
+    id = UUID.randomUUID().toString();
     this.accNumber = accNumber;
     this.money = money;
     blocked = false;
@@ -39,12 +39,20 @@ public class Account {
     return blocked;
   }
 
+  public void unblockAccount() {
+    blocked = false;
+  }
+
   public void blockAccount() {
     blocked = true;
   }
 
-  public UUID getId() {
+    public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override

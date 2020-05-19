@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class Bank {
-
   private HashMap<String, Account> accounts;
   private final Random random = new Random();
 
@@ -20,19 +19,29 @@ public class Bank {
     return accounts;
   }
 
+  private void generateRandomAcc(int accountsCount, long minMoney, long maxMoney) {
+    for (int i = 0; i < accountsCount; i++) {
+      String accNumber = Integer.toString(i + 1);
+      accounts.put(
+          accNumber,
+          new Account(accNumber, random.nextInt((int) (maxMoney - minMoney) + 1) + minMoney));
+    }
+  }
+
   public void addAccount(Account account) {
     accounts.put(account.getAccNumber(), account);
   }
 
-  public synchronized boolean isFraud(String fromAccountNum, String toAccountNum, long amount) {
+  public synchronized boolean isFraud(String fromAccountNum, String toAccountNum, long amount)
+      throws InterruptedException {
+    Thread.sleep(1000);
     return random.nextBoolean();
   }
 
   /**
    * TODO: реализовать метод. Метод переводит деньги между счетами. Если сумма транзакции > 50000,
    * то после совершения транзакции, она отправляется на проверку Службе Безопасности – вызывается
-   * метод isFraud. Если возвращается true, то делается блокировка счетов (как – на ваше
-   * усмотрение)
+   * метод isFraud. Если возвращается true, то делается блокировка счетов (как – на ваше усмотрение)
    */
   public void transfer(String fromAccountNum, String toAccountNum, long amount)
       throws InterruptedException {
@@ -43,20 +52,20 @@ public class Bank {
         "\nTransfer %s : %s[%s] -> %s[%s]",
         amount, from.getAccNumber(), from.getBalance(), to.getAccNumber(), to.getBalance());
 
-    if (from.getId().compareTo(to.getId()) > 0) {
+    if (isNotCorrectTransfer(from, to)) {
+      return;
+    }
+
+    if (from.getId().equals(to.getId())) {
       synchronized (from) {
         synchronized (to) {
-          if (!isNotCorrectTransfer(from, to)) {
-            doTransfer(from, to, amount);
-          }
+          doTransfer(from, to, amount);
         }
       }
     } else {
       synchronized (to) {
         synchronized (from) {
-          if (!isNotCorrectTransfer(from, to)) {
-            doTransfer(from, to, amount);
-          }
+          doTransfer(from, to, amount);
         }
       }
     }
@@ -66,7 +75,9 @@ public class Bank {
     return from.equals(to) || from.isBlocked() || to.isBlocked();
   }
 
-  private void doTransfer(final Account from, final Account to, final long amount) {
+  private void doTransfer(final Account from, final Account to, final long amount)
+      throws InterruptedException {
+
     if (from.decrease(amount)) {
       to.increase(amount);
     }
@@ -79,9 +90,7 @@ public class Bank {
     }
   }
 
-  /**
-   * TODO: реализовать метод. Возвращает остаток на счёте.
-   */
+  /** TODO: реализовать метод. Возвращает остаток на счёте. */
   public long getBalance(String accountNum) {
     Account account = accounts.get(accountNum);
     synchronized (account) {

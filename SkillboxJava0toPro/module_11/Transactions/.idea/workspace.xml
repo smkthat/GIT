@@ -3,153 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="d71cd778-2a81-4f76-b368-5740cedb784f" name="Default" comment="fix happensBeforeBlock() test and other issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Transactions/main/java/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Transactions/main/java/Bank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/ConsoleCustomerList.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/src/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/src/CustomerStorage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/ConsoleCustomerList/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/google-java-format.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/SPBMetro.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/logs/app-allLogs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/logs/app-errors.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/logs/app-searchesInfo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/logs/app-stationsNotFound.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/RouteCalculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/StationIndex.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/core/Line.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/java/core/Station.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/resources/log4j2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/main/resources/map.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/test/java/RouteCalculatorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/src/test/java/StationIndexTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/RouteCalculator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/StationIndex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/core/Line.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/core/Station.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/log4j2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/classes/map.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/errors.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/spb-metro-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/spb-metro-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/surefire-reports/RouteCalculatorTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/surefire-reports/TEST-RouteCalculatorTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/test-classes/META-INF/SPBMetro.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/test-classes/RouteCalculatorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/target/test-classes/StationIndexTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/google-java-format.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/libraries/jsoup_1_12_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/DocParser.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/lib/jsoup-1.12.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/out/production/DocParser/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/DocParser/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/google-java-format.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/FileBrowser.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/out/production/FileBrowser/FileBrowser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileBrowserV2/src/FileBrowser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/google-java-format.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/FileManager.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/out/production/FileManager/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/out/production/FileManager/Commander.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/out/production/FileManager/FileManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/out/production/FileManager/FileOperator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/out/production/FileManager/META-INF/FileManager.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/Commander.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/FileCopier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/FileManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/FileOperator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/FileSizeCounter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/FileManager/src/Helper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/google-java-format.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/libraries/jackson_annotations_2_10_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/libraries/jackson_core_2_10_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/libraries/jackson_databind_2_10_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/libraries/jsoup_1_12_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/libraries/lombok.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_8/SPBMetro/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/MSKMetroWikiParser.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/lib/jackson-annotations-2.10.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/lib/jackson-core-2.10.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/lib/jackson-databind-2.10.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/lib/jsoup-1.12.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/lib/lombok.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/out/production/MSKMetroWikiParser/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/out/production/MSKMetroWikiParser/metro/Line.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/google-java-format.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/TableParser.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/resources/movementList.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/src/CSVHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/src/Movement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/src/MovementStats.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/src/TableGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_9/TableParser/src/TableParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/metro.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/metro.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/out/production/MSKMetroWikiParser/MetroParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/out/production/MSKMetroWikiParser/MetroParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/src/MetroParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_9/MSKMetroWikiParser/src/MetroParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="277" />
@@ -177,9 +40,6 @@
       </set>
     </option>
   </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
-  </component>
   <component name="ProjectId" id="1ZBr7AP0R6Ux97v7NruLyh5blzB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -196,10 +56,9 @@
     <property name="Repository.Attach.Annotations" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/junit-jupiter-params-5.6.0.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -214,7 +73,7 @@
       <recent name="C:\Users\VlasenkoMV\GIT\SkillboxJava0toPro\module_11\Transactions\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TransfersTest">
+  <component name="RunManager" selected="JUnit.TransfersTest.happensBeforeBlock">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -268,73 +127,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BankTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Transactions" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.java.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.java" />
-      <option name="MAIN_CLASS_NAME" value="main.java.BankTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BankTest.testParallelism" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Transactions" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.java.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.java" />
-      <option name="MAIN_CLASS_NAME" value="main.java.BankTest" />
-      <option name="METHOD_NAME" value="testParallelism" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BankTest.testWillRespectBlock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Transactions" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.java.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.java" />
-      <option name="MAIN_CLASS_NAME" value="main.java.BankTest" />
-      <option name="METHOD_NAME" value="testWillRespectBlock" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BankTest.test_that_only_one_transaction_will_pass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Transactions" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.java.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.java" />
-      <option name="MAIN_CLASS_NAME" value="main.java.BankTest" />
-      <option name="METHOD_NAME" value="test_that_only_one_transaction_will_pass" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TransfersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Transactions" />
       <extension name="coverage">
@@ -346,6 +138,74 @@
       <option name="PACKAGE_NAME" value="test.java" />
       <option name="MAIN_CLASS_NAME" value="test.java.TransfersTest" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransfersTest.happensBeforeBlock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Transactions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java" />
+      <option name="MAIN_CLASS_NAME" value="test.java.TransfersTest" />
+      <option name="METHOD_NAME" value="happensBeforeBlock" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransfersTest.multiThreadTransferCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Transactions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java" />
+      <option name="MAIN_CLASS_NAME" value="test.java.TransfersTest" />
+      <option name="METHOD_NAME" value="multiThreadTransferCheck" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransfersTest.oneThreadTransfer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Transactions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java" />
+      <option name="MAIN_CLASS_NAME" value="test.java.TransfersTest" />
+      <option name="METHOD_NAME" value="oneThreadTransfer" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransfersTest.transferFromToBlockedAcc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Transactions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java" />
+      <option name="MAIN_CLASS_NAME" value="test.java.TransfersTest" />
+      <option name="METHOD_NAME" value="transferFromToBlockedAcc" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -378,11 +238,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TransfersTest.happensBeforeBlock" />
         <item itemvalue="JUnit.TransfersTest" />
-        <item itemvalue="JUnit.BankTest" />
-        <item itemvalue="JUnit.BankTest.test_that_only_one_transaction_will_pass" />
-        <item itemvalue="JUnit.BankTest.testParallelism" />
-        <item itemvalue="JUnit.BankTest.testWillRespectBlock" />
+        <item itemvalue="JUnit.TransfersTest.oneThreadTransfer" />
+        <item itemvalue="JUnit.TransfersTest.multiThreadTransferCheck" />
+        <item itemvalue="JUnit.TransfersTest.transferFromToBlockedAcc" />
       </list>
     </recent_temporary>
   </component>
@@ -437,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584920804491</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix happensBeforeBlock() test">
+      <created>1585264805943</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585264805943</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -454,7 +321,8 @@
     <MESSAGE value="refactoring and fix multiThreadTransferCheck() test" />
     <MESSAGE value="refactoring and fix multiThreadTransferCheck() test&#10;add new happensBeforeBlock() test" />
     <MESSAGE value="fix happensBeforeBlock() test and other issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix happensBeforeBlock() test and other issues" />
+    <MESSAGE value="fix happensBeforeBlock() test" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix happensBeforeBlock() test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2477" y="152" key="#All_in_Transactions" timestamp="1584410509846">
@@ -469,10 +337,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2012" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584500262849" />
-    <state x="544" y="146" key="#com.intellij.ide.util.MemberChooser" timestamp="1585624658628">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="2685" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1585094471322">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="544" y="146" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1585624658628" />
     <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584327042376" />
     <state x="2685" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585094471322" />
     <state x="2582" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584336530545">
@@ -483,59 +350,46 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2610" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584402572242" />
-    <state x="252" y="105" key="CommitChangelistDialog2" timestamp="1585662058903">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="2747" y="142" key="CommitChangelistDialog2" timestamp="1585264796244">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2747" y="142" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584920787884" />
-    <state x="252" y="105" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1585662058903" />
+    <state x="2747" y="142" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585264796244" />
     <state x="2660" y="276" key="FileChooserDialogImpl" timestamp="1584408948827">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2660" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584408948827" />
-    <state width="1323" height="309" key="GridCell.Tab.0.bottom" timestamp="1586240925323">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1921" height="388" key="GridCell.Tab.0.bottom" timestamp="1585292658080">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="309" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586240925323" />
-    <state width="1921" height="388" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585263082717" />
-    <state width="1398" height="116" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1585662063069" />
-    <state width="1323" height="309" key="GridCell.Tab.0.center" timestamp="1586240925322">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1921" height="388" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585292658080" />
+    <state width="1921" height="388" key="GridCell.Tab.0.center" timestamp="1585292658080">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="309" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586240925322" />
-    <state width="1921" height="388" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585263082717" />
-    <state width="1398" height="116" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1585662063068" />
-    <state width="1323" height="309" key="GridCell.Tab.0.left" timestamp="1586240925322">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1921" height="388" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585292658080" />
+    <state width="1921" height="388" key="GridCell.Tab.0.left" timestamp="1585292658080">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="309" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586240925322" />
-    <state width="1921" height="388" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585263082716" />
-    <state width="1398" height="116" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1585662063068" />
-    <state width="1323" height="309" key="GridCell.Tab.0.right" timestamp="1586240925322">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1921" height="388" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585292658080" />
+    <state width="1921" height="388" key="GridCell.Tab.0.right" timestamp="1585292658080">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="309" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586240925322" />
-    <state width="1921" height="388" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585263082717" />
-    <state width="1398" height="116" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1585662063068" />
-    <state width="1398" height="280" key="GridCell.Tab.1.bottom" timestamp="1585660840365">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1921" height="388" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585292658080" />
+    <state width="1921" height="176" key="GridCell.Tab.1.bottom" timestamp="1585292658064">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="176" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585262331332" />
-    <state width="1398" height="280" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1585660840365" />
-    <state width="1398" height="280" key="GridCell.Tab.1.center" timestamp="1585660840364">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1921" height="176" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585292658064" />
+    <state width="1921" height="176" key="GridCell.Tab.1.center" timestamp="1585292658048">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="176" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585262331332" />
-    <state width="1398" height="280" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1585660840364" />
-    <state width="1398" height="280" key="GridCell.Tab.1.left" timestamp="1585660840364">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1921" height="176" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585292658048" />
+    <state width="1921" height="176" key="GridCell.Tab.1.left" timestamp="1585292658048">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="176" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585262331332" />
-    <state width="1398" height="280" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1585660840364" />
-    <state width="1398" height="280" key="GridCell.Tab.1.right" timestamp="1585660840364">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1921" height="176" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585292658048" />
+    <state width="1921" height="176" key="GridCell.Tab.1.right" timestamp="1585292658064">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="176" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585262331332" />
-    <state width="1398" height="280" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1585660840364" />
+    <state width="1921" height="176" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585292658064" />
     <state x="2695" y="455" key="ReplaceDuplicatesPrompt" timestamp="1585093992316">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -544,33 +398,24 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2360" y="95" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584413581718" />
-    <state x="2472" y="254" key="Vcs.Push.Dialog.v2" timestamp="1584920821448">
+    <state x="2472" y="254" key="Vcs.Push.Dialog.v2" timestamp="1585264812197">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584920821448" />
+    <state x="2472" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585264812197" />
     <state x="2584" y="414" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584413519697">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2584" y="414" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584413519697" />
-    <state x="341" y="13" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586240691984">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="341" y="13" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1586240691984" />
-    <state x="518" y="256" width="524" height="432" key="extract.method.dialog" timestamp="1585660636879">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="2610" y="276" width="540" height="496" key="extract.method.dialog" timestamp="1585093986851">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2610" y="276" width="540" height="496" key="extract.method.dialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585093986851" />
-    <state x="518" y="256" width="524" height="432" key="extract.method.dialog/0.23.1440.877@0.23.1440.877" timestamp="1585660636879" />
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1585661708147">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1585661708147" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Transactions$BankTest.ic" NAME="BankTest Coverage Results" MODIFIED="1584919966782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Transactions$BankTest_multiThreadTransferCheck.ic" NAME="BankTest.multiThreadTransferCheck Coverage Results" MODIFIED="1584415451122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.java.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Transactions$BankTest_multiThreadTransferCheck.ic" NAME="BankTest.multiThreadTransferCheck Coverage Results" MODIFIED="1584415451122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Transactions$BankTest.ic" NAME="BankTest Coverage Results" MODIFIED="1584919966782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.java.*</FILTER>
     </SUITE>
   </component>
