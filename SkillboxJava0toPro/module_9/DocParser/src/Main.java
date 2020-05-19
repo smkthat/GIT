@@ -10,21 +10,18 @@ import java.util.*;
 public class Main {
 
   private static final String URL_STR = "https://lenta.ru/";
+  private static final String DOWNLOAD_PATH = "./downloads";
   private static Path PATH;
 
   public static void main(String[] args) {
-    String url = "d:\\test";
-    PATH = getPathFromString(url);
     startParse();
   }
 
-  private static Path getPathFromString(String url) {
-    System.out.println("Getting path from string");
-    return Paths.get(url);
-  }
-
   private static void startParse() {
-    System.out.println("Start getting images from " + URL_STR + "to " + PATH + " :");
+    System.out.println("Getting path from string");
+    PATH = Paths.get(DOWNLOAD_PATH);
+
+    System.out.println("Start getting images from " + URL_STR + " to " + PATH + " :");
 
     Document doc;
     try {
