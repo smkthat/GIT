@@ -2,77 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfb3b400-eb44-47b9-87f2-05bf2f26bd44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/downloads/feature_74d8d0d03a079bba434c2d1bf93c08c0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_0334129b4502f606e4c63fe1645f5952.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_05d587590d1570a4a03654966e18b181.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_08fec788838a53178156082940444fc4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_1458a05a38c667a5d353d23ef3c1afb9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_16061ee694fffa128d8b64cbfa7f46cf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_17b65064a29fc3575f7a16823497b262.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_210bf7a46f12e9f3d2c8af0eef7c7cf7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_2427eff737ec44c783b1dceed29f868b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_256b14cc2b3f1b46198ae6dba21d5a1e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_2a2dbcaf96744e0243b935b8d99b67c1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_2a4e7286dc9e5c568f56a481efc09b28.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_2acf98f3a77468170814f1be536bb873.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_2d31d0a9ab3ecad1044c493febe70bf9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_31c43aa1087f13418994f17b13e700c6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_398defffd0cfbc7a043ad07f094cde2f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_4b8e72cc6ab43be06eabf5c0da27b415.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_522a0a3d0614012d76f222be530a329e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_53e9ca5a6647a869b7b5df091f601f5a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_582691dc81f0d088c5f5e582edf72b40.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_5a2b29dbb91a69e9deacfb9e8656bcd3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_5b97b3854ab949918e82ce825c196e82.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_5f6fca471243792921e34e5bad8c2954.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_6546b2b0d7c76be5da8e5a63863ff48e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_7f0807b0e7978322f8c6606214299ca0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_92fbb076e923f1bbbdcb6d2242c484e8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_99014c7bcdfbf6deb79ade3fa8756716.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_9d9316eaa17f1c0b254b649352eaf5a6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_9f8701f27151396b34b0304a9632cad8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_a2d4be2f8c6b62d48ae96800217db130.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_b635f829df7d0a3ba5484fef359a907a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_b6684be1d3e49bc35ccb56ed9edb563b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_c37969531eeddca0d0471c5a363b79f1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_c43ab828e1ecb8b5f9c3104c13e8ad74.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_c6b6429291f59d491c7429fe89dc4436.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_cf6488aa787185efe7a64f78f082d8c5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_d44ca580ebe7139c677bf40b54c96fea.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_dc8fdabf336fb226263323cf066f962f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_ddd1a0460fc14d61cd050e82516d1ca2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_e5547608c8336d8970bcfc27abbc1a3c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_ebf248ed9d69a232f83a4a96b8fb7806.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/tabloid_f1e285e31382e7a229bbb737a92da005.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_1458a05a38c667a5d353d23ef3c1afb9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_248ef932568cbad6da92978d73fe085d.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_256b14cc2b3f1b46198ae6dba21d5a1e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_2a4e7286dc9e5c568f56a481efc09b28.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_2d31d0a9ab3ecad1044c493febe70bf9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_35c5cda8ffa9d9cb189fb5d96cf3c598.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_398defffd0cfbc7a043ad07f094cde2f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_3a8670a6d63381ae4d04f815d55f76fb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_46f7095cda4936a0e86d6194b1ab1456.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_470d76caad0f6f893e376d7b4c76ab6c.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_53e9ca5a6647a869b7b5df091f601f5a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_582691dc81f0d088c5f5e582edf72b40.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_69c0f4b3bc16536d3b4c40d83da7f189.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_77e2a6f757b199a4e7271bdd7b49e567.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_7878b24d824214288ec717a8f35e4dbb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_7c880a146f62e2babbf5c1b57b8e9d5f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_812b4c13356392378bf4829a1c621ecd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_9254d86728ae037486812807b50be58b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_a2d4be2f8c6b62d48ae96800217db130.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_b5c5cd1d1c1465f298c5a5607f8290b6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_c37969531eeddca0d0471c5a363b79f1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_c66db5d24c0b01961a5d51acbcfba22f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_c6b6429291f59d491c7429fe89dc4436.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_ddd1a0460fc14d61cd050e82516d1ca2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_ebf248ed9d69a232f83a4a96b8fb7806.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloads/top7_f8bf13dcc90340652a7f05bfec1d6e75.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocParser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DocParser/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,30 +60,54 @@
       <option name="project" value="LOCAL" />
       <updated>1576804497361</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix download path">
+      <created>1589858474572</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589858474572</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="fix download path" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix download path" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1921" height="339" key="GridCell.Tab.0.bottom" timestamp="1589858318966">
+    <state x="2457" y="88" key="CommitChangelistDialog2" timestamp="1589858469842">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="339" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589858318966" />
-    <state width="1921" height="339" key="GridCell.Tab.0.center" timestamp="1589858318966">
+    <state x="2457" y="88" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589858469842" />
+    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1589859005675">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="339" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589858318966" />
-    <state width="1921" height="339" key="GridCell.Tab.0.left" timestamp="1589858318965">
+    <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589859005675" />
+    <state width="1921" height="339" key="GridCell.Tab.0.bottom" timestamp="1589859017628">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="339" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589858318965" />
-    <state width="1921" height="339" key="GridCell.Tab.0.right" timestamp="1589858318966">
+    <state width="1921" height="339" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589859017628" />
+    <state width="1921" height="339" key="GridCell.Tab.0.center" timestamp="1589859017627">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="339" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589858318966" />
+    <state width="1921" height="339" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589859017627" />
+    <state width="1921" height="339" key="GridCell.Tab.0.left" timestamp="1589859017627">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="339" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589859017627" />
+    <state width="1921" height="339" key="GridCell.Tab.0.right" timestamp="1589859017627">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="339" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589859017627" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1589858493826">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589858493826" />
+    <state x="2262" y="181" key="new project wizard" timestamp="1589859012280">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2262" y="181" key="new project wizard/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589859012280" />
   </component>
 </project>
