@@ -17,7 +17,7 @@ import utils.ColorUtils;
 public class MetroParser {
   private Map<String, Set<String>> lineStations;
   private Set<Line> linesSet;
-  private Set<String> uniquelineNumbers;
+  private Set<String> uniqueLinesNumbers;
   private List<Set<Connection>> connections;
 
   private final String URL =
@@ -62,7 +62,7 @@ public class MetroParser {
   }
 
   private void parseUniqueLineNumbers(Elements tablesRows) {
-    uniquelineNumbers = new LinkedHashSet<>();
+    uniqueLinesNumbers = new LinkedHashSet<>();
     tablesRows.forEach(
         row -> {
           Elements sortKeys = row.select("td:nth-child(1) span.sortkey");
@@ -70,7 +70,7 @@ public class MetroParser {
           sortKeys.forEach(
               sortKey -> {
                 if (!sortKey.text().isEmpty()) {
-                  uniquelineNumbers.add(sortKey.text());
+                  uniqueLinesNumbers.add(sortKey.text());
                 }
               });
         });
@@ -80,7 +80,7 @@ public class MetroParser {
     linesSet = new LinkedHashSet<>();
     lineStations = new HashMap<>();
 
-    uniquelineNumbers.forEach(
+    uniqueLinesNumbers.forEach(
         line -> {
           tablesRows
               .parallelStream()
