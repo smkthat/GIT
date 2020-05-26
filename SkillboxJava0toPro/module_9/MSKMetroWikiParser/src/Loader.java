@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 /**
  * Написать код парсинга страницы Википедии “Список станций Московского метрополитена”, который
  * будет на основе этой страницы создавать JSON-файл со списком станций по линиям и списком линий по
@@ -12,7 +10,7 @@ import java.io.IOException;
  */
 public class Loader {
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) {
     MetroParser metroParser = new MetroParser();
     metroParser.startParse();
   }

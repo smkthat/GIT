@@ -15,6 +15,11 @@ import org.jsoup.select.Elements;
 import utils.ColorUtils;
 
 public class MetroParser {
+  private Map<String, Set<String>> lineStations;
+  private Set<Line> linesSet;
+  private Set<String> uniquelineNumbers;
+  private List<Set<Connection>> connections;
+
   private final String URL =
       "https://ru.wikipedia.org/wiki/"
           + "%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA"
@@ -22,19 +27,42 @@ public class MetroParser {
           + "_%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE"
           + "_%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B5%D0%BD%D0%B0";
 
-  public void startParse() throws IOException {
+  public MetroParser() {
+    // init
+  }
+
+  public void startParse() {
     Document doc = getDocument();
     if (doc == null) {
       throw new RuntimeException("Can't get document!");
     }
 
     System.out.println("Getting page data from\n\"" + doc.title() + "\"");
-
-    Elements tablesRows = getTablesRows(doc);
+    Elements tablesRows = getRowsFromTables(doc);
 
     System.out.println("\t* getting unique line numbers");
-    Set<String> lineNumbers = new LinkedHashSet<>();
+    parseUniqueLineNumbers(tablesRows);
 
+    System.out.println("\t* getting lines and stations");
+    parseLinesAndStations(tablesRows);
+
+    System.out.println("\t* getting connections");
+    parseConnections(tablesRows);
+
+    System.out.println("\t* fill metro data");
+    Map<String, Object> metro = new LinkedHashMap<>();
+    metro.put("lines", linesSet);
+    metro.put("stations", lineStations);
+    metro.put("connections", connections);
+
+    System.out.println("\t* writing metro.json file");
+    writeMetroJson(metro);
+
+    System.out.println("\nComplete!");
+  }
+
+  private void parseUniqueLineNumbers(Elements tablesRows) {
+    uniquelineNumbers = new LinkedHashSet<>();
     tablesRows.forEach(
         row -> {
           Elements sortKeys = row.select("td:nth-child(1) span.sortkey");
@@ -42,16 +70,17 @@ public class MetroParser {
           sortKeys.forEach(
               sortKey -> {
                 if (!sortKey.text().isEmpty()) {
-                  lineNumbers.add(sortKey.text());
+                  uniquelineNumbers.add(sortKey.text());
                 }
               });
         });
+  }
 
-    System.out.println("\t* getting lines and stations");
-    Set<Line> linesSet = new LinkedHashSet<>();
-    Map<String, Set<String>> lineStations = new LinkedHashMap<>();
+  private void parseLinesAndStations(Elements tablesRows) {
+    linesSet = new LinkedHashSet<>();
+    lineStations = new HashMap<>();
 
-    lineNumbers.forEach(
+    uniquelineNumbers.forEach(
         line -> {
           tablesRows
               .parallelStream()
@@ -66,15 +95,9 @@ public class MetroParser {
                     sortKeys.forEach(
                         sortKey -> {
                           String lineName = sortKey.text();
-                          Set<String> stations;
-                          if (lineStations.containsKey(lineName)) {
-                            stations = lineStations.get(lineName);
-                          } else {
-                            stations = new LinkedHashSet<>();
-                          }
-
-                          stations.add(stationName);
-                          lineStations.put(lineName, stations);
+                          lineStations
+                              .computeIfAbsent(lineName, key -> new LinkedHashSet<>())
+                              .add(stationName);
                         });
                   });
 
@@ -90,7 +113,7 @@ public class MetroParser {
                         x.select("td:nth-child(1)").attr("style").replace("background:", "");
 
                     if (colorHex.isEmpty()) {
-                      lineColorName = "???";
+                      lineColorName = "no color";
                     } else {
                       lineColorName =
                           new ColorUtils().getColorNameFromColor(Color.decode(colorHex));
@@ -100,10 +123,13 @@ public class MetroParser {
                         new Line(line, lineName, lineColorName, lineStations.get(line).size()));
                   });
         });
+  }
 
-    System.out.println("\t* getting connections");
-    List<Set<Connection>> connections = new ArrayList<>();
-    tablesRows.stream()
+  private void parseConnections(Elements tablesRows) {
+    connections = new ArrayList<>();
+
+    tablesRows
+        .parallelStream()
         .filter(tr -> !tr.select("td:nth-child(4)").text().isEmpty())
         .forEach(
             row -> {
@@ -132,17 +158,15 @@ public class MetroParser {
 
               connections.add(connList);
             });
+  }
 
-    System.out.println("\t* fill metro data");
-    Map<String, Object> metro = new LinkedHashMap<>();
-    metro.put("lines", linesSet);
-    metro.put("stations", lineStations);
-    metro.put("connections", connections);
-
-    System.out.println("\t* writing metro.json file");
-    ObjectMapper mapper = new ObjectMapper();
-    mapper.writerWithDefaultPrettyPrinter().writeValue(new File("metro.json"), metro);
-    System.out.println("\nComplete!");
+  private void writeMetroJson(Map<String, Object> metro) {
+    try {
+      ObjectMapper mapper = new ObjectMapper();
+      mapper.writerWithDefaultPrettyPrinter().writeValue(new File("metro.json"), metro);
+    } catch (IOException e) {
+      throw new RuntimeException("Can't write json file!\n\n" + Arrays.toString(e.getStackTrace()));
+    }
   }
 
   private static String getConnStationName(Set<String> stations, String simpleName) {
@@ -164,7 +188,7 @@ public class MetroParser {
     return name;
   }
 
-  private Elements getTablesRows(Document doc) {
+  private Elements getRowsFromTables(Document doc) {
     System.out.println("\t* getting data elements from tables");
     Elements tRows = doc.select(".standard.sortable tr");
     tRows.remove(0);
