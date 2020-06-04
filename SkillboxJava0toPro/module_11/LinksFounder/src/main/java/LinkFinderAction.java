@@ -23,12 +23,14 @@ public class LinkFinderAction extends RecursiveAction {
 
   @Override
   protected void compute() {
-    if (lh.size() >= LinksFounder.MAX_VISITED_LINKS_LENGTH) {
-      if (getPool().getQueuedTaskCount() == 0) {
-        getPool().shutdown();
-      }
+    if (LinksFounder.MAX_VISITED_LINKS_LENGTH != -1) {
+      if (lh.size() >= LinksFounder.MAX_VISITED_LINKS_LENGTH) {
+        if (getPool().getQueuedTaskCount() == 0) {
+          getPool().shutdown();
+        }
 
-      return;
+        return;
+      }
     }
 
     if (isValidToVisit(url)) {

@@ -4,9 +4,9 @@ import java.util.concurrent.TimeUnit;
 
 public class LinksFounder implements LinkHandler {
   public static final String STARTING_URL =
-            "https://lenta.ru";
-//      "https://secure-headland-59304.herokuapp.com";
-  //      "https://skillbox.ru";
+      //"https://lenta.ru";
+      //"https://secure-headland-59304.herokuapp.com";
+      "https://skillbox.ru";
 
   private final Collection<String> visitedLinks = Collections.synchronizedSet(new TreeSet<>());
   private static final int MAX_THREADS = Runtime.getRuntime().availableProcessors() * 2;
@@ -28,8 +28,13 @@ public class LinksFounder implements LinkHandler {
   private void startSearching() {
     startTime = System.currentTimeMillis();
     System.out.print("*********************************************************\n");
-    System.out.printf(
-        "LinksFounder: Starting with max visited links: %s\n", MAX_VISITED_LINKS_LENGTH);
+    if (MAX_VISITED_LINKS_LENGTH == -1) {
+      System.out.print("LinksFounder: Starting with max visited links: no limit!\n");
+    } else {
+      System.out.printf(
+          "LinksFounder: Starting with max visited links: %s\n", MAX_VISITED_LINKS_LENGTH);
+    }
+
     System.out.printf("LinksFounder: Start Date: %s\n", new Date(startTime));
 
     LinkFinderAction action = new LinkFinderAction(this.rootUrl, this);
@@ -71,7 +76,7 @@ public class LinksFounder implements LinkHandler {
     System.out.printf("LinksFounder: Queued Task Count: %s\n", pool.getQueuedTaskCount());
     System.out.printf("LinksFounder: Steal Count: %s\n", pool.getStealCount());
     System.out.printf(
-        "LinksFounder: Links founded: %s\n", LinkFinderAction.linksFoundCounter.get());
+        "LinksFounder: Total Links Found: %s\n", LinkFinderAction.linksFoundCounter.get());
     System.out.print("*********************************************************\n");
   }
 
@@ -102,9 +107,13 @@ public class LinksFounder implements LinkHandler {
       founder.visitedLinks.remove(founder.visitedLinks.stream().findFirst().get());
     }
     System.out.printf("\nResult:\n%s\n", STARTING_URL);
-    new ArrayList<>(founder.visitedLinks)
-        .subList(0, MAX_VISITED_LINKS_LENGTH - 1)
-        .forEach(link -> System.out.printf("%s%s\n", getTabs(link), link));
+    if (MAX_VISITED_LINKS_LENGTH == -1) {
+      founder.visitedLinks.forEach(link -> System.out.printf("%s%s\n", getTabs(link), link));
+    } else {
+      new ArrayList<>(founder.visitedLinks)
+          .subList(0, MAX_VISITED_LINKS_LENGTH - 1)
+          .forEach(link -> System.out.printf("%s%s\n", getTabs(link), link));
+    }
   }
 
   private static String getTabs(String link) {
