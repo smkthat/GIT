@@ -7,7 +7,7 @@ import static java.lang.System.out;
 public class Loader {
 
   private static final String EXIT = "выход";
-  private static List<String> numbersArrayList;
+  private static List<String> rogueNumbers;
   private static SearchingResults searchingResults;
   private static long start;
   private static long finish;
@@ -16,7 +16,7 @@ public class Loader {
 
   public static void main(String[] args) {
     RogueNumberGenerator numberGenerator = new RogueNumberGenerator();
-    numbersArrayList = numberGenerator.getRogueNumbersDB();
+    rogueNumbers = numberGenerator.getRogueNumbersDB();
 
     boolean isWorking = true;
     searchCounter = 0;
@@ -173,40 +173,33 @@ public class Loader {
   private static String enumeration(String inputNumber) {
     /* ПОИСК ПЕРЕБОРОМ */
     start = System.nanoTime();
-    for (String number : numbersArrayList) {
-      if (number.equals(inputNumber)) {
-        isFound = true;
-        break;
-      }
-    }
+    isFound = rogueNumbers.stream().anyMatch(inputNumber::equals);
     finish = System.nanoTime() - start;
     return Long.toString(finish);
   }
 
   /** ПОИСК В TREESET */
   private static String treeSetSearch(String inputNumber) {
-    TreeSet<String> numbersTreeSet = new TreeSet<>(numbersArrayList);
+    TreeSet<String> numbersTreeSet = new TreeSet<>(rogueNumbers);
     start = System.nanoTime();
     isFound = numbersTreeSet.contains(inputNumber);
     finish = System.nanoTime() - start;
-    numbersTreeSet.clear();
     return Long.toString(finish);
   }
 
   /** ПОИСК В HASHSET */
   private static String hashSetSearch(String inputNumber) {
-    HashSet<String> numbersHashSet = new HashSet<>(numbersArrayList);
+    HashSet<String> numbersHashSet = new HashSet<>(rogueNumbers);
     start = System.nanoTime();
     isFound = numbersHashSet.contains(inputNumber);
     finish = System.nanoTime() - start;
-    numbersHashSet.clear();
     return Long.toString(finish);
   }
 
   /** БИНАРНЫЙ ПОИСК */
   private static String binarySearch(String inputNumber) {
     start = System.nanoTime();
-    int index = Collections.binarySearch(numbersArrayList, inputNumber);
+    int index = Collections.binarySearch(rogueNumbers, inputNumber);
     finish = System.nanoTime() - start;
     if (index >= 0) {
       isFound = true;

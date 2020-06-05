@@ -1,6 +1,5 @@
 package Main.Java;
 
-import java.util.ArrayList;
 import java.util.List;
 
 class SearchingResults {
@@ -16,22 +15,8 @@ class SearchingResults {
     return dataList;
   }
 
-  List<List<String>> getDataListById(int id) {
-    List<List<String>> dataById = new ArrayList<>();
-    dataById.add(dataList.get(id - 1));
-    return dataById;
-  }
-
   void addToDataList(List<String> rows) {
     dataList.add(rows);
-  }
-
-  void setHeaderList(List<String> headerList) {
-    this.headerList = headerList;
-  }
-
-  void setDataList(List<List<String>> dataList) {
-    this.dataList = dataList;
   }
 
   List<String> getHeaderList() {

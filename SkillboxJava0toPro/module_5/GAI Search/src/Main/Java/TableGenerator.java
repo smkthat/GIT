@@ -5,16 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 class TableGenerator {
-
   private int PADDING_SIZE = 2;
 
   String generateTable(List<String> headersList, List<List<String>> rowsList,
       int... overRiddenHeaderHeight) {
     StringBuilder stringBuilder = new StringBuilder();
-
     int rowHeight = overRiddenHeaderHeight.length > 0 ? overRiddenHeaderHeight[0] : 1;
-
-    Map<Integer, Integer> columnMaxWidthMapping = getMaximumWidhtOfTable(headersList, rowsList);
+    Map<Integer, Integer> columnMaxWidthMapping = getMaximumWidthOfTable(headersList, rowsList);
 
     String NEW_LINE = "\n";
     stringBuilder.append(NEW_LINE);
@@ -27,13 +24,10 @@ class TableGenerator {
     }
 
     stringBuilder.append(NEW_LINE);
-
     createRowLine(stringBuilder, headersList.size(), columnMaxWidthMapping);
 
     for (List<String> row : rowsList) {
-
       stringBuilder.append(NEW_LINE.repeat(Math.max(0, rowHeight)));
-
       for (int cellIndex = 0; cellIndex < row.size(); cellIndex++) {
         fillCell(stringBuilder, row.get(cellIndex), cellIndex, columnMaxWidthMapping);
       }
@@ -69,7 +63,7 @@ class TableGenerator {
   }
 
 
-  private Map<Integer, Integer> getMaximumWidhtOfTable(List<String> headersList,
+  private Map<Integer, Integer> getMaximumWidthOfTable(List<String> headersList,
       List<List<String>> rowsList) {
     Map<Integer, Integer> columnMaxWidthMapping = new HashMap<>();
 
@@ -78,7 +72,6 @@ class TableGenerator {
     }
 
     for (int columnIndex = 0; columnIndex < headersList.size(); columnIndex++) {
-
       if (headersList.get(columnIndex).length() > columnMaxWidthMapping.get(columnIndex)) {
         columnMaxWidthMapping.put(columnIndex, headersList.get(columnIndex).length());
       }
@@ -87,7 +80,6 @@ class TableGenerator {
     for (List<String> row : rowsList) {
 
       for (int columnIndex = 0; columnIndex < row.size(); columnIndex++) {
-
         if (row.get(columnIndex).length() > columnMaxWidthMapping.get(columnIndex)) {
           columnMaxWidthMapping.put(columnIndex, row.get(columnIndex).length());
         }
@@ -95,7 +87,6 @@ class TableGenerator {
     }
 
     for (int columnIndex = 0; columnIndex < headersList.size(); columnIndex++) {
-
       if (columnMaxWidthMapping.get(columnIndex) % 2 != 0) {
         columnMaxWidthMapping.put(columnIndex, columnMaxWidthMapping.get(columnIndex) + 1);
       }
@@ -104,14 +95,14 @@ class TableGenerator {
     return columnMaxWidthMapping;
   }
 
-  private int getOptimumCellPadding(int cellIndex, int datalength,
+  private int getOptimumCellPadding(int cellIndex, int dataLength,
       Map<Integer, Integer> columnMaxWidthMapping, int cellPaddingSize) {
-    if (datalength % 2 != 0) {
-      datalength++;
+    if (dataLength % 2 != 0) {
+      dataLength++;
     }
 
-    if (datalength < columnMaxWidthMapping.get(cellIndex)) {
-      cellPaddingSize = cellPaddingSize + (columnMaxWidthMapping.get(cellIndex) - datalength) / 2;
+    if (dataLength < columnMaxWidthMapping.get(cellIndex)) {
+      cellPaddingSize = cellPaddingSize + (columnMaxWidthMapping.get(cellIndex) - dataLength) / 2;
     }
 
     return cellPaddingSize;
@@ -119,7 +110,6 @@ class TableGenerator {
 
   private void fillCell(StringBuilder stringBuilder, String cell, int cellIndex,
       Map<Integer, Integer> columnMaxWidthMapping) {
-
     int cellPaddingSize = getOptimumCellPadding(cellIndex, cell.length(), columnMaxWidthMapping,
         PADDING_SIZE);
 
@@ -130,13 +120,12 @@ class TableGenerator {
 
     fillSpace(stringBuilder, cellPaddingSize);
     stringBuilder.append(cell);
+
     if (cell.length() % 2 != 0) {
       stringBuilder.append(" ");
     }
 
     fillSpace(stringBuilder, cellPaddingSize);
-
     stringBuilder.append(TABLE_V_SPLIT_SYMBOL);
-
   }
 }

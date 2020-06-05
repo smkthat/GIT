@@ -9,7 +9,7 @@ class Helpers {
    * Добавляет знаки табуляции
    * */
   static String tab(int n) {
-    return "\t".repeat(Math.max(0, n));
+    return "\t".repeat(n);
   }
 
   /**
