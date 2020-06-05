@@ -1,16 +1,19 @@
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Stream;
 
-public class LinksFounder implements LinkHandler {
+public class LinksFounder {
+
   public static final String STARTING_URL =
-      //"https://lenta.ru";
-      //"https://secure-headland-59304.herokuapp.com";
-      "https://skillbox.ru";
+      "https://lenta.ru";
+//       "https://secure-headland-59304.herokuapp.com";
+//      "https://skillbox.ru";
 
-  private final Collection<String> visitedLinks = Collections.synchronizedSet(new TreeSet<>());
+  private final Map<String, Set<String>> visitedLinks = new ConcurrentHashMap<>();
   private static final int MAX_THREADS = Runtime.getRuntime().availableProcessors() * 2;
-  public static final int MAX_VISITED_LINKS_LENGTH = 300;
+  public static final int MAX_VISITED_LINKS_LENGTH = 100;
   private long startTime = System.currentTimeMillis();
 
   private final String rootUrl;
@@ -80,19 +83,16 @@ public class LinksFounder implements LinkHandler {
     System.out.print("*********************************************************\n");
   }
 
-  @Override
   public int size() {
     return visitedLinks.size();
   }
 
-  @Override
   public boolean isVisited(String link) {
-    return visitedLinks.contains(link);
+    return visitedLinks.containsKey(link);
   }
 
-  @Override
-  public void addVisited(String link) {
-    visitedLinks.add(link);
+  public void addVisited(String link, Set<String> children) {
+    visitedLinks.put(link, children);
   }
 
   public static void main(String[] args) {
@@ -103,15 +103,16 @@ public class LinksFounder implements LinkHandler {
   }
 
   public static void prepareAndPrintResult(LinksFounder founder) {
-    if (founder.visitedLinks.stream().findFirst().isPresent()) {
-      founder.visitedLinks.remove(founder.visitedLinks.stream().findFirst().get());
-    }
-    System.out.printf("\nResult:\n%s\n", STARTING_URL);
+    founder.visitedLinks.remove(STARTING_URL + "/");
+    Stream<String> resultStream = founder.visitedLinks.keySet().stream().sorted();
+    System.out.print("\nResult:\n");
     if (MAX_VISITED_LINKS_LENGTH == -1) {
-      founder.visitedLinks.forEach(link -> System.out.printf("%s%s\n", getTabs(link), link));
+      resultStream
+//          .skip(1L)
+          .forEach(link -> System.out.printf("%s%s\n", getTabs(link), link));
     } else {
-      new ArrayList<>(founder.visitedLinks)
-          .subList(0, MAX_VISITED_LINKS_LENGTH - 1)
+      resultStream.limit(MAX_VISITED_LINKS_LENGTH)
+//          .skip(1L)
           .forEach(link -> System.out.printf("%s%s\n", getTabs(link), link));
     }
   }

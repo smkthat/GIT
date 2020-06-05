@@ -12,28 +12,30 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class LinkFinderAction extends RecursiveAction {
+
   private final String url;
-  private final LinkHandler lh;
+  private final LinksFounder founder;
   public static AtomicInteger linksFoundCounter = new AtomicInteger(0);
 
-  public LinkFinderAction(String url, LinkHandler lh) {
+  public LinkFinderAction(String url, LinksFounder founder) {
     this.url = url;
-    this.lh = lh;
+    this.founder = founder;
   }
 
   @Override
   protected void compute() {
     if (LinksFounder.MAX_VISITED_LINKS_LENGTH != -1) {
-      if (lh.size() >= LinksFounder.MAX_VISITED_LINKS_LENGTH) {
+      if (founder.size() >= LinksFounder.MAX_VISITED_LINKS_LENGTH) {
         if (getPool().getQueuedTaskCount() == 0) {
           getPool().shutdown();
         }
-
         return;
       }
     }
 
     if (isValidToVisit(url)) {
+      founder.addVisited(url, new TreeSet<>());
+
       try {
         List<RecursiveAction> actions = new ArrayList<>();
         URL urlLink = new URL(url);
@@ -41,17 +43,23 @@ public class LinkFinderAction extends RecursiveAction {
         Parser parser = new Parser(urlLink.openConnection());
         NodeList list = parser.extractAllNodesThatMatch(new NodeClassFilter(LinkTag.class));
 
-        IntStream.range(0, list.size()).mapToObj(i -> (LinkTag) list.elementAt(i))
-            .collect(Collectors.toSet()).stream()
+        Set<String> children = IntStream.range(0, list.size())
+            .mapToObj(i -> (LinkTag) list.elementAt(i))
+            .collect(Collectors.toSet()).parallelStream()
             .map(LinkTag::extractLink)
-            .filter(this::isValidToVisit)
+            .map(String::trim)
+            //.filter(this::isValidToVisit)
+            .collect(Collectors.toSet());
+
+        founder.addVisited(url, children);
+
+        children.parallelStream()
             .forEach(
                 link -> {
-                  actions.add(new LinkFinderAction(link, lh));
+                  actions.add(new LinkFinderAction(link, founder));
                   linksFoundCounter.getAndAdd(1);
                 });
 
-        lh.addVisited(url);
         invokeAll(actions);
       } catch (Exception e) {
         // ignore 404, unknown protocol or other server errors
@@ -61,10 +69,11 @@ public class LinkFinderAction extends RecursiveAction {
 
   private boolean isValidToVisit(String url) {
     return url.startsWith(LinksFounder.STARTING_URL)
-        && !lh.isVisited(url)
+        && !founder.isVisited(url)
         && !isFileUrl(url)
         && !url.contains("#")
-        && !url.contains("?");
+        && !url.contains("?")
+        && !url.endsWith("//");
   }
 
   private boolean isFileUrl(String url) {
