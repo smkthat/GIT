@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e65f99e6-6abb-4960-9587-eab16126a241" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1dAshnkHrT9x7xaSnRhNmVMmSTe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager" selected="JUnit.MyLockTest.testLock">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="MyReentrantLock" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyLockTest.testLock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyReentrantLock" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyLockTest" />
+      <option name="METHOD_NAME" value="testLock" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MyLockTest.testLock" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e65f99e6-6abb-4960-9587-eab16126a241" name="Default Changelist" comment="" />
+      <created>1591879353947</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591879353947</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1317" height="260" key="GridCell.Tab.0.bottom" timestamp="1591941578739">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="260" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1591941578739" />
+    <state width="1317" height="260" key="GridCell.Tab.0.center" timestamp="1591941578739">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="260" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1591941578739" />
+    <state width="1317" height="260" key="GridCell.Tab.0.left" timestamp="1591941578739">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="260" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1591941578739" />
+    <state width="1317" height="260" key="GridCell.Tab.0.right" timestamp="1591941578739">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="260" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1591941578739" />
+    <state x="160" y="0" key="SettingsEditor" timestamp="1591879790117">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="160" y="0" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1591879790117" />
+    <state x="336" y="162" key="run.anything.popup" timestamp="1591940593079">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1591940593079" />
+  </component>
+</project>
