@@ -11,7 +11,6 @@ public class MyLockTest {
   public void testLock() throws InterruptedException {
     int expected = c;
 
-    MyLock lock = new MyLock();
     Thread t1 = new Thread(() -> {
       for (int i = 0; i < 10_000; i++) {
         lock.lock();

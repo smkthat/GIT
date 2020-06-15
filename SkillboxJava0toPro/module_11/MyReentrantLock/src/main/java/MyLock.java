@@ -6,7 +6,7 @@ public class MyLock {
     if (this.lock) {
       while (lock) {
         try {
-          wait(1L);
+          wait();
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
@@ -20,5 +20,6 @@ public class MyLock {
 
   public synchronized void unlock() {
     lock = false;
+    notify();
   }
 }
