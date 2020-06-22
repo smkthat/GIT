@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface TodoTaskRepo extends CrudRepository<TodoTask,Long> {
     List<TodoTask> findByTitle(String title);
+    String deleteById(Integer id);
 }

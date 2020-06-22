@@ -1,17 +1,18 @@
 package ru.todolist.entities;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 
 @Entity
 public class TodoTask {
     @Id
+    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @Column
     private String title;
 
+    @Column
     private String text;
 
     public TodoTask() {
