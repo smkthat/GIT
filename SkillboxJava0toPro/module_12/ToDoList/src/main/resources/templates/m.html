@@ -5,10 +5,10 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
-    <title>Authorization page</title>
+    <title>Home page</title>
     <!-- Required meta tags -->
     <meta charset="utf-8"/>
-    <meta http-equiv="Content-Type" content="text/html"/>
+<!--    <meta http-equiv="Content-Type" content="text/html"/>-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="../../favicon.ico"/>
 
@@ -16,27 +16,49 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <!-- Custom styles for this template -->
-    <link href="css/authorization.css" rel="stylesheet">
-
 </head>
-<body class="text-center">
-<form class="form-signin">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputLogin" class="sr-only">Email address</label>
-    <input type="text" id="inputLogin" class="form-control" placeholder="Login" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <div class="form-group">
-        <label>
-            Not a member?
-        </label>
-        <a href="/registration">Register</a>
+<body>
+<div class="container">
+    </p>
+    <div>
+        <p><b>Список заданий:</b></p>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-</form>
 
+    <form method="post" action="filter">
+        <input type="text" name="filter">
+        <button class="button-filter" type="submit">Найти</button>
+    </form>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Text</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${todoTasks.empty}">
+            <td colspan="2"> No tasks available!</td>
+        </tr>
+        <tr th:each="todoTask : ${todoTasks}">
+            <td><b th:text="${todoTask.id}"></b></td>
+            <td><span th:text="${todoTask.title}"></span></td>
+            <td><span th:text="${todoTask.text}"></span></td>
+            <td><a class="button-edit" href="/edit-todoTask">Изменить</a></td>
+            <td><a class="button-delete" href="/delete-todoTask">Удалить</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <form method="post">
+            <input type="text" name="title" placeholder="Введите название"/>
+            <input type="text" name="text" placeholder="Введите описание"/>
+            <button class="button-add" type="submit">Добавить</button>
+        </form>
+    </div>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
