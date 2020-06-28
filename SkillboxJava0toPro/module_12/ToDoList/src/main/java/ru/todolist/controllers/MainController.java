@@ -11,18 +11,17 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 @Controller
-public class CommonController {
+public class MainController {
 
   @Autowired private TodoTaskRepo taskRepo;
 
   @GetMapping("/")
-  public String authorization() {
-
-    return "authorization";
+  public String root() {
+    return "redirect:/home";
   }
 
   @GetMapping("/home")
-  public String common(Model model) {
+  public String home(Model model) {
     model.addAttribute("todoTasks", taskRepo.findAll());
     return "home";
   }

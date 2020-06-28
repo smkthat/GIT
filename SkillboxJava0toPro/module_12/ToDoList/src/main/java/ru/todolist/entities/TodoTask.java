@@ -9,10 +9,10 @@ public class TodoTask {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column
+    @Column(columnDefinition = "text")
     private String title;
 
-    @Column
+    @Column(columnDefinition = "longtext")
     private String text;
 
     public TodoTask() {
