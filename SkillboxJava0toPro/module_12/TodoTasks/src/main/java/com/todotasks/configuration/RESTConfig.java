@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 public class RESTConfig {
 
   @Bean
-  public View todotask() {
+  public View todotasks() {
     MappingJackson2JsonView view = new MappingJackson2JsonView();
     view.setPrettyPrint(true);
     return view;

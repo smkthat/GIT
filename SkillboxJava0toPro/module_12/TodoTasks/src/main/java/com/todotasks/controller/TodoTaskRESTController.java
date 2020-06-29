@@ -1,6 +1,8 @@
 package com.todotasks.controller;
 
 import com.todotasks.model.*;
+
+import java.io.IOException;
 import java.net.URI;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -11,13 +13,15 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.servlet.http.HttpServletResponse;
+
 @RestController
-@RequestMapping("/todotask")
+@RequestMapping("/todotasks")
 public class TodoTaskRESTController {
 
   @Autowired public TodoTaskRepo todoTaskRepo;
 
-  @GetMapping()
+  @GetMapping
   public ResponseEntity<List<TodoTask>> getAll() {
     List<TodoTask> todoTasks = todoTaskRepo.findAll();
     if (!CollectionUtils.isEmpty(todoTasks)) {
@@ -73,5 +77,15 @@ public class TodoTaskRESTController {
               return ResponseEntity.ok(todoTask);
             })
         .orElseGet(() -> ResponseEntity.notFound().build());
+  }
+
+  @DeleteMapping
+  public ResponseEntity<TodoTask> deleteAll() {
+    List<TodoTask> todoTasks = todoTaskRepo.findAll();
+    if (!CollectionUtils.isEmpty(todoTasks)) {
+      todoTaskRepo.deleteAll();
+      return ResponseEntity.ok().body(null);
+    }
+    return ResponseEntity.noContent().build();
   }
 }

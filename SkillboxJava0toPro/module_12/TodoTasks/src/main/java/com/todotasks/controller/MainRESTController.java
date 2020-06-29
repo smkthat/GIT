@@ -11,6 +11,6 @@ public class MainRESTController {
   @RequestMapping
   @ResponseStatus(HttpStatus.FOUND)
   void root(HttpServletResponse response) throws IOException {
-    response.sendRedirect("/todotask");
+    response.sendRedirect("/todotasks");
   }
 }
