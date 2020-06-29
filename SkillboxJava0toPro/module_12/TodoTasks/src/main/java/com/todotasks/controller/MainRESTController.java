@@ -1,4 +1,4 @@
-package com.todotasks.controllers;
+package com.todotasks.controller;
 
 import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;

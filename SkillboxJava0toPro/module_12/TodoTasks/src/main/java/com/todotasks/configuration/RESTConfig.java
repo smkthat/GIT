@@ -1,4 +1,4 @@
-package com.todotasks.configurations;
+package com.todotasks.configuration;
 
 import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.*;
@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 public class RESTConfig {
 
   @Bean
-  public View todotasks() {
+  public View todotask() {
     MappingJackson2JsonView view = new MappingJackson2JsonView();
     view.setPrettyPrint(true);
     return view;

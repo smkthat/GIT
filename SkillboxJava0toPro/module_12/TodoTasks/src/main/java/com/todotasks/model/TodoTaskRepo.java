@@ -1,4 +1,4 @@
-package com.todotasks.models;
+package com.todotasks.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

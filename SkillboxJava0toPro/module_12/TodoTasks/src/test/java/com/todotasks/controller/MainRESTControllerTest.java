@@ -1,7 +1,8 @@
-package com.todotasks.controllers;
+package com.todotasks.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.todotasks.AbstractIntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;

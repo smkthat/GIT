@@ -1,6 +1,8 @@
-package com.todotasks.controllers;
+package com.todotasks;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.todotasks.controller.MainRESTController;
+import com.todotasks.controller.TodoTaskRESTController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

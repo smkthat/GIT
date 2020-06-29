@@ -1,7 +1,6 @@
-package com.todotasks.models;
+package com.todotasks.model;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import javax.persistence.*;
 
 @Entity
@@ -18,8 +17,11 @@ public class TodoTask {
   @Column(name = "description", columnDefinition = "longtext")
   private String desc;
 
-  @Column(name = "create_date")
-  private String createDate;
+  @Column(name = "create_date", nullable = false)
+  private LocalDateTime createDate;
+
+  @Column(name = "update_date")
+  private LocalDateTime updateDate;
 
   @Column(name = "is_done", columnDefinition = "tinyint(1) default 0", nullable = false)
   private Boolean isDone = false;
@@ -28,12 +30,12 @@ public class TodoTask {
     //used by Hibernate
   }
 
-  public TodoTask(String title, String desc) {
+  public TodoTask(String title, String desc, Boolean isDone) {
     this.title = title;
     this.desc = desc;
-    this.createDate = LocalDateTime.now()
-        .format(DateTimeFormatter.ofPattern("yyyy-MM-dd\nHH:mm:ss"));
-    this.isDone = false;
+    this.createDate = LocalDateTime.now();
+    this.updateDate = createDate;
+    this.isDone = isDone;
   }
 
   public Integer getId() {
@@ -60,19 +62,32 @@ public class TodoTask {
     this.desc = desc;
   }
 
-  public String getCreateDate() {
+  public LocalDateTime getCreateDate() {
     return createDate;
   }
 
-  public void setCreateDate(String createDate) {
+  public void setCreateDate(LocalDateTime createDate) {
     this.createDate = createDate;
   }
 
-  public Boolean getIsDone() {
+  public LocalDateTime getUpdateDate() {
+    return updateDate;
+  }
+
+  public void setUpdateDate(LocalDateTime updateDate) {
+    this.updateDate = updateDate;
+  }
+
+  public Boolean getDone() {
     return isDone;
   }
 
-  public void setIsDone(Boolean isDone) {
-    this.isDone = isDone;
+  public void setDone(Boolean done) {
+    isDone = done;
+  }
+
+  public void setToAllDates(LocalDateTime date) {
+    createDate = date;
+    updateDate = date;
   }
 }
