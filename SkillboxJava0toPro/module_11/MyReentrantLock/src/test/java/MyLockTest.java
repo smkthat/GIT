@@ -5,6 +5,7 @@ import org.junit.Test;
 
 public class MyLockTest {
 
+  static final int ACTIONS = 10_000_000;
   static int c = 0;
   static MyLock lock = new MyLock();
 
@@ -13,7 +14,7 @@ public class MyLockTest {
     int expected = c;
 
     Thread t1 = new Thread(() -> {
-      for (int i = 0; i < 10_000_000; i++) {
+      for (int i = 0; i < ACTIONS; i++) {
         lock.lock();
         c++;
         lock.unlock();
@@ -21,7 +22,7 @@ public class MyLockTest {
     });
 
     Thread t2 = new Thread(() -> {
-      for (int i = 0; i < 10_000_000; i++) {
+      for (int i = 0; i < ACTIONS; i++) {
         lock.lock();
         c--;
         lock.unlock();
@@ -29,9 +30,8 @@ public class MyLockTest {
     });
 
     Thread t3 = new Thread(() -> {
-      while (MyLock.counter.get() < 20_000_000) {
+      while (MyLock.counter.get() < (ACTIONS * 2)) {
         try {
-          //noinspection BusyWait
           sleep(500);
           System.out.printf("%s\n", MyLock.counter.get());
         } catch (InterruptedException e) {

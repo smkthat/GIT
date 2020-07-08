@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e65f99e6-6abb-4960-9587-eab16126a241" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/resources/templates/todotasks.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MyLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MyLock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MyLockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MyLockTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MyLock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MyLock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MyLockTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MyLockTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/configuration/RESTConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/configuration/RESTConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/controller/MainRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/controller/MainRESTController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/controller/TodoTaskRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/controller/TodoTaskRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/resources/templates/custom.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/resources/templates/todotasks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/resources/templates/custom.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/test/java/com/todotasks/AbstractIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/test/java/com/todotasks/AbstractIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/test/java/com/todotasks/controller/MainRESTControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/test/java/com/todotasks/controller/MainControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/target/classes/templates/custom.html" beforeDir="false" />
@@ -95,51 +95,59 @@
       <option name="project" value="LOCAL" />
       <updated>1592184688929</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix some issues&#10;refactoring">
+      <created>1594168494910</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1594168494910</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactoring&#10;add google-format&#10;add java-version in pom.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring&#10;add google-format&#10;add java-version in pom.xml" />
+    <MESSAGE value="fix some issues&#10;refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some issues&#10;refactoring" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2411" y="107" key="CommitChangelistDialog2" timestamp="1592184684527">
+    <state x="2411" y="107" key="CommitChangelistDialog2" timestamp="1594168489742">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2411" y="107" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592184684527" />
+    <state x="2411" y="107" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594168489742" />
     <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1592184887668">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592184887668" />
-    <state width="1921" height="289" key="GridCell.Tab.0.bottom" timestamp="1594167548713">
+    <state width="1921" height="289" key="GridCell.Tab.0.bottom" timestamp="1594168343687">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1317" height="260" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1591941578739" />
-    <state width="1921" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594167548713" />
-    <state width="1921" height="289" key="GridCell.Tab.0.center" timestamp="1594167548712">
+    <state width="1921" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594168343687" />
+    <state width="1921" height="289" key="GridCell.Tab.0.center" timestamp="1594168343686">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1317" height="260" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1591941578739" />
-    <state width="1921" height="289" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594167548712" />
-    <state width="1921" height="289" key="GridCell.Tab.0.left" timestamp="1594167548712">
+    <state width="1921" height="289" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594168343686" />
+    <state width="1921" height="289" key="GridCell.Tab.0.left" timestamp="1594168343686">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1317" height="260" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1591941578739" />
-    <state width="1921" height="289" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594167548712" />
-    <state width="1921" height="289" key="GridCell.Tab.0.right" timestamp="1594167548712">
+    <state width="1921" height="289" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594168343686" />
+    <state width="1921" height="289" key="GridCell.Tab.0.right" timestamp="1594168343686">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1317" height="260" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1591941578739" />
-    <state width="1921" height="289" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594167548712" />
+    <state width="1921" height="289" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594168343686" />
     <state x="2146" y="0" key="SettingsEditor" timestamp="1592183958759">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="160" y="0" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1591879790117" />
     <state x="2146" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592183958759" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1592184697073">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1594168577028">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592184697073" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594168577028" />
     <state x="336" y="162" key="run.anything.popup" timestamp="1591940593079">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
