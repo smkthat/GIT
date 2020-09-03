@@ -1,0 +1,44 @@
+<body th:fragment="content"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div class="task-card">
+    <div class="card-body">
+        <h2 class="form-name">Update task</h2>
+        <form id="create-task" action="#" th:action="@{/todotasks/update={id}(id=${todoTask.id})}"
+              th:object="${todoTask}"
+              method="POST">
+            <div class="input-group">
+                <input class="input-style input-update-title input-border"
+                       type="text"
+                       placeholder="Title"
+                       name="title"
+                       th:value="${todoTask.title}"
+                       th:field="*{title}"
+                       oninvalid="this.setCustomValidity('Please, enter title')"
+                       oninput="this.setCustomValidity('')"
+                       required
+                       contenteditable="false"/>
+            </div>
+            <div class="input-group">
+                <textarea class="input-style input-update-desc input-border"
+                          name="description"
+                          rows="20"
+                          th:text="${todoTask.desc}"
+                          th:field="*{desc}"
+                          contenteditable="false"></textarea>
+            </div>
+            <div class="input-group">
+                <p class="checkbox-question">Task completed ?</p>
+                <div class="toggle-btn" th:classappend="${todoTask.complete} ? active">
+                    <input type="checkbox"
+                           class="cb-value"
+                           th:field="*{complete}"/>
+                    <span class="round-btn"></span>
+                </div>
+            </div>
+        </form>
+        <button form="create-task" type="submit" class="remodal-confirm">Update</button>
+        <a data-remodal-action="cancel" class="remodal-cancel" th:href="@{/}">Cancel</a>
+    </div>
+</div>
+</body>

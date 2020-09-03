@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Error</title>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header-css"></div>
+<div th:replace="fragments/header :: header"></div>
+<div th:insert="fragments/model_bg&loader"></div>
+
+<div class="error">
+    <div class="card-body">
+        <h3 th:text="${errorStatus}"></h3>
+        <h2>Something went wrong!</h2>
+        <h3>Our Engineers are on it</h3>
+        <a th:href="@{/}">Go Home</a>
+    </div>
+</div>
+
+<div th:insert="fragments/footer"></div>
+</body>
+</html>

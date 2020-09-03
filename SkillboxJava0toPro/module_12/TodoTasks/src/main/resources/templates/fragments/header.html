@@ -1,0 +1,80 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="header-css">
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon"
+              href="../static/images/favicon.ico"
+              th:href="@{images/favicon.ico}"/>
+        <!-- jQuery -->
+        <script type="text/javascript"
+                src="https://code.jquery.com/jquery-3.5.1.js"
+                integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+                crossorigin="anonymous"></script>
+        <!-- Remodal -->
+        <link rel="stylesheet"
+              href="../static/css/remodal.css"
+              th:href="@{css/remodal.css}">
+        <link rel="stylesheet"
+              href="../static/css/remodal-default-theme.css"
+              th:href="@{css/remodal-default-theme.css}">
+        <!-- Custom CSS -->
+        <link rel="stylesheet"
+              href="../static/css/normalize.css"
+              th:href="@{css/normalize.css}">
+        <link rel="stylesheet"
+              href="../static/css/styles.css"
+              th:href="@{css/styles.css}">
+        <link rel="stylesheet"
+              href="../static/css/custom.css"
+              th:href="@{css/custom.css}">
+</head>
+<header th:fragment="header">
+    <nav class="navbar fixed">
+        <div class="navbar-container">
+            <div class="logo-icon">
+                <a th:href="@{/}"><img th:src="@{/images/logo_100x50.png}" alt="TODO TASK's" src=""></a>
+            </div>
+            <ul>
+                <li>
+                    <form method="POST" action="#" th:action="@{/filter}">
+                        <input class="search-input"
+                               placeholder="find tasks by any word"
+                               type="text"
+                               name="filter"
+                               aria-label="Search">
+                        <button type="submit" id="filter" hidden></button>
+                        <button id="filter-reset" th:href="@{/}" hidden></button>
+                    </form>
+                </li>
+
+                <li>
+                    <label class="fa fa-search" for="filter" aria-hidden="true"></label>
+                </li>
+
+                <li>
+                    <label class="fa fa-ban" for="filter-reset" aria-hidden="true"></label>
+                </li>
+
+                <li></li>
+
+                <li>
+                    <i class="fa fa fa-eraser" data-remodal-target="deleteAll-modal" aria-hidden="true"></i>
+                    <div class="remodal" data-remodal-id="deleteAll-modal"
+                         data-remodal-options="hashTracking: true, closeOnOutsideClick: false">
+                        <div class="card-body">
+                            <h2 class="form-name">Delete all tasks?</h2>
+                            <form method="post" th:action="@{/todotasks/deleteAll}">
+                                <input type="submit" id="deleteAll-modal" hidden/>
+                            </form>
+                            <label for="deleteAll-modal" class="remodal-confirm">Yes</label>
+                            <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+</html>

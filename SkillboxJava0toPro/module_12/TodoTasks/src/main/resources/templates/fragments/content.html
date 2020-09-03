@@ -1,0 +1,113 @@
+<body th:fragment="content"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+
+<!-- TABLE -->
+<section class="wrapper">
+    <main class="row title">
+        <ul>
+            <li>Title</li>
+            <li>Completed</li>
+            <li>Created</li>
+            <li>Last update</li>
+            <li>Actions</li>
+        </ul>
+    </main>
+
+    <div th:if="${todoTasks.empty}">
+        <article class="row content not-completed no-hover">
+            <ul>
+                <li><a>No tasks available!</a></li>
+            </ul>
+        </article>
+    </div>
+
+    <div th:each="todoTask : ${todoTasks}">
+        <article th:classappend="${todoTask.complete} ? completed : not-completed" class="row content">
+            <!-- update-row -->
+            <ul>
+                <li><a th:href="@{/todotasks/{id}(id=${todoTask.id})}" th:text="${todoTask.title}"
+                       class="truncate"></a>
+                </li>
+                <li th:text="${todoTask.complete}"></li>
+                <li class="date-time">
+                    <input type="datetime-local" th:value="${todoTask.createDate}" readonly/>
+                </li>
+                <li class="date-time">
+                    <input type="datetime-local" th:value="${todoTask.updateDate}" readonly/>
+                </li>
+                <li class="actions">
+                    <a class="fa fa-pencil-square-o edit-button"
+                       th:href="@{/todotasks/{id}(id=${todoTask.id})}"></a>
+                    <a class="fa fa fa-trash delete-button"
+                       data-remodal-target="delete-modal" th:attrappend="data-remodal-target=${'-' + todoTask.id}"></a>
+                    <div>
+                        <div class="remodal" data-remodal-id="delete-modal"
+                             th:attrappend="data-remodal-id=${'-' + todoTask.id}"
+                             data-remodal-options="hashTracking: false, closeOnOutsideClick: false">
+                            <div class="card-body">
+                                <h2 class="form-name">Are you sure?</h2>
+                                <form method="GET" th:action="@{/todotasks/delete={id}(id=${todoTask.id})}">
+                                    <button id="delete-modal"
+                                            th:attrappend="id=${'-' + todoTask.id}"
+                                            type="submit" class="remodal-confirm">Yes</button>
+                                    <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="more-content">
+                <li th:id="${todoTask.id}" th:text="${todoTask.desc}"></li>
+            </ul>
+        </article>
+    </div>
+</section>
+
+<!-- CREATE BUTTON TRIGGER MODAL-->
+<div class="create-button">
+    <i class="fa fa-plus-circle" data-remodal-target="create-modal"></i>
+</div>
+
+<div class="remodal" data-remodal-id="create-modal"
+     data-remodal-options="hashTracking: true, closeOnOutsideClick: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="card-body">
+        <h2 class="form-name">Create todo task</h2>
+        <form id="create-task" action="#" th:action="@{/todotasks}" th:object="${newTask}"
+              method="POST">
+            <div class="input-group">
+                <input class="input-style input-title input-border"
+                       type="text"
+                       placeholder="Title"
+                       name="title"
+                       th:field="*{title}"
+                       oninvalid="this.setCustomValidity('Please, enter title')"
+                       oninput="this.setCustomValidity('')"
+                       required>
+            </div>
+            <div class="input-group">
+                <textarea class="input-style input-desc input-border"
+                          placeholder="Description"
+                          name="description"
+                          rows="20" th:field="*{desc}"></textarea>
+            </div>
+            <div class="input-group">
+                <p class="checkbox-question">Task completed ?</p>
+                <div class="toggle-btn">
+                    <input type="checkbox" class="cb-value" th:field="*{complete}"/>
+                    <span class="round-btn"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <button form="create-task" type="submit" class="remodal-confirm">Create</button>
+    <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+</div>
+
+<!-- SCROLL UP BUTTON-->
+<div class="scrollup-button">
+    <i class="fa fa-chevron-up"></i>
+</div>
+</body>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon"
+          href="../static/images/favicon.ico"
+          th:href="@{../images/favicon.ico}"/>
+    <!-- jQuery -->
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+    <!-- Remodal -->
+    <link rel="stylesheet"
+          href="../static/css/remodal.css"
+          th:href="@{../css/remodal.css}">
+    <link rel="stylesheet"
+          href="../static/css/remodal-default-theme.css"
+          th:href="@{../css/remodal-default-theme.css}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet"
+          href="../static/css/normalize.css"
+          th:href="@{../css/normalize.css}">
+    <link rel="stylesheet"
+          href="../static/css/styles.css"
+          th:href="@{../css/styles.css}">
+    <link rel="stylesheet"
+          href="../static/css/custom.css"
+          th:href="@{../css/custom.css}">
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+<div th:insert="fragments/model_bg&loader"></div>
+<div th:insert="fragments/task_card"></div>
+
+<!-- Optional JavaScript -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<!-- Font Awesome -->
+<script type="text/javascript"
+        src="https://use.fontawesome.com/831d5b2fa3.js"></script>
+<!-- Succinct -->
+<script type="text/javascript"
+        src="../static/js/jquery.succinct.min.js"
+        th:src="@{../js/jquery.succinct.min.js}"></script>
+<!-- Remodal -->
+<script type="text/javascript"
+        src="../static/js/remodal.js"
+        th:src="@{../js/remodal.js}"></script>
+<!-- Moments -->
+<script type="text/javascript"
+        src="../static/js/moments.js"
+        th:src="@{../js/moments.js}"></script>
+<!-- Custom  -->
+<script type="text/javascript"
+        src="../static/js/scripts.js"
+        th:src="@{../js/scripts.js}"></script>
+</body>
+</html>

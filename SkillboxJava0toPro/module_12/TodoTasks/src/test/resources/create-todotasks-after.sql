@@ -1,0 +1,1 @@
+delete from todo_task;
