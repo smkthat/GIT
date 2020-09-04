@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e65f99e6-6abb-4960-9587-eab16126a241" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/controller/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/resources/templates/todotasks.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MyLockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MyLockTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/MyLockTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MyLockTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/configuration/RESTConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/configuration/RESTConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/controller/MainRESTController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/controller/TodoTaskRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/java/com/todotasks/controller/TodoTaskRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/main/resources/templates/custom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/test/java/com/todotasks/AbstractIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/test/java/com/todotasks/AbstractIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/src/test/java/com/todotasks/controller/MainRESTControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_12/TodoTasks/src/test/java/com/todotasks/controller/MainControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module_12/TodoTasks/target/classes/templates/custom.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../module_12/ToDoList" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -102,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594168494910</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix some issues&#10;refactoring">
+      <created>1599212307884</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599212307884</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -139,14 +137,16 @@
     </state>
     <state width="1317" height="260" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1591941578739" />
     <state width="1921" height="289" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594168343686" />
-    <state x="2146" y="0" key="SettingsEditor" timestamp="1592183958759">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="198" y="0" key="SettingsEditor" timestamp="1599212888403">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="160" y="0" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1591879790117" />
+    <state x="198" y="0" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1599212888403" />
     <state x="2146" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592183958759" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1594168577028">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="483" y="246" key="Vcs.Push.Dialog.v2" timestamp="1599212569607">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state x="483" y="246" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1599212569607" />
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594168577028" />
     <state x="336" y="162" key="run.anything.popup" timestamp="1591940593079">
       <screen x="0" y="0" width="1360" height="728" />
