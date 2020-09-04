@@ -8,7 +8,7 @@
     <groupId>com.todotasks</groupId>
     <artifactId>TodoTasks</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>TODO TASKs WEBAPP</name>
     <url>http://localhost:8080</url>
@@ -18,7 +18,7 @@
         <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <springBoot.version>2.3.1.RELEASE</springBoot.version>
+<!--        <springBoot.version>2.3.1.RELEASE</springBoot.version>-->
     </properties>
 
     <build>
@@ -27,7 +27,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${springBoot.version}</version>
+<!--                <version>${springBoot.version}</version>-->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -40,35 +40,39 @@
         </plugins>
     </build>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.1.RELEASE</version>
+    </parent>
 
     <dependencies>
-
         <!-- SPRING-BOOT-STARTER -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${springBoot.version}</version>
+<!--            <version>${springBoot.version}</version>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <version>${springBoot.version}</version>
+<!--            <version>${springBoot.version}</version>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <version>${springBoot.version}</version>
+<!--            <version>${springBoot.version}</version>-->
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>${springBoot.version}</version>
+<!--            <version>${springBoot.version}</version>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>${springBoot.version}</version>
+<!--            <version>${springBoot.version}</version>-->
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -127,6 +131,5 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.11.0</version>
         </dependency>
-
     </dependencies>
 </project>
