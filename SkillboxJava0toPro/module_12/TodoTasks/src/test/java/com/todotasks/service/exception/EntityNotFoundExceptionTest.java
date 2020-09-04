@@ -12,10 +12,15 @@ class EntityNotFoundExceptionTest {
     final String expectedParamKey = "id";
     final int expectedParamValue = 1;
     final String expectedMessage =
-        "Entity='" + expectedEntityName + "' with " + expectedParamKey + "='" + expectedParamValue
+        "Entity='"
+            + expectedEntityName
+            + "' with "
+            + expectedParamKey
+            + "='"
+            + expectedParamValue
             + "' not found";
-    EntityNotFoundException actualException = EntityNotFoundException
-        .createWith("id", Integer.toString(expectedParamValue), expectedEntityName);
+    EntityNotFoundException actualException =
+        new EntityNotFoundException("id", Integer.toString(expectedParamValue), expectedEntityName);
 
     assertThat(expectedMessage).isEqualTo(actualException.getMessage());
   }

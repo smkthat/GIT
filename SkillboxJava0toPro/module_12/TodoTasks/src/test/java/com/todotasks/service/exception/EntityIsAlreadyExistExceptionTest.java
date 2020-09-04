@@ -4,7 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-
 class EntityIsAlreadyExistExceptionTest {
 
   @Test
@@ -13,10 +12,16 @@ class EntityIsAlreadyExistExceptionTest {
     final String expectedParamKey = "id";
     final int expectedParamValue = 1;
     final String expectedMessage =
-        "Entity='" + expectedEntityName + "' with " + expectedParamKey + "='" + expectedParamValue
+        "Entity='"
+            + expectedEntityName
+            + "' with "
+            + expectedParamKey
+            + "='"
+            + expectedParamValue
             + "' is already exist";
-    EntityIsAlreadyExistException actualException = EntityIsAlreadyExistException
-        .createWith("id", Integer.toString(expectedParamValue), expectedEntityName);
+    EntityIsAlreadyExistException actualException =
+        new EntityIsAlreadyExistException(
+            "id", Integer.toString(expectedParamValue), expectedEntityName);
 
     assertThat(expectedMessage).isEqualTo(actualException.getMessage());
   }

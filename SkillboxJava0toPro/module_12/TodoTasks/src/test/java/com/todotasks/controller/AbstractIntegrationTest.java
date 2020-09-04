@@ -22,18 +22,9 @@ import java.util.List;
 @AutoConfigureMockMvc
 public abstract class AbstractIntegrationTest {
 
-  public static final String TODO_TASK_ROUT = "/todotasks";
-  public static final String TODO_TASK_API_ROUT = "/api/todotasks";
-  public static final String SERVER_HOST = "http://localhost";
-  public static final String SERVER_PORT = "8080";
-  public final LocalDateTimeAttributeConverter dateConverter =
-      new LocalDateTimeAttributeConverter();
-
-  public static final int TEST_TODO_TASK_ID = 1;
-  public static final int TEST_NOT_EXIST_TODO_TASK_ID = 100;
-
-  public final List<TodoTask> testTodoTaskList = new ArrayList<>();
-  public final TodoTask testTodoTask = new TodoTask();
+  protected static final String TODO_TASK_API_ROUT = "/api/todotasks";
+  protected static final int TEST_TODO_TASK_ID = 1;
+  protected static final int TEST_NOT_EXIST_TODO_TASK_ID = 100;
 
   /**
    * Web application context.
@@ -52,24 +43,6 @@ public abstract class AbstractIntegrationTest {
    */
   @Autowired
   protected ObjectMapper mapper;
-
-  /**
-   * TodoTask REST api controller.
-   */
-  @Autowired
-  protected TodoTaskRestController todoTaskRestController;
-
-  /**
-   * TodoTask controller.
-   */
-  @Autowired
-  protected TodoTaskController todoTaskController;
-
-  /**
-   * TodoTask error controller.
-   */
-  @Autowired
-  protected TodoErrorController todoErrorController;
 
   /**
    * Create mock mvc.

@@ -2,14 +2,17 @@ package com.todotasks.controller.rest;
 
 import com.todotasks.controller.AbstractIntegrationTest;
 import com.todotasks.entity.TodoTask;
+import com.todotasks.entity.utils.LocalDateTimeAttributeConverter;
 import com.todotasks.service.exception.EntityIsAlreadyExistException;
 import com.todotasks.service.exception.EntityNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -34,11 +37,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class TodoTaskRestControllerDBTest extends AbstractIntegrationTest {
 
   private static final String SIMPLE_CLASS_NAME = TodoTask.class.getSimpleName();
+  private static final String SERVER_HOST = "http://localhost";
+  private final LocalDateTimeAttributeConverter dateConverter =
+      new LocalDateTimeAttributeConverter();
 
   private final List<TodoTask> testTodoTaskList = new ArrayList<>();
   private final TodoTask testTodoTask = new TodoTask();
   private final TodoTask created = new TodoTask("Created", "Creation description", false);
   private final TodoTask updated = new TodoTask("Updated", "Updated description", true);
+
+  @Autowired protected TodoTaskRestController todoTaskRestController;
 
   @Test
   public void contextLoads() {
@@ -104,7 +112,7 @@ public class TodoTaskRestControllerDBTest extends AbstractIntegrationTest {
         .andExpect(
             result ->
                 mapper.writeValueAsString(
-                    EntityNotFoundException.createWith(
+                    new EntityNotFoundException(
                         "id", Integer.toString(TEST_NOT_EXIST_TODO_TASK_ID), SIMPLE_CLASS_NAME)))
         .andDo(print());
   }
@@ -128,7 +136,8 @@ public class TodoTaskRestControllerDBTest extends AbstractIntegrationTest {
             post(TODO_TASK_API_ROUT)
                 .content(mapper.writeValueAsString(created))
                 .contentType(MediaType.APPLICATION_JSON))
-        .andExpect(redirectedUrl(SERVER_HOST + TODO_TASK_API_ROUT + "/" + expectedId))
+        .andExpect(
+            redirectedUrl(SERVER_HOST + TODO_TASK_API_ROUT + "/" + expectedId))
         .andExpect(status().isCreated())
         .andDo(print());
   }
@@ -146,7 +155,7 @@ public class TodoTaskRestControllerDBTest extends AbstractIntegrationTest {
         .andExpect(
             result ->
                 mapper.writeValueAsString(
-                    EntityIsAlreadyExistException.createWith(
+                    new EntityIsAlreadyExistException(
                         "id", Integer.toString(TEST_TODO_TASK_ID), SIMPLE_CLASS_NAME)))
         .andDo(print());
   }
@@ -189,7 +198,7 @@ public class TodoTaskRestControllerDBTest extends AbstractIntegrationTest {
         .andExpect(
             result ->
                 mapper.writeValueAsString(
-                    EntityNotFoundException.createWith(
+                    new EntityNotFoundException(
                         "id", Integer.toString(TEST_NOT_EXIST_TODO_TASK_ID), SIMPLE_CLASS_NAME)))
         .andDo(print());
   }
@@ -202,7 +211,7 @@ public class TodoTaskRestControllerDBTest extends AbstractIntegrationTest {
         .andExpect(
             result ->
                 mapper.writeValueAsString(
-                    EntityNotFoundException.createWith(
+                    new EntityNotFoundException(
                         "id", Integer.toString(TEST_NOT_EXIST_TODO_TASK_ID), SIMPLE_CLASS_NAME)))
         .andDo(print());
   }

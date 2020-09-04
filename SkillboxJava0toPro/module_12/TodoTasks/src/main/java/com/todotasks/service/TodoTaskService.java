@@ -36,7 +36,7 @@ public class TodoTaskService {
 
   public Integer addTask(TodoTask todoTask) {
     if (todoTask.getId() != null && todoTaskRepo.findById(todoTask.getId()).isPresent()) {
-      throw EntityIsAlreadyExistException.createWith(
+      throw new EntityIsAlreadyExistException(
           "id", Integer.toString(todoTask.getId()), SIMPLE_CLASS_NAME);
     }
 
@@ -82,6 +82,6 @@ public class TodoTaskService {
         .findById(id)
         .orElseThrow(
             () ->
-                EntityNotFoundException.createWith("id", Integer.toString(id), SIMPLE_CLASS_NAME));
+                new EntityNotFoundException("id", Integer.toString(id), SIMPLE_CLASS_NAME));
   }
 }

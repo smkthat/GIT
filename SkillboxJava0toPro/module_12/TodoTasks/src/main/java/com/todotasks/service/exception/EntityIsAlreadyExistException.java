@@ -6,12 +6,7 @@ public class EntityIsAlreadyExistException extends RuntimeException {
   private String paramKey;
   private String paramValue;
 
-  public static EntityIsAlreadyExistException createWith(String paramKey, String paramValue,
-      String entityName) {
-    return new EntityIsAlreadyExistException(paramKey, paramValue, entityName);
-  }
-
-  private EntityIsAlreadyExistException(String paramKey, String paramValue, String entityName) {
+  public EntityIsAlreadyExistException(String paramKey, String paramValue, String entityName) {
     this.paramKey = paramKey;
     this.paramValue = paramValue;
     this.entityName = entityName;

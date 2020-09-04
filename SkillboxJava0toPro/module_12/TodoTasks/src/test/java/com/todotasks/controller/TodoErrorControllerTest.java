@@ -1,6 +1,7 @@
 package com.todotasks.controller;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -8,6 +9,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 class TodoErrorControllerTest extends AbstractIntegrationTest {
+
+  @Autowired
+  protected TodoErrorController todoErrorController;
 
   @Test
   public void contextLoads() {

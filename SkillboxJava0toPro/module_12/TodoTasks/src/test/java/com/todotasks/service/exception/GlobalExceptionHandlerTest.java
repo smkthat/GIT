@@ -11,10 +11,9 @@ class GlobalExceptionHandlerTest {
 
   @Test
   void handleException() {
-    EntityNotFoundException notFoundException = EntityNotFoundException
-        .createWith("id", "1", "NotFound");
-    EntityIsAlreadyExistException existException = EntityIsAlreadyExistException
-        .createWith("id", "2", "AlreadyExist");
+    EntityNotFoundException notFoundException = new EntityNotFoundException("id", "1", "NotFound");
+    EntityIsAlreadyExistException existException =
+        new EntityIsAlreadyExistException("id", "2", "AlreadyExist");
     RuntimeException ex = new RuntimeException();
 
     GlobalExceptionHandler handler = new GlobalExceptionHandler();

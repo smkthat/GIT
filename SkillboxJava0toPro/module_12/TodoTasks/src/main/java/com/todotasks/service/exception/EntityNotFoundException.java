@@ -6,12 +6,7 @@ public class EntityNotFoundException extends RuntimeException {
   private String paramKey;
   private String paramValue;
 
-  public static EntityNotFoundException createWith(String paramKey, String paramValue,
-      String entityName) {
-    return new EntityNotFoundException(paramKey, paramValue, entityName);
-  }
-
-  private EntityNotFoundException(String paramKey, String paramValue, String entityName) {
+  public EntityNotFoundException(String paramKey, String paramValue, String entityName) {
     this.paramKey = paramKey;
     this.paramValue = paramValue;
     this.entityName = entityName;
