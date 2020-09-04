@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class MyLockTest {
 
-  static final int ACTIONS = 10_000_000;
+  static final int ACTIONS = 10_000;
   static int c = 0;
   static MyLock lock = new MyLock();
 
@@ -13,43 +13,51 @@ public class MyLockTest {
   public void testLock() throws InterruptedException {
     int expected = c;
 
-    Thread t1 = new Thread(() -> {
-      for (int i = 0; i < ACTIONS; i++) {
-        lock.lock();
-        c++;
-        lock.unlock();
-      }
-    });
+    Thread t1 =
+        new Thread(
+            () -> {
+              for (int i = 0; i < ACTIONS; i++) {
+                lock.lock();
+                c++;
+                try {
+                  sleep(0);
+                } catch (InterruptedException e) {
+                  e.printStackTrace();
+                }
+                System.out.printf("t1:\t%s\n", c);
+                lock.unlock();
+              }
+            });
 
-    Thread t2 = new Thread(() -> {
-      for (int i = 0; i < ACTIONS; i++) {
-        lock.lock();
-        c--;
-        lock.unlock();
-      }
-    });
-
-    Thread t3 = new Thread(() -> {
-      while (MyLock.counter.get() < (ACTIONS * 2)) {
-        try {
-          sleep(500);
-          System.out.printf("%s\n", MyLock.counter.get());
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-      }
-    });
-
-    t3.start();
+    Thread t2 =
+        new Thread(
+            () -> {
+              for (int i = 0; i < ACTIONS; i++) {
+                lock.lock();
+                c--;
+                try {
+                  sleep(0);
+                } catch (InterruptedException e) {
+                  e.printStackTrace();
+                }
+                System.out.printf("t2:\t%s\n", c);
+                lock.unlock();
+              }
+            });
 
     t1.start();
     t2.start();
     t1.join();
     t2.join();
-    t3.join();
 
     int actual = c;
-    System.out.printf("\nExpected: %s\tActual: %s", expected, actual);
+    int expectedCounter = ACTIONS * 2;
+    int actualCounter = MyLock.COUNTER.intValue();
+
+    System.out.printf("\n* Result *\nExpected: %s\tActual: %s", expected, actual);
+    System.out.printf("\n\n* Actions* \nExpected: %s\tActual: %s", expectedCounter, actualCounter);
+
     assertEquals(expected, actual);
+    assertEquals(expectedCounter, actualCounter);
   }
 }
